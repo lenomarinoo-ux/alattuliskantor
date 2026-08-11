@@ -1,0 +1,8 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo Alat Tulis Kantor">
+  <circle cx="100" cy="100" r="92" fill="#0c2647"/>
+  <circle cx="100" cy="100" r="92" fill="none" stroke="#550000" stroke-width="4" stroke-dasharray="6 6"/>
+  <circle cx="100" cy="100" r="78" fill="none" stroke="#ffffff" stroke-width="1.5" opacity="0.35"/>
+  <text x="100" y="95" text-anchor="middle" font-family="'Plus Jakarta Sans', Arial, sans-serif" font-weight="800" font-size="34" fill="#ffffff">ATK</text>
+  <text x="100" y="122" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="600" font-size="11" letter-spacing="1.5" fill="#ffd7d7">DISTRIBUTOR</text>
+  <text x="100" y="136" text-anchor="middle" font-family="'IBM Plex Mono', monospace" font-weight="600" font-size="11" letter-spacing="1.5" fill="#ffd7d7">RESMI</text>
+</svg>
