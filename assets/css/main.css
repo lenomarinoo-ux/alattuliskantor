@@ -547,3 +547,1413 @@ textarea:focus-visible {
 .blog-card:hover .blog-img img {
   transform: scale(1.05);
 }
+/* ==========================================================================
+   PAKET PENGADAAN - Responsive & Tombol Full
+   ========================================================================== */
+
+/* Package card - pastikan tinggi sama dan responsive */
+.package-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: all 0.3s ease;
+  padding: 24px 20px;
+  background: var(--white);
+  border: 1.5px dashed var(--gray-200);
+  border-radius: var(--radius);
+  position: relative;
+}
+
+/* Isi card fleksibel agar tombol di bawah */
+.package-card .package-tag {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--maroon);
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.package-card h4 {
+  font-size: 1.1rem;
+  margin: 6px 0 2px;
+}
+
+.package-card .package-for {
+  font-size: 0.82rem;
+  color: var(--ink-soft);
+  margin-bottom: 14px;
+}
+
+.package-card ul {
+  flex: 1;
+  list-style: none;
+  padding: 0;
+  margin: 0 0 18px;
+}
+
+.package-card ul li {
+  font-size: 0.85rem;
+  padding: 5px 0;
+  border-top: 1px dashed var(--gray-200);
+  display: flex;
+  gap: 10px;
+}
+
+.package-card ul li:first-child {
+  border-top: none;
+}
+
+.package-card ul li::before {
+  content: "✓";
+  color: var(--navy-700);
+  font-weight: 700;
+}
+
+/* ========================================
+   BADGE POPULER - HANYA DI CARD FEATURED
+   ======================================== */
+.package-badge {
+  position: absolute;
+  top: -12px;
+  right: 16px;
+  font-size: 0.6rem;
+  padding: 4px 14px;
+  border-radius: 20px;
+  background: var(--maroon);
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  transition: all 0.3s ease;
+}
+
+/* Hanya tampil di card yang punya class featured */
+.package-card.featured .package-badge {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Sembunyikan di card non-featured */
+.package-card:not(.featured) .package-badge {
+  display: none;
+}
+
+/* ========================================
+   TOMBOL FULL 100%
+   ======================================== */
+.package-card .btn-navy,
+.package-card .btn-outline-navy {
+  display: block !important;
+  width: 100% !important;
+  text-align: center !important;
+  padding: 12px 16px !important;
+  font-size: 0.9rem !important;
+  border-radius: 8px !important;
+  box-sizing: border-box !important;
+}
+
+/* Tombol di package featured */
+.package-card.featured .btn-navy {
+  background: var(--navy-800);
+  color: var(--white) !important;
+}
+
+.package-card.featured .btn-navy:hover {
+  background: var(--navy-900);
+}
+
+/* ========================================
+   FEATURED STYLE - Aktif permanent & hover
+   ======================================== */
+.package-card.featured {
+  border-color: var(--maroon);
+  border-style: solid;
+  box-shadow: var(--shadow-md);
+  background: #fffcf7;
+}
+
+/* Hover effect - semua card jadi featured style saat hover */
+.package-card:hover {
+  border-color: var(--maroon);
+  border-style: solid;
+  box-shadow: var(--shadow-md);
+}
+
+/* ========================================
+   RESPONSIVE - Mobile & Tablet
+   ======================================== */
+
+/* Tablet (md) */
+@media (max-width: 991px) {
+  .package-card {
+    padding: 20px 18px;
+  }
+  
+  .package-card h4 {
+    font-size: 1.05rem;
+  }
+  
+  .package-card ul li {
+    font-size: 0.82rem;
+    padding: 4px 0;
+  }
+  
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 10px 14px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* Mobile (sm) */
+@media (max-width: 767px) {
+  .package-card {
+    padding: 18px 16px;
+    border-radius: 10px;
+  }
+  
+  .package-card h4 {
+    font-size: 1rem;
+  }
+  
+  .package-card .package-for {
+    font-size: 0.78rem;
+    margin-bottom: 10px;
+  }
+  
+  .package-card ul li {
+    font-size: 0.8rem;
+    padding: 4px 0;
+  }
+  
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 10px 12px !important;
+    font-size: 0.82rem !important;
+    border-radius: 6px !important;
+  }
+  
+  .package-badge {
+    font-size: 0.55rem;
+    padding: 3px 12px;
+    top: -10px;
+    right: 12px;
+  }
+  
+  .package-card .package-tag {
+    font-size: 0.6rem;
+  }
+  
+  /* Grid 1 kolom di mobile */
+  .row.g-4 > .col-md-6.col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+/* Mobile kecil (xs) */
+@media (max-width: 575px) {
+  .package-card {
+    padding: 16px 14px;
+  }
+  
+  .package-card h4 {
+    font-size: 0.95rem;
+  }
+  
+  .package-card ul li {
+    font-size: 0.78rem;
+    padding: 3px 0;
+  }
+  
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+/* ========================================
+   TRANSISI HALUS
+   ======================================== */
+.package-card,
+.package-card .btn-navy,
+.package-card .btn-outline-navy,
+.package-card .package-badge {
+  transition: all 0.25s ease;
+}
+
+/* ==========================================================================
+   RESPONSIVE FIX - Semua Button Full 100% di Mobile
+   ========================================================================== */
+
+/* Button di Hero - jadi full di mobile */
+@media (max-width: 576px) {
+  .hero .d-flex.flex-wrap.gap-3 {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .hero .d-flex.flex-wrap.gap-3 a {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  /* Hero stats - stack di mobile */
+  .hero-stats {
+    flex-direction: column !important;
+    gap: 12px !important;
+    align-items: flex-start !important;
+  }
+}
+
+/* Button di About */
+@media (max-width: 576px) {
+  .section .btn-outline-navy,
+  .section .btn-navy {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* Button di Value Proposition */
+@media (max-width: 576px) {
+  .value-card .btn-outline-navy,
+  .value-card .btn-navy {
+    width: 100% !important;
+    text-align: center !important;
+  }
+}
+
+/* Button di Product Cards */
+@media (max-width: 576px) {
+  .product-card .btn-order {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    background: var(--navy-050);
+    border-radius: 6px;
+  }
+}
+
+/* Button "Lihat Semua Produk" */
+@media (max-width: 576px) {
+  .d-flex.flex-wrap.justify-content-between .btn-outline-navy {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* CTA Section - button full */
+@media (max-width: 576px) {
+  .cta-section .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* Footer - button full */
+@media (max-width: 576px) {
+  .footer-atk .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ==========================================================================
+   PAKET PENGADAAN - Sudah full, tapi dipastikan
+   ========================================================================== */
+@media (max-width: 576px) {
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 12px 10px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+/* ==========================================================================
+   GRID - 1 Kolom di Mobile untuk semua section
+   ========================================================================== */
+@media (max-width: 576px) {
+  /* Product cards - 1 kolom */
+  .product-card {
+    max-width: 100%;
+  }
+  
+  /* Value cards - 1 kolom */
+  .value-card {
+    max-width: 100%;
+  }
+  
+  /* Package cards - 1 kolom (sudah ada) */
+  .row.g-4 > .col-md-6.col-lg-3 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  /* About section - gambar stack */
+  .col-lg-6 .row.g-3 {
+    flex-direction: column !important;
+  }
+  
+  .col-lg-6 .col-7,
+  .col-lg-6 .col-5 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .col-lg-6 .col-5 {
+    flex-direction: row !important;
+  }
+  
+  .col-lg-6 .col-5 img {
+    height: 120px !important;
+  }
+}
+
+/* ==========================================================================
+   NAVBAR - Mobile fix
+   ========================================================================== */
+@media (max-width: 991px) {
+  .navbar-atk .navbar-collapse {
+    padding: 16px 0;
+  }
+  
+  .navbar-atk .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 8px;
+  }
+  
+  .navbar-atk .navbar-nav {
+    width: 100%;
+  }
+  
+  .navbar-atk .nav-link {
+    padding: 10px 14px !important;
+    width: 100%;
+  }
+}
+
+/* ==========================================================================
+   TESTIMONI - Mobile fix
+   ========================================================================== */
+@media (max-width: 576px) {
+  .testi-card {
+    padding: 20px 16px !important;
+  }
+  
+  .testi-card .quote {
+    font-size: 0.92rem !important;
+  }
+  
+  .testi-card .stamp {
+    width: 70px !important;
+    height: 70px !important;
+  }
+}
+
+/* ==========================================================================
+   FAQ - Mobile fix
+   ========================================================================== */
+@media (max-width: 576px) {
+  .accordion-atk .accordion-button {
+    font-size: 0.9rem !important;
+    padding: 14px 16px !important;
+  }
+  
+  .accordion-atk .accordion-body {
+    padding: 0 16px 16px !important;
+    font-size: 0.88rem !important;
+  }
+}
+
+/* ==========================================================================
+   HERO - Mobile fix (tambahan)
+   ========================================================================== */
+@media (max-width: 576px) {
+  .hero {
+    padding: 60px 0 80px !important;
+    min-height: 90vh !important;
+  }
+  
+  .hero h1 {
+    font-size: 1.6rem !important;
+  }
+  
+  .hero .lead-text {
+    font-size: 0.95rem !important;
+  }
+  
+  .hero .eyebrow {
+    font-size: 0.65rem !important;
+  }
+}
+
+/* ==========================================================================
+   CTA - Mobile fix
+   ========================================================================== */
+@media (max-width: 576px) {
+  .cta-section {
+    padding: 40px 0 !important;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.4rem !important;
+  }
+  
+  .cta-section p {
+    font-size: 0.95rem !important;
+  }
+}
+
+/* ==========================================================================
+   ABOUT - Gambar Rapi & Tidak Mepet
+   ========================================================================== */
+
+.about-image-wrapper {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(11, 31, 59, 0.10);
+}
+
+.about-image-wrapper img {
+  display: block;
+  transition: transform 0.4s ease;
+}
+
+.about-image-wrapper:hover img {
+  transform: scale(1.02);
+}
+
+/* Desktop - spacing lebih lega */
+@media (min-width: 992px) {
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-x: 4rem !important;
+    --bs-gutter-y: 3rem !important;
+  }
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .about-image-wrapper img {
+    height: 320px !important;
+  }
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-y: 2.5rem !important;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .about-image-wrapper {
+    padding: 0 4px !important;
+  }
+  .about-image-wrapper img {
+    height: 260px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-image-wrapper img {
+    height: 220px !important;
+  }
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-y: 2rem !important;
+  }
+}
+
+/* ==========================================================================
+   RESPONSIVE FULL - SEMUA HALAMAN
+   Mobile First · Tablet · Desktop
+   ========================================================================== */
+
+/* ========================================
+   1. CONTAINER & SPACING
+   ======================================== */
+@media (max-width: 576px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+  
+  .section {
+    padding: 48px 0 !important;
+  }
+  
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+  
+  .section-lead {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+  .section {
+    padding: 60px 0 !important;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 991px) {
+  .section {
+    padding: 70px 0 !important;
+  }
+}
+
+/* ========================================
+   2. NAVBAR - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .navbar-atk {
+    padding: 10px 0 !important;
+  }
+  
+  .navbar-atk .navbar-brand {
+    font-size: 1rem !important;
+  }
+  
+  .navbar-atk .navbar-brand img {
+    height: 32px !important;
+  }
+  
+  .navbar-atk .navbar-collapse {
+    padding: 12px 0 !important;
+    background: var(--white);
+    border-radius: 12px;
+    margin-top: 8px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  }
+  
+  .navbar-atk .navbar-nav {
+    width: 100% !important;
+    padding: 0 12px !important;
+  }
+  
+  .navbar-atk .nav-link {
+    padding: 10px 14px !important;
+    width: 100% !important;
+    border-radius: 8px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .navbar-atk .nav-link:hover,
+  .navbar-atk .nav-link.active {
+    background: var(--navy-050) !important;
+    color: var(--navy-800) !important;
+  }
+  
+  .navbar-atk .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    margin-top: 8px !important;
+    padding: 10px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  .navbar-toggler {
+    border: none !important;
+    padding: 6px 10px !important;
+  }
+  
+  .navbar-toggler:focus {
+    box-shadow: none !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .navbar-atk .navbar-brand {
+    font-size: 0.9rem !important;
+  }
+  
+  .navbar-atk .navbar-brand img {
+    height: 28px !important;
+  }
+}
+
+/* ========================================
+   3. HERO - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .hero {
+    padding: 60px 0 80px !important;
+    min-height: 90vh !important;
+  }
+  
+  .hero h1 {
+    font-size: 2rem !important;
+  }
+  
+  .hero .lead-text {
+    font-size: 1rem !important;
+    max-width: 100% !important;
+  }
+  
+  .hero .eyebrow {
+    font-size: 0.65rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding: 50px 0 70px !important;
+    min-height: 85vh !important;
+  }
+  
+  .hero h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+  
+  .hero .lead-text {
+    font-size: 0.9rem !important;
+  }
+  
+  .hero .d-flex.flex-wrap.gap-3 {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  
+  .hero .d-flex.flex-wrap.gap-3 a {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 16px !important;
+  }
+  
+  .hero-stats {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    margin-top: 20px !important;
+  }
+  
+  .hero-stats .num {
+    font-size: 1.4rem !important;
+  }
+  
+  .hero-stats .label {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* ========================================
+   4. ABOUT - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .about-image-wrapper img {
+    height: 320px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-image-wrapper {
+    padding: 0 4px !important;
+  }
+  .about-image-wrapper img {
+    height: 260px !important;
+  }
+  
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-y: 2rem !important;
+    --bs-gutter-x: 1.5rem !important;
+  }
+  
+  .col-lg-6 .row.g-3 {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+  
+  .col-lg-6 .col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .about-image-wrapper img {
+    height: 220px !important;
+  }
+  
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-y: 1.5rem !important;
+    --bs-gutter-x: 1rem !important;
+  }
+  
+  .col-lg-6 .col-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .col-lg-6 .d-flex.align-items-start.gap-2 {
+    font-size: 0.85rem !important;
+  }
+  
+  .section .btn-outline-navy,
+  .section .btn-navy {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ========================================
+   5. VALUE PROPOSITION - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .value-card {
+    padding: 24px 20px !important;
+  }
+  
+  .value-card h5 {
+    font-size: 0.98rem !important;
+  }
+  
+  .value-card p {
+    font-size: 0.88rem !important;
+  }
+  
+  .value-card .icon-wrap {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .value-card {
+    padding: 18px 16px !important;
+  }
+  
+  .value-card h5 {
+    font-size: 0.92rem !important;
+  }
+  
+  .value-card p {
+    font-size: 0.82rem !important;
+  }
+  
+  .value-card .icon-wrap {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .row.g-4 > .col-md-6.col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ========================================
+   6. PRODUCT CARDS - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .product-card .product-img {
+    height: 150px !important;
+  }
+  
+  .product-card .product-body {
+    padding: 14px 16px 18px !important;
+  }
+  
+  .product-card h6 {
+    font-size: 0.92rem !important;
+  }
+  
+  .product-card p {
+    font-size: 0.82rem !important;
+  }
+  
+  .product-card .btn-order {
+    font-size: 0.8rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .product-card .product-img {
+    height: 180px !important;
+  }
+  
+  .product-card .product-body {
+    padding: 12px 14px 16px !important;
+  }
+  
+  .product-card h6 {
+    font-size: 0.88rem !important;
+  }
+  
+  .product-card p {
+    font-size: 0.78rem !important;
+  }
+  
+  .product-card .btn-order {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    background: var(--navy-050);
+    border-radius: 6px;
+  }
+  
+  .col-sm-6.col-lg-3 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+  
+  .d-flex.flex-wrap.justify-content-between .btn-outline-navy {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+}
+
+/* ========================================
+   7. PACKAGE CARDS - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .package-card {
+    padding: 20px 18px !important;
+  }
+  
+  .package-card h4 {
+    font-size: 1.05rem !important;
+  }
+  
+  .package-card ul li {
+    font-size: 0.82rem !important;
+    padding: 4px 0 !important;
+  }
+  
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 10px 14px !important;
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .package-card {
+    padding: 18px 16px !important;
+    border-radius: 10px !important;
+  }
+  
+  .package-card h4 {
+    font-size: 1rem !important;
+  }
+  
+  .package-card .package-for {
+    font-size: 0.78rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .package-card ul li {
+    font-size: 0.8rem !important;
+    padding: 4px 0 !important;
+  }
+  
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 10px 12px !important;
+    font-size: 0.82rem !important;
+    border-radius: 6px !important;
+  }
+  
+  .package-badge {
+    font-size: 0.55rem !important;
+    padding: 3px 12px !important;
+    top: -10px !important;
+    right: 12px !important;
+  }
+  
+  .package-card .package-tag {
+    font-size: 0.6rem !important;
+  }
+  
+  .row.g-4 > .col-md-6.col-lg-3 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .package-card {
+    padding: 16px 14px !important;
+  }
+  
+  .package-card h4 {
+    font-size: 0.95rem !important;
+  }
+  
+  .package-card ul li {
+    font-size: 0.78rem !important;
+    padding: 3px 0 !important;
+  }
+  
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+/* ========================================
+   8. TESTIMONI - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .testi-card {
+    padding: 28px 24px !important;
+  }
+  
+  .testi-card .quote {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .testi-card {
+    padding: 20px 16px !important;
+  }
+  
+  .testi-card .quote {
+    font-size: 0.9rem !important;
+  }
+  
+  .testi-card .stamp {
+    width: 70px !important;
+    height: 70px !important;
+  }
+  
+  .testi-card .stamp .stamp-title {
+    font-size: 0.45rem !important;
+  }
+  
+  .testi-card .name {
+    font-size: 0.9rem !important;
+  }
+  
+  .testi-card .role {
+    font-size: 0.78rem !important;
+  }
+  
+  .testi-nav-btn {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ========================================
+   9. FAQ - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .accordion-atk .accordion-button {
+    font-size: 0.95rem !important;
+    padding: 16px 18px !important;
+  }
+  
+  .accordion-atk .accordion-body {
+    font-size: 0.9rem !important;
+    padding: 0 18px 18px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .accordion-atk .accordion-button {
+    font-size: 0.85rem !important;
+    padding: 14px 14px !important;
+  }
+  
+  .accordion-atk .accordion-body {
+    font-size: 0.82rem !important;
+    padding: 0 14px 14px !important;
+  }
+  
+  .col-lg-4 .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+}
+
+/* ========================================
+   10. CTA - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .cta-section {
+    padding: 50px 0 !important;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.8rem !important;
+  }
+  
+  .cta-section p {
+    font-size: 1rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .cta-section {
+    padding: 40px 0 !important;
+  }
+  
+  .cta-section h2 {
+    font-size: 1.3rem !important;
+  }
+  
+  .cta-section p {
+    font-size: 0.9rem !important;
+    padding: 0 16px !important;
+  }
+  
+  .cta-section .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 12px !important;
+  }
+}
+
+/* ========================================
+   11. FOOTER - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .footer-atk {
+    padding: 40px 0 20px !important;
+  }
+  
+  .footer-atk h6 {
+    font-size: 0.95rem !important;
+  }
+  
+  .footer-atk ul li {
+    font-size: 0.85rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .footer-atk .col-lg-2.col-6,
+  .footer-atk .col-lg-3.col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+  
+  .footer-atk .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-atk {
+    padding: 30px 0 16px !important;
+  }
+  
+  .footer-atk h6 {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .footer-atk ul li {
+    font-size: 0.8rem !important;
+    margin-bottom: 6px !important;
+  }
+  
+  .footer-atk .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px !important;
+  }
+  
+  .footer-atk .footer-pillar-link {
+    font-size: 0.78rem !important;
+    padding: 6px 12px !important;
+  }
+  
+  .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 6px !important;
+    font-size: 0.7rem !important;
+  }
+}
+
+/* ========================================
+   12. SCROLL TOP BUTTON - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .scroll-top-btn {
+    width: 44px !important;
+    height: 44px !important;
+    font-size: 1.1rem !important;
+    bottom: 85px !important;
+    right: 20px !important;
+  }
+}
+
+/* ========================================
+   13. WA FLOAT - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .wa-float {
+    width: 50px !important;
+    height: 50px !important;
+    font-size: 1.3rem !important;
+    bottom: 18px !important;
+    right: 18px !important;
+  }
+}
+
+/* ========================================
+   14. PAGE HEADER - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .page-header {
+    padding: 40px 0 !important;
+  }
+  
+  .page-header h1 {
+    font-size: 1.8rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 30px 0 !important;
+  }
+  
+  .page-header h1 {
+    font-size: 1.4rem !important;
+  }
+  
+  .page-header .breadcrumb-atk {
+    font-size: 0.7rem !important;
+  }
+}
+
+/* ========================================
+   15. CONTACT FORM - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .contact-form-card {
+    padding: 24px !important;
+  }
+  
+  .info-strip {
+    padding: 20px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact-form-card {
+    padding: 18px !important;
+  }
+  
+  .form-control-atk {
+    padding: 10px 12px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .form-label-atk {
+    font-size: 0.82rem !important;
+  }
+  
+  .info-strip {
+    padding: 16px !important;
+  }
+  
+  .info-strip .info-item {
+    gap: 10px !important;
+    margin-bottom: 12px !important;
+  }
+  
+  .info-strip .info-icon {
+    width: 36px !important;
+    height: 36px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* ========================================
+   16. BLOG - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 991px) {
+  .blog-card .blog-img {
+    height: 160px !important;
+  }
+  
+  .blog-card .blog-body {
+    padding: 16px 18px 18px !important;
+  }
+  
+  .blog-card h5 {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .blog-card .blog-img {
+    height: 200px !important;
+  }
+  
+  .blog-card .blog-body {
+    padding: 14px 14px 16px !important;
+  }
+  
+  .blog-card h5 {
+    font-size: 0.88rem !important;
+  }
+  
+  .blog-card .blog-meta {
+    font-size: 0.6rem !important;
+  }
+  
+  .blog-card .read-more {
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ========================================
+   17. CATEGORY FILTER CHIPS - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .chip-filter {
+    padding: 6px 14px !important;
+    font-size: 0.78rem !important;
+    margin: 2px !important;
+  }
+  
+  .d-flex.flex-wrap.gap-2 {
+    gap: 6px !important;
+  }
+}
+
+/* ========================================
+   18. GRID SYSTEM - FULL RESPONSIVE
+   ======================================== */
+/* Tablet ke bawah - 2 kolom */
+@media (max-width: 991px) {
+  .row.g-4 > .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* Mobile - 1 kolom */
+@media (max-width: 576px) {
+  .row.g-4 > .col-md-6,
+  .row.g-4 > .col-lg-3,
+  .row.g-4 > .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ========================================
+   19. EYEBROW - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .eyebrow {
+    font-size: 0.65rem !important;
+    gap: 6px !important;
+  }
+  
+  .eyebrow::before {
+    width: 16px !important;
+    height: 2px !important;
+  }
+}
+
+/* ========================================
+   20. BUTTONS - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .btn-navy,
+  .btn-outline-navy,
+  .btn-wa {
+    padding: 10px 16px !important;
+    font-size: 0.85rem !important;
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+  }
+  
+  .d-inline-block {
+    display: block !important;
+    width: 100% !important;
+  }
+}
+
+/* ========================================
+   21. TABEL - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  .table-responsive-mobile {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+  
+  .table-responsive-mobile table {
+    min-width: 500px !important;
+  }
+}
+
+/* ========================================
+   22. MISC - FULL RESPONSIVE
+   ======================================== */
+@media (max-width: 576px) {
+  /* Text alignment */
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  /* Gap adjustments */
+  .gap-3 {
+    gap: 0.75rem !important;
+  }
+  
+  .gap-4 {
+    gap: 1rem !important;
+  }
+  
+  /* Padding adjustments */
+  .p-4 {
+    padding: 1rem !important;
+  }
+  
+  .p-5 {
+    padding: 1.5rem !important;
+  }
+  
+  /* Margin adjustments */
+  .mt-5 {
+    margin-top: 1.5rem !important;
+  }
+  
+  .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+/* ========================================
+   23. PRINT - FULL RESPONSIVE
+   ======================================== */
+@media print {
+  .navbar-atk,
+  .wa-float,
+  .scroll-top-btn,
+  .btn-wa,
+  .cta-section {
+    display: none !important;
+  }
+  
+  .section {
+    padding: 20px 0 !important;
+  }
+}

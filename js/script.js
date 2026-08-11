@@ -1,4 +1,47 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Paket card hover effect - aktifkan style featured
+var paketCards = document.querySelectorAll('.package-card');
+
+paketCards.forEach(function (card) {
+  // Simpan class asli
+  card.addEventListener('mouseenter', function () {
+    // Tambahkan class featured saat hover
+    card.classList.add('featured');
+  });
+  
+  card.addEventListener('mouseleave', function () {
+    // Hapus class featured saat hover keluar
+    card.classList.remove('featured');
+  });
+});
+
+// ========================================
+// SCROLL TO TOP BUTTON
+// ========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  var scrollBtn = document.getElementById('scrollTopBtn');
+  
+  if (!scrollBtn) return;
+  
+  // Tampilkan/sembunyikan button saat scroll
+  window.addEventListener('scroll', function() {
+    if (window.scrollY > 400) {
+      scrollBtn.classList.add('show');
+    } else {
+      scrollBtn.classList.remove('show');
+    }
+  });
+  
+  // Scroll ke atas saat diklik
+  scrollBtn.addEventListener('click', function() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
+
   // Tandai menu navbar aktif berdasarkan halaman saat ini
   var current = window.location.pathname.split('/').pop() || 'index.html';
   document.querySelectorAll('.navbar-atk .nav-link, .navbar-atk .dropdown-item').forEach(function (link) {
