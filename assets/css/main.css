@@ -392,6 +392,19 @@ a { text-decoration: none; }
 .footer-atk .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 36px; padding-top: 20px; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
 .footer-atk ul { list-style: none; padding: 0; }
 .footer-atk ul li { margin-bottom: 10px; font-size: 0.9rem; }
+.footer-pillar-link {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.14);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.86rem;
+  padding: 9px 14px;
+  border-radius: 8px;
+  transition: background .15s ease, border-color .15s ease, transform .15s ease;
+}
+.footer-pillar-link:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateY(-1px); color: var(--white); }
 
 /* ---------- Page header (inner pages) ---------- */
 .page-header {
@@ -472,4 +485,65 @@ a { text-decoration: none; }
 
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
+}
+
+/* ---------- Accessibility: visible keyboard focus ---------- */
+a:focus-visible,
+button:focus-visible,
+.form-control-atk:focus-visible,
+.chip-filter:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--navy-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+.btn-wa:focus-visible,
+.btn-navy:focus-visible,
+.btn-outline-navy:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ---------- Carousel controls (custom, brand-consistent) ---------- */
+.testi-nav-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  color: var(--navy-800);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
+}
+.testi-nav-btn:hover { background: var(--navy-800); border-color: var(--navy-800); color: var(--white); }
+.testi-nav-btn i { font-size: 1.1rem; }
+
+/* ---------- Hero pattern refinement ---------- */
+.hero {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05) 0, transparent 45%),
+    linear-gradient(160deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-600) 100%);
+}
+
+/* ---------- Product image hover polish ---------- */
+.product-card .product-img img,
+.blog-card .blog-img img {
+  transition: transform .35s ease;
+}
+.product-card:hover .product-img img,
+.blog-card:hover .blog-img img {
+  transform: scale(1.05);
 }
