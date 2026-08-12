@@ -1,135 +1,480 @@
+/**
+ * ============================================================
+ * ALAT TULIS KANTOR - Main JavaScript
+ * ============================================================
+ * Fitur:
+ * - Navbar active state
+ * - Navbar shadow on scroll
+ * - Scroll to top button
+ * - Filter produk (dengan animasi fade)
+ * - Package card hover effect
+ * - Contact form to WhatsApp
+ * - Scroll reveal animation
+ * ============================================================
+ */
+
 document.addEventListener('DOMContentLoaded', function () {
-  // Paket card hover effect - aktifkan style featured
-var paketCards = document.querySelectorAll('.package-card');
 
-paketCards.forEach(function (card) {
-  // Simpan class asli
-  card.addEventListener('mouseenter', function () {
-    // Tambahkan class featured saat hover
-    card.classList.add('featured');
-  });
-  
-  card.addEventListener('mouseleave', function () {
-    // Hapus class featured saat hover keluar
-    card.classList.remove('featured');
-  });
-});
+  // ============================================================
+  // 1. NAVBAR - ACTIVE STATE
+  // ============================================================
+  (function () {
+    var current = window.location.pathname.split('/').pop() || 'index.html';
+    var navLinks = document.querySelectorAll('.navbar-atk .nav-link, .navbar-atk .dropdown-item');
 
-// ========================================
-// SCROLL TO TOP BUTTON
-// ========================================
-
-document.addEventListener('DOMContentLoaded', function() {
-  var scrollBtn = document.getElementById('scrollTopBtn');
-  
-  if (!scrollBtn) return;
-  
-  // Tampilkan/sembunyikan button saat scroll
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 400) {
-      scrollBtn.classList.add('show');
-    } else {
-      scrollBtn.classList.remove('show');
-    }
-  });
-  
-  // Scroll ke atas saat diklik
-  scrollBtn.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
-});
-
-  // Tandai menu navbar aktif berdasarkan halaman saat ini
-  var current = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.navbar-atk .nav-link, .navbar-atk .dropdown-item').forEach(function (link) {
-    var href = link.getAttribute('href');
-    if (href === current) {
-      link.classList.add('active');
-      var parentDropdown = link.closest('.dropdown');
-      if (parentDropdown) {
-        parentDropdown.querySelector('.nav-link').classList.add('active');
-      }
-    }
-  });
-
-  // Filter kategori produk (halaman Produk)
-  var chips = document.querySelectorAll('.chip-filter');
-  var productItems = document.querySelectorAll('[data-category]');
-  function applyFilter(target, chipEl) {
-    chips.forEach(function (c) { c.classList.remove('active'); });
-    if (chipEl) chipEl.classList.add('active');
-    productItems.forEach(function (item) {
-      if (target === 'semua' || item.getAttribute('data-category') === target) {
-        item.style.display = '';
-      } else {
-        item.style.display = 'none';
+    navLinks.forEach(function (link) {
+      var href = link.getAttribute('href');
+      if (href === current) {
+        link.classList.add('active');
+        var parentDropdown = link.closest('.dropdown');
+        if (parentDropdown) {
+          var dropdownToggle = parentDropdown.querySelector('.nav-link');
+          if (dropdownToggle) dropdownToggle.classList.add('active');
+        }
       }
     });
-  }
-  if (chips.length && productItems.length) {
-    chips.forEach(function (chip) {
-      chip.addEventListener('click', function () {
-        applyFilter(chip.getAttribute('data-filter'), chip);
-      });
-    });
-    // Jika halaman dibuka dari link dropdown kategori (mis. produk.html#meeting)
-    var hash = window.location.hash.replace('#', '');
-    if (hash) {
-      var matchedChip = document.getElementById(hash);
-      if (matchedChip && matchedChip.classList.contains('chip-filter')) {
-        applyFilter(hash, matchedChip);
-        setTimeout(function () {
-          matchedChip.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 200);
-      }
-    }
-  }
+  })();
 
-  // Validasi ringan form kontak + arahkan ke WhatsApp
-  var contactForm = document.getElementById('contactForm');
-  if (contactForm) {
-    contactForm.addEventListener('submit', function (e) {
-      e.preventDefault();
-      if (!contactForm.checkValidity()) {
-        contactForm.classList.add('was-validated');
-        return;
-      }
-      var nama = document.getElementById('cfNama').value;
-      var perusahaan = document.getElementById('cfPerusahaan').value;
-      var pesan = document.getElementById('cfPesan').value;
-      var text = 'Halo Alat Tulis Kantor, saya ' + nama + ' dari ' + perusahaan + '. ' + pesan;
-      window.open('https://wa.me/6288989643555?text=' + encodeURIComponent(text), '_blank');
-    });
-  }
 
-  // Navbar shadow saat scroll
-  var nav = document.querySelector('.navbar-atk');
-  if (nav) {
+  // ============================================================
+  // 2. NAVBAR - SHADOW ON SCROLL
+  // ============================================================
+  (function () {
+    var nav = document.querySelector('.navbar-atk');
+    if (!nav) return;
+
     window.addEventListener('scroll', function () {
       if (window.scrollY > 10) {
         nav.style.boxShadow = '0 4px 16px rgba(12,38,71,0.10)';
       } else {
         nav.style.boxShadow = '0 1px 0 #e4e9f0';
       }
-    });
-  }
+    }, { passive: true });
+  })();
 
-  // Reveal halus saat elemen masuk viewport
-  var revealEls = document.querySelectorAll('.reveal');
-  if (revealEls.length && 'IntersectionObserver' in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (entry) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-          io.unobserve(entry.target);
+
+  // ============================================================
+  // 3. SCROLL TO TOP BUTTON
+  // ============================================================
+  (function () {
+    var scrollBtn = document.getElementById('scrollTopBtn');
+    if (!scrollBtn) return;
+
+    var toggleButton = function () {
+      if (window.scrollY > 300) {
+        scrollBtn.classList.add('visible');
+      } else {
+        scrollBtn.classList.remove('visible');
+      }
+    };
+
+    window.addEventListener('scroll', toggleButton, { passive: true });
+
+    scrollBtn.addEventListener('click', function (e) {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+
+    // Keyboard support
+    scrollBtn.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+
+    toggleButton();
+  })();
+
+
+  // ============================================================
+  // 4. FILTER PRODUK - DENGAN ANIMASI FADE
+  // ============================================================
+  (function () {
+    var filterButtons = document.querySelectorAll('.chip-filter');
+    var productCards = document.querySelectorAll('#productGrid .col-sm-6');
+
+    if (!filterButtons.length || !productCards.length) return;
+
+    // Tambahkan animasi fade ke CSS
+    var style = document.createElement('style');
+    style.textContent = `
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    var applyFilter = function (filterValue, activeButton) {
+      // Update active class
+      filterButtons.forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+
+      var visibleCount = 0;
+
+      productCards.forEach(function (card) {
+        var category = card.getAttribute('data-category');
+
+        if (filterValue === 'semua' || category === filterValue) {
+          card.style.display = 'block';
+          card.style.animation = '';
+          // Trigger reflow
+          void card.offsetWidth;
+          card.style.animation = 'fadeInUp 0.4s ease ' + (visibleCount * 0.06) + 's forwards';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
         }
       });
-    }, { threshold: 0.15 });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add('is-visible'); });
-  }
-});
+    };
+
+    // Event listener untuk setiap filter button
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var filterValue = this.getAttribute('data-filter');
+        applyFilter(filterValue, this);
+      });
+    });
+
+    // Handle hash from URL (contoh: produk.html#alat-tulis)
+    var hash = window.location.hash.replace('#', '');
+    if (hash) {
+      var matchedButton = document.querySelector('.chip-filter[data-filter="' + hash + '"]');
+      if (matchedButton) {
+        applyFilter(hash, matchedButton);
+        setTimeout(function () {
+          matchedButton.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+        return;
+      }
+    }
+
+    // Default: tampilkan semua produk dengan animasi
+    var defaultButton = document.querySelector('.chip-filter.active') ||
+      document.querySelector('.chip-filter[data-filter="semua"]');
+    if (defaultButton) {
+      applyFilter('semua', defaultButton);
+    } else {
+      // Fallback: tampilkan semua tanpa filter
+      productCards.forEach(function (card) {
+        card.style.display = 'block';
+        card.style.animation = 'fadeInUp 0.4s ease forwards';
+      });
+    }
+  })();
+
+
+  // ============================================================
+  // 5. PACKAGE CARD - HOVER EFFECT
+  // ============================================================
+  (function () {
+    var packageCards = document.querySelectorAll('.package-card');
+
+    packageCards.forEach(function (card) {
+      card.addEventListener('mouseenter', function () {
+        this.classList.add('featured');
+      });
+
+      card.addEventListener('mouseleave', function () {
+        this.classList.remove('featured');
+      });
+    });
+  })();
+
+
+  // ============================================================
+  // 6. CONTACT FORM - WHATSAPP REDIRECT
+  // ============================================================
+  (function () {
+    var contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!this.checkValidity()) {
+        this.classList.add('was-validated');
+        return;
+      }
+
+      var nama = document.getElementById('cfNama');
+      var perusahaan = document.getElementById('cfPerusahaan');
+      var pesan = document.getElementById('cfPesan');
+
+      var text = 'Halo Alat Tulis Kantor, saya ' +
+        (nama ? nama.value : '') +
+        ' dari ' +
+        (perusahaan ? perusahaan.value : '') +
+        '. ' +
+        (pesan ? pesan.value : '');
+
+      window.open(
+        'https://wa.me/6288989643555?text=' + encodeURIComponent(text),
+        '_blank'
+      );
+    });
+  })();
+
+
+  // ============================================================
+  // 7. SCROLL REVEAL - ANIMASI SAAT SCROLL
+  // ============================================================
+  (function () {
+    var revealElements = document.querySelectorAll('.reveal');
+
+    if (!revealElements.length) return;
+
+    if ('IntersectionObserver' in window) {
+      var observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, {
+        threshold: 0.15,
+        rootMargin: '0px 0px -20px 0px'
+      });
+
+      revealElements.forEach(function (el) {
+        observer.observe(el);
+      });
+    } else {
+      // Fallback untuk browser lama
+      revealElements.forEach(function (el) {
+        el.classList.add('is-visible');
+      });
+    }
+  })();
+
+  // ============================================================
+  // 8. FILTER PAKET
+  // ============================================================
+  (function () {
+    var filterButtons = document.querySelectorAll('.filter-wrapper .chip-filter');
+    var packageCards = document.querySelectorAll('#paketGrid .col-sm-6');
+
+    if (!filterButtons.length || !packageCards.length) return;
+
+    // Tambahkan animasi jika belum ada
+    var style = document.createElement('style');
+    if (!document.querySelector('style[data-paket-filter]')) {
+      style.setAttribute('data-paket-filter', 'true');
+      style.textContent = `
+      @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+    `;
+      document.head.appendChild(style);
+    }
+
+    var applyFilter = function (filterValue, activeButton) {
+      // Update active class
+      filterButtons.forEach(function (btn) {
+        btn.classList.remove('active');
+      });
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+
+      var visibleCount = 0;
+
+      packageCards.forEach(function (card) {
+        var category = card.getAttribute('data-category');
+
+        if (filterValue === 'semua' || category === filterValue) {
+          card.style.display = 'block';
+          card.style.animation = '';
+          void card.offsetWidth; // trigger reflow
+          card.style.animation = 'fadeInUp 0.4s ease ' + (visibleCount * 0.06) + 's forwards';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    };
+
+    // Event listener
+    filterButtons.forEach(function (button) {
+      button.addEventListener('click', function () {
+        var filterValue = this.getAttribute('data-filter');
+        applyFilter(filterValue, this);
+      });
+    });
+
+    // Default: aktifkan filter pertama atau 'semua'
+    var defaultButton = document.querySelector('.filter-wrapper .chip-filter.active');
+    if (!defaultButton) {
+      defaultButton = document.querySelector('.filter-wrapper .chip-filter[data-filter="semua"]');
+    }
+    if (defaultButton) {
+      applyFilter('semua', defaultButton);
+    }
+  })();
+
+
+  // ============================================================
+  // 9. PAKET DETAIL - REDIRECT KE #detail-paket
+  // ============================================================
+  (function () {
+    var detailLinks = document.querySelectorAll('[data-paket]');
+    var detailTitle = document.getElementById('detail-title');
+    var detailDesc = document.getElementById('detail-desc');
+    var detailContent = document.getElementById('detail-content');
+
+    if (!detailLinks.length || !detailTitle || !detailContent) return;
+
+    // Data paket (bisa ditambah sesuai kebutuhan)
+    var paketData = {
+      'paket-meja-baru': {
+        title: 'Paket Meja Baru',
+        desc: 'New Desk Setup Kit — Perlengkapan awal untuk meja kerja baru.',
+        items: [
+          'Tempat pulpen (pen holder) — menyimpan alat tulis agar rapi',
+          'Penggaris — untuk kebutuhan pengukuran sederhana',
+          'Stapler kecil No. 10 — untuk penjilidan dokumen ringan',
+          'Kalkulator 12 digit — untuk perhitungan administrasi',
+          'Gunting — untuk kebutuhan pemotongan kertas',
+          'Catatan tempel (sticky notes) — untuk pengingat dan catatan cepat'
+        ]
+      },
+      'paket-ruang-rapat': {
+        title: 'Paket Ruang Rapat',
+        desc: 'Meeting Room Bundle — Perlengkapan lengkap untuk ruang rapat.',
+        items: [
+          'Spidol papan tulis (whiteboard) — untuk presentasi',
+          'Penghapus papan — untuk membersihkan whiteboard',
+          'Penanda (highlighter) — untuk menandai poin penting',
+          'Buku memo catatan — untuk mencatat hasil rapat'
+        ]
+      },
+      'paket-administrasi-keuangan': {
+        title: 'Paket Administrasi & Keuangan',
+        desc: 'Finance & Admin Kit — Perlengkapan untuk bagian keuangan dan administrasi.',
+        items: [
+          'Buku kuitansi — untuk pencatatan transaksi',
+          'Nota kontan — untuk nota pembayaran tunai',
+          'Kertas karbon — untuk pembuatan rangkap dokumen',
+          'Pulpen meja (dengan tali) — untuk menulis dokumen',
+          'Kalkulator kantor — untuk perhitungan keuangan'
+        ]
+      },
+      'paket-audit-berkas': {
+        title: 'Paket Audit / Berkas Besar',
+        desc: 'Archiving Bundle — Solusi penyimpanan dokumen skala besar.',
+        items: [
+          'Ordner (map tebal besar) — untuk arsip dokumen penting',
+          'Box file (karton/plastik) — untuk penyimpanan jangka panjang',
+          'Map snelhechter — untuk pengelompokan dokumen',
+          'Amplop cokelat besar — untuk dokumen ukuran besar'
+        ]
+      },
+      'paket-distribusi-dokumen': {
+        title: 'Paket Distribusi Dokumen',
+        desc: 'Daily Filing Kit — Perlengkapan sehari-hari untuk distribusi dokumen.',
+        items: [
+          'Map plastik kancing — untuk dokumen harian',
+          'Clear sleeve — untuk melindungi dokumen penting',
+          'Paper clip & binder clip — untuk menjepit dokumen'
+        ]
+      },
+      'paket-logistik-packing': {
+        title: 'Paket Logistik / Packing',
+        desc: 'Logistics Packing Bundle — Perlengkapan packing dan pengiriman.',
+        items: [
+          'Lakban cokelat — untuk packing kardus',
+          'Lakban hitam (kain) — untuk packing berat',
+          'Pisau cutter + isi ulang — untuk membuka packing',
+          'Tali rafia — untuk mengikat barang'
+        ]
+      },
+      'paket-cetak-fotokopi': {
+        title: 'Paket Cetak & Fotokopi',
+        desc: 'Bulk Paper Bundle — Kebutuhan cetak dan fotokopi dalam jumlah besar.',
+        items: [
+          'Bundel kertas HVS A4 70gr — untuk cetak dokumen',
+          'Bundel kertas HVS F4 70gr — untuk cetak folio',
+          'Bonus selotip bening — untuk menempel dokumen'
+        ]
+      },
+      'paket-seminar-pelatihan': {
+        title: 'Paket Seminar / Pelatihan',
+        desc: 'Seminar Event Kit — Perlengkapan untuk acara seminar dan pelatihan.',
+        items: [
+          'Amplop putih polos — untuk amplop peserta',
+          'Notebook jilid spiral — untuk catatan peserta',
+          'Pulpen cetek — untuk menulis catatan',
+          'Highlighter warna pastel — untuk menandai materi'
+        ]
+      },
+      'paket-gambar-kreatif': {
+        title: 'Paket Gambar & Kreatif',
+        desc: 'Basic Drafting Kit — Perlengkapan dasar untuk menggambar dan desain.',
+        items: [
+          'Pensil kayu (2B/HB) — untuk menggambar sketsa',
+          'Pensil mekanik + isi ulang — untuk gambar detail',
+          'Penggaris besi panjang — untuk pengukuran presisi',
+          'Penghapus karet — untuk mengoreksi gambar'
+        ]
+      }
+    };
+
+    detailLinks.forEach(function (link) {
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        var paketKey = this.getAttribute('data-paket');
+        var data = paketData[paketKey];
+
+        if (!data) return;
+
+        // Update title & desc
+        detailTitle.textContent = data.title;
+        detailDesc.textContent = data.desc;
+
+        // Build items HTML
+        var itemsHtml = data.items.map(function (item) {
+          return '<li class="d-flex align-items-start gap-3"><i class="bi bi-check-circle-fill text-maroon mt-1"></i><span>' + item + '</span></li>';
+        }).join('');
+
+        // Update content
+        detailContent.innerHTML = `
+        <div class="col-lg-8 mx-auto">
+          <div class="package-card" style="border-color: var(--maroon); border-style: solid; background: var(--white);">
+            <h4 class="text-center">${data.title}</h4>
+            <p class="text-center text-muted" style="font-size:0.95rem;">${data.desc}</p>
+            <hr>
+            <ul style="list-style: none; padding: 0; font-size:0.92rem;">
+              ${itemsHtml}
+            </ul>
+            <div class="d-flex flex-wrap gap-3 mt-4">
+              <a href="https://wa.me/6288989643555?text=Halo%2C%20saya%20tertarik%20dengan%20paket%20${encodeURIComponent(data.title)}" target="_blank" rel="noopener" class="btn-wa" style="flex:1; justify-content:center; display:flex; align-items:center;">
+                <i class="bi bi-whatsapp"></i> Pesan Paket
+              </a>
+              <a href="paket.html" class="btn-outline-navy" style="flex:1; justify-content:center; display:flex; align-items:center;">
+                <i class="bi bi-arrow-left me-2"></i> Kembali
+              </a>
+            </div>
+          </div>
+        </div>
+      `;
+
+        // Scroll ke detail section
+        var detailSection = document.getElementById('detail-paket');
+        if (detailSection) {
+          setTimeout(function () {
+            detailSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }, 150);
+        }
+      });
+    });
+  })();
+
+}); // END DOMContentLoaded

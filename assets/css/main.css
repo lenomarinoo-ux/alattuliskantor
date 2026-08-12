@@ -1,7 +1,6 @@
 /* ==========================================================================
-   ALAT TULIS KANTOR — Design System
+   ALAT TULIS KANTOR — Design System (REVISED FULL)
    Palette: Navy (utama) · Maroon/Red (brand aksen) · Putih (bersih)
-   Motif: stempel resmi & kwitansi — dunia administrasi & pengadaan kantor
    ========================================================================== */
 
 :root {
@@ -14,7 +13,7 @@
 
   --maroon: #550000;
   --maroon-700: #6e1010;
-  --red: #d81c1c;      /* CTA aksen — dari brand #ff0000, disesuaikan agar tetap tegas & mudah dibaca */
+  --red: #d81c1c;
   --red-bright: #ff0000;
 
   --white: #ffffff;
@@ -83,12 +82,16 @@ a { text-decoration: none; }
 .section-title { font-size: clamp(1.7rem, 2.6vw, 2.4rem); margin-bottom: 14px; }
 .section-lead { color: var(--ink-soft); max-width: 620px; }
 
-/* ---------- Navbar ---------- */
+/* ==========================================================================
+   NAVBAR - MODERN & CLEAN
+   ========================================================================== */
 .navbar-atk {
   background: var(--white);
   box-shadow: 0 1px 0 var(--gray-200);
   padding: 14px 0;
+  transition: all 0.3s ease;
 }
+
 .navbar-atk .navbar-brand {
   font-family: var(--font-display);
   font-weight: 800;
@@ -98,6 +101,7 @@ a { text-decoration: none; }
   align-items: center;
   gap: 10px;
 }
+
 .navbar-atk .navbar-brand .brand-mark {
   width: 38px; height: 38px;
   border-radius: 50%;
@@ -109,22 +113,60 @@ a { text-decoration: none; }
   font-size: 0.85rem;
   border: 2px dashed rgba(255,255,255,0.55);
 }
+
+/* === MENU NAVIGASI YANG RAPI === */
+.navbar-atk .navbar-nav {
+  gap: 4px;
+}
+
 .navbar-atk .nav-link {
   color: var(--ink);
   font-weight: 600;
   font-size: 0.95rem;
-  padding: 8px 14px !important;
+  padding: 8px 18px !important;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  position: relative;
 }
+
 .navbar-atk .nav-link:hover,
-.navbar-atk .nav-link.active { color: var(--navy-700); }
+.navbar-atk .nav-link.active {
+  color: var(--navy-700);
+  background: var(--navy-050);
+}
+
+/* Active indicator - garis bawah */
+.navbar-atk .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 3px;
+  background: var(--navy-700);
+  border-radius: 2px;
+}
+
 .navbar-atk .dropdown-menu {
   border: none;
   box-shadow: var(--shadow-md);
   border-radius: var(--radius);
   padding: 8px;
+  margin-top: 4px;
 }
-.navbar-atk .dropdown-item { border-radius: 6px; padding: 8px 14px; font-size: 0.92rem; }
-.navbar-atk .dropdown-item:hover { background: var(--navy-050); color: var(--navy-800); }
+
+.navbar-atk .dropdown-item {
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 0.92rem;
+  transition: all 0.15s ease;
+}
+
+.navbar-atk .dropdown-item:hover {
+  background: var(--navy-050);
+  color: var(--navy-800);
+}
 
 .btn-wa {
   background: var(--red);
@@ -138,7 +180,13 @@ a { text-decoration: none; }
   border: none;
   transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
 }
-.btn-wa:hover { background: var(--maroon); color: var(--white) !important; transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+
+.btn-wa:hover {
+  background: var(--maroon);
+  color: var(--white) !important;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-sm);
+}
 
 .btn-navy {
   background: var(--navy-800);
@@ -149,7 +197,12 @@ a { text-decoration: none; }
   border: none;
   transition: background .15s ease, transform .15s ease;
 }
-.btn-navy:hover { background: var(--navy-900); transform: translateY(-1px); color: var(--white) !important; }
+
+.btn-navy:hover {
+  background: var(--navy-900);
+  transform: translateY(-1px);
+  color: var(--white) !important;
+}
 
 .btn-outline-navy {
   border: 1.5px solid var(--navy-800);
@@ -160,9 +213,15 @@ a { text-decoration: none; }
   background: transparent;
   transition: all .15s ease;
 }
-.btn-outline-navy:hover { background: var(--navy-800); color: var(--white) !important; }
 
-/* ---------- Stamp / Seal motif (signature element) ---------- */
+.btn-outline-navy:hover {
+  background: var(--navy-800);
+  color: var(--white) !important;
+}
+
+/* ==========================================================================
+   STAMP / SEAL
+   ========================================================================== */
 .stamp {
   display: inline-flex;
   flex-direction: column;
@@ -180,6 +239,7 @@ a { text-decoration: none; }
   position: relative;
   flex-shrink: 0;
 }
+
 .stamp::before {
   content: "";
   position: absolute;
@@ -188,10 +248,13 @@ a { text-decoration: none; }
   border: 1px solid var(--maroon);
   opacity: 0.5;
 }
+
 .stamp .stamp-title { font-size: 0.62rem; font-weight: 700; letter-spacing: 0.06em; line-height: 1.2; text-transform: uppercase; }
 .stamp .stamp-sub { font-size: 0.55rem; opacity: 0.8; margin-top: 3px; }
 
-/* ---------- Hero ---------- */
+/* ==========================================================================
+   HERO
+   ========================================================================== */
 .hero {
   background: linear-gradient(160deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-600) 100%);
   color: var(--white);
@@ -199,6 +262,7 @@ a { text-decoration: none; }
   overflow: hidden;
   padding: 76px 0 96px;
 }
+
 .hero::after {
   content: "";
   position: absolute;
@@ -207,6 +271,7 @@ a { text-decoration: none; }
   border-radius: 50%;
   border: 60px solid rgba(255,255,255,0.05);
 }
+
 .hero .eyebrow { color: #ffd7d7; }
 .hero .eyebrow::before { background: var(--red-bright); }
 .hero h1 { color: var(--white); font-size: clamp(2rem, 4vw, 3rem); line-height: 1.15; }
@@ -222,20 +287,25 @@ a { text-decoration: none; }
   position: relative;
   z-index: 2;
 }
+
 .hero-po-card .po-head {
   display: flex; justify-content: space-between; align-items: center;
   border-bottom: 1px dashed var(--gray-200);
   padding-bottom: 10px; margin-bottom: 12px;
   font-size: 0.75rem; color: var(--ink-soft); text-transform: uppercase; letter-spacing: 0.05em;
 }
+
 .hero-po-card .po-row { display: flex; justify-content: space-between; font-size: 0.86rem; padding: 6px 0; border-bottom: 1px solid var(--gray-100); }
 .hero-po-card .po-row span:first-child { color: var(--ink-soft); }
 .hero-po-card .po-row span:last-child { font-weight: 700; color: var(--navy-800); }
+
 .hero-stats { display: flex; gap: 26px; margin-top: 30px; flex-wrap: wrap; }
 .hero-stats .num { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; color: var(--white); }
 .hero-stats .label { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
 
-/* ---------- Value cards ---------- */
+/* ==========================================================================
+   VALUE CARDS
+   ========================================================================== */
 .value-card {
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
@@ -244,7 +314,13 @@ a { text-decoration: none; }
   background: var(--white);
   transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
 }
-.value-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); border-color: transparent; }
+
+.value-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: transparent;
+}
+
 .value-card .icon-wrap {
   width: 52px; height: 52px;
   border-radius: 12px;
@@ -254,10 +330,13 @@ a { text-decoration: none; }
   margin-bottom: 16px;
   font-size: 1.3rem;
 }
+
 .value-card h5 { font-size: 1.05rem; margin-bottom: 8px; }
 .value-card p { color: var(--ink-soft); font-size: 0.92rem; margin: 0; }
 
-/* ---------- Product cards ---------- */
+/* ==========================================================================
+   PRODUCT CARDS
+   ========================================================================== */
 .product-card {
   border: 1px solid var(--gray-200);
   border-radius: var(--radius);
@@ -266,10 +345,28 @@ a { text-decoration: none; }
   height: 100%;
   transition: box-shadow .18s ease, transform .18s ease;
 }
+
 .product-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.product-card .product-img { height: 170px; overflow: hidden; background: var(--navy-050); }
-.product-card .product-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.product-card .product-img {
+  height: 170px;
+  overflow: hidden;
+  background: var(--navy-050);
+}
+
+.product-card .product-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.product-card:hover .product-img img {
+  transform: scale(1.05);
+}
+
 .product-card .product-body { padding: 18px 18px 20px; }
+
 .product-card .sku-tag {
   font-family: var(--font-mono);
   font-size: 0.68rem;
@@ -281,8 +378,10 @@ a { text-decoration: none; }
   margin-bottom: 8px;
   letter-spacing: 0.03em;
 }
+
 .product-card h6 { font-weight: 700; margin-bottom: 6px; font-size: 1rem; }
 .product-card p { color: var(--ink-soft); font-size: 0.86rem; }
+
 .product-card .btn-order {
   color: var(--navy-800);
   font-weight: 700;
@@ -291,267 +390,12 @@ a { text-decoration: none; }
   align-items: center;
   gap: 6px;
 }
+
 .product-card .btn-order:hover { color: var(--red); }
 
-/* ---------- Package / kwitansi cards ---------- */
-.package-card {
-  background: var(--white);
-  border: 1.5px dashed var(--gray-200);
-  border-radius: var(--radius);
-  padding: 30px 26px;
-  height: 100%;
-  position: relative;
-}
-.package-card::before, .package-card::after {
-  content: "";
-  position: absolute;
-  width: 20px; height: 20px;
-  background: var(--white);
-  border-radius: 50%;
-  top: 50%;
-  transform: translateY(-50%);
-}
-.package-card.featured {
-  border-color: var(--maroon);
-  border-style: solid;
-  box-shadow: var(--shadow-md);
-}
-.package-card .package-tag {
-  font-family: var(--font-mono);
-  font-size: 0.7rem;
-  letter-spacing: 0.05em;
-  color: var(--maroon);
-  text-transform: uppercase;
-}
-.package-card h4 { font-size: 1.25rem; margin: 8px 0 4px; }
-.package-card .package-for { color: var(--ink-soft); font-size: 0.88rem; margin-bottom: 18px; }
-.package-card ul { list-style: none; padding: 0; margin: 0 0 22px; }
-.package-card ul li { padding: 7px 0; border-top: 1px dashed var(--gray-200); font-size: 0.9rem; display: flex; gap: 10px; }
-.package-card ul li:first-child { border-top: none; }
-.package-card ul li::before { content: "✓"; color: var(--navy-700); font-weight: 700; }
-.package-badge {
-  position: absolute; top: -14px; right: 20px;
-  background: var(--maroon);
-  color: var(--white);
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 5px 14px;
-  border-radius: 20px;
-  letter-spacing: 0.04em;
-}
-
-/* ---------- Testimonial ---------- */
-.testi-card {
-  background: var(--navy-050);
-  border-radius: var(--radius);
-  padding: 34px 36px;
-  text-align: center;
-  max-width: 720px;
-  margin: 0 auto;
-}
-.testi-card p.quote { font-size: 1.08rem; color: var(--ink); font-style: italic; margin-bottom: 20px; }
-.testi-card .stamp { margin: 0 auto 18px; width: 84px; height: 84px; }
-.testi-card .stamp .stamp-title { font-size: 0.5rem; }
-.testi-card .name { font-weight: 700; color: var(--navy-900); }
-.testi-card .role { color: var(--ink-soft); font-size: 0.85rem; }
-.carousel-control-prev-icon, .carousel-control-next-icon { filter: invert(0.5) sepia(1) saturate(5) hue-rotate(180deg); background-color: var(--navy-800); border-radius: 50%; padding: 14px; }
-
-/* ---------- FAQ ---------- */
-.accordion-atk .accordion-button {
-  font-weight: 700;
-  color: var(--navy-900);
-  background: var(--white);
-  font-family: var(--font-display);
-  padding: 18px 20px;
-}
-.accordion-atk .accordion-button:not(.collapsed) {
-  background: var(--navy-050);
-  color: var(--navy-800);
-  box-shadow: none;
-}
-.accordion-atk .accordion-button:focus { box-shadow: none; border-color: var(--gray-200); }
-.accordion-atk .accordion-item { border: 1px solid var(--gray-200); border-radius: 8px !important; overflow: hidden; margin-bottom: 12px; }
-
-/* ---------- CTA ---------- */
-.cta-section {
-  background: linear-gradient(120deg, var(--maroon) 0%, var(--red) 100%);
-  color: var(--white);
-  padding: 64px 0;
-  text-align: center;
-}
-.cta-section h2 { color: var(--white); }
-.cta-section p { color: rgba(255,255,255,0.88); }
-.cta-section .btn-wa { background: var(--white); color: var(--maroon) !important; }
-.cta-section .btn-wa:hover { background: var(--navy-900); color: var(--white) !important; }
-
-/* ---------- Footer ---------- */
-.footer-atk { background: var(--navy-900); color: rgba(255,255,255,0.75); padding: 56px 0 24px; }
-.footer-atk h6 { color: var(--white); font-family: var(--font-display); margin-bottom: 16px; }
-.footer-atk a { color: rgba(255,255,255,0.7); }
-.footer-atk a:hover { color: var(--white); }
-.footer-atk .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); margin-top: 36px; padding-top: 20px; font-size: 0.82rem; color: rgba(255,255,255,0.5); }
-.footer-atk ul { list-style: none; padding: 0; }
-.footer-atk ul li { margin-bottom: 10px; font-size: 0.9rem; }
-.footer-pillar-link {
-  display: inline-flex;
-  align-items: center;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.14);
-  color: var(--white);
-  font-weight: 600;
-  font-size: 0.86rem;
-  padding: 9px 14px;
-  border-radius: 8px;
-  transition: background .15s ease, border-color .15s ease, transform .15s ease;
-}
-.footer-pillar-link:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.3); transform: translateY(-1px); color: var(--white); }
-
-/* ---------- Page header (inner pages) ---------- */
-.page-header {
-  background: var(--navy-900);
-  color: var(--white);
-  padding: 54px 0;
-  position: relative;
-  overflow: hidden;
-}
-.page-header::after {
-  content: "";
-  position: absolute; right: -80px; bottom: -80px;
-  width: 260px; height: 260px; border-radius: 50%;
-  border: 40px solid rgba(255,255,255,0.05);
-}
-.page-header .breadcrumb-atk { font-family: var(--font-mono); font-size: 0.78rem; color: rgba(255,255,255,0.6); }
-.page-header .breadcrumb-atk a { color: rgba(255,255,255,0.75); }
-.page-header h1 { color: var(--white); font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top: 8px; }
-
-/* ---------- Category filter chips ---------- */
-.chip-filter {
-  border: 1px solid var(--gray-200);
-  background: var(--white);
-  color: var(--ink-soft);
-  border-radius: 20px;
-  padding: 8px 18px;
-  font-size: 0.86rem;
-  font-weight: 600;
-  transition: all .15s ease;
-}
-.chip-filter:hover, .chip-filter.active { background: var(--navy-800); border-color: var(--navy-800); color: var(--white); }
-
-/* ---------- Blog ---------- */
-.blog-card { border: 1px solid var(--gray-200); border-radius: var(--radius); overflow: hidden; height: 100%; background: var(--white); transition: box-shadow .18s ease, transform .18s ease; }
-.blog-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
-.blog-card .blog-img { height: 190px; overflow: hidden; }
-.blog-card .blog-img img { width: 100%; height: 100%; object-fit: cover; }
-.blog-card .blog-body { padding: 20px 20px 22px; }
-.blog-card .blog-meta { font-family: var(--font-mono); font-size: 0.7rem; color: var(--navy-600); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 8px; }
-.blog-card h5 { font-size: 1.05rem; line-height: 1.4; }
-.blog-card .read-more { font-weight: 700; font-size: 0.86rem; color: var(--navy-800); }
-.blog-card .read-more:hover { color: var(--red); }
-
-/* ---------- Contact form ---------- */
-.contact-form-card { background: var(--white); border: 1px solid var(--gray-200); border-radius: var(--radius); padding: 34px; box-shadow: var(--shadow-sm); }
-.form-control-atk { border: 1.5px solid var(--gray-200); border-radius: 8px; padding: 12px 14px; font-size: 0.94rem; }
-.form-control-atk:focus { border-color: var(--navy-700); box-shadow: 0 0 0 3px var(--navy-050); }
-.form-label-atk { font-weight: 600; font-size: 0.88rem; color: var(--ink); margin-bottom: 6px; }
-.info-strip { background: var(--navy-050); border-radius: var(--radius); padding: 26px; }
-.info-strip .info-item { display: flex; gap: 14px; align-items: flex-start; margin-bottom: 18px; }
-.info-strip .info-item:last-child { margin-bottom: 0; }
-.info-strip .info-icon { width: 42px; height: 42px; border-radius: 10px; background: var(--navy-800); color: var(--white); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
-
-/* ---------- WA float button ---------- */
-.wa-float {
-  position: fixed; bottom: 22px; right: 22px; z-index: 1050;
-  background: #25D366; color: var(--white);
-  width: 58px; height: 58px; border-radius: 50%;
-  display: flex; align-items: center; justify-content: center;
-  box-shadow: var(--shadow-md);
-  font-size: 1.5rem;
-  animation: pulseWa 2.4s infinite;
-}
-@keyframes pulseWa {
-  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
-  70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
-  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
-}
-
-/* ---------- Utilities ---------- */
-.badge-navy { background: var(--navy-050); color: var(--navy-800); font-weight: 600; font-size: 0.78rem; padding: 6px 12px; border-radius: 6px; }
-.divider-dash { border-top: 1px dashed var(--gray-200); margin: 0; }
-
-@media (max-width: 991px) {
-  .section { padding: 60px 0; }
-  .hero-po-card { margin-top: 36px; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  * { animation: none !important; transition: none !important; }
-}
-
-/* ---------- Accessibility: visible keyboard focus ---------- */
-a:focus-visible,
-button:focus-visible,
-.form-control-atk:focus-visible,
-.chip-filter:focus-visible,
-input:focus-visible,
-textarea:focus-visible {
-  outline: 3px solid var(--navy-600);
-  outline-offset: 2px;
-  border-radius: 4px;
-}
-.btn-wa:focus-visible,
-.btn-navy:focus-visible,
-.btn-outline-navy:focus-visible {
-  outline-offset: 3px;
-}
-
-/* ---------- Scroll reveal ---------- */
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .6s ease, transform .6s ease;
-}
-.reveal.is-visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-@media (prefers-reduced-motion: reduce) {
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
-
-/* ---------- Carousel controls (custom, brand-consistent) ---------- */
-.testi-nav-btn {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: var(--white);
-  border: 1.5px solid var(--gray-200);
-  color: var(--navy-800);
-  display: flex; align-items: center; justify-content: center;
-  transition: background .15s ease, border-color .15s ease, color .15s ease;
-}
-.testi-nav-btn:hover { background: var(--navy-800); border-color: var(--navy-800); color: var(--white); }
-.testi-nav-btn i { font-size: 1.1rem; }
-
-/* ---------- Hero pattern refinement ---------- */
-.hero {
-  background-image:
-    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05) 0, transparent 45%),
-    linear-gradient(160deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-600) 100%);
-}
-
-/* ---------- Product image hover polish ---------- */
-.product-card .product-img img,
-.blog-card .blog-img img {
-  transition: transform .35s ease;
-}
-.product-card:hover .product-img img,
-.blog-card:hover .blog-img img {
-  transform: scale(1.05);
-}
 /* ==========================================================================
-   PAKET PENGADAAN - Responsive & Tombol Full
+   PACKAGE CARDS
    ========================================================================== */
-
-/* Package card - pastikan tinggi sama dan responsive */
 .package-card {
   display: flex;
   flex-direction: column;
@@ -564,7 +408,6 @@ textarea:focus-visible {
   position: relative;
 }
 
-/* Isi card fleksibel agar tombol di bawah */
 .package-card .package-tag {
   font-family: var(--font-mono);
   font-size: 0.7rem;
@@ -610,9 +453,6 @@ textarea:focus-visible {
   font-weight: 700;
 }
 
-/* ========================================
-   BADGE POPULER - HANYA DI CARD FEATURED
-   ======================================== */
 .package-badge {
   position: absolute;
   top: -12px;
@@ -627,21 +467,29 @@ textarea:focus-visible {
   transition: all 0.3s ease;
 }
 
-/* Hanya tampil di card yang punya class featured */
 .package-card.featured .package-badge {
   display: block;
   opacity: 1;
   transform: translateY(0);
 }
 
-/* Sembunyikan di card non-featured */
 .package-card:not(.featured) .package-badge {
   display: none;
 }
 
-/* ========================================
-   TOMBOL FULL 100%
-   ======================================== */
+.package-card.featured {
+  border-color: var(--maroon);
+  border-style: solid;
+  box-shadow: var(--shadow-md);
+  background: #fffcf7;
+}
+
+.package-card:hover {
+  border-color: var(--maroon);
+  border-style: solid;
+  box-shadow: var(--shadow-md);
+}
+
 .package-card .btn-navy,
 .package-card .btn-outline-navy {
   display: block !important;
@@ -653,7 +501,6 @@ textarea:focus-visible {
   box-sizing: border-box !important;
 }
 
-/* Tombol di package featured */
 .package-card.featured .btn-navy {
   background: var(--navy-800);
   color: var(--white) !important;
@@ -663,120 +510,6 @@ textarea:focus-visible {
   background: var(--navy-900);
 }
 
-/* ========================================
-   FEATURED STYLE - Aktif permanent & hover
-   ======================================== */
-.package-card.featured {
-  border-color: var(--maroon);
-  border-style: solid;
-  box-shadow: var(--shadow-md);
-  background: #fffcf7;
-}
-
-/* Hover effect - semua card jadi featured style saat hover */
-.package-card:hover {
-  border-color: var(--maroon);
-  border-style: solid;
-  box-shadow: var(--shadow-md);
-}
-
-/* ========================================
-   RESPONSIVE - Mobile & Tablet
-   ======================================== */
-
-/* Tablet (md) */
-@media (max-width: 991px) {
-  .package-card {
-    padding: 20px 18px;
-  }
-  
-  .package-card h4 {
-    font-size: 1.05rem;
-  }
-  
-  .package-card ul li {
-    font-size: 0.82rem;
-    padding: 4px 0;
-  }
-  
-  .package-card .btn-navy,
-  .package-card .btn-outline-navy {
-    padding: 10px 14px !important;
-    font-size: 0.85rem !important;
-  }
-}
-
-/* Mobile (sm) */
-@media (max-width: 767px) {
-  .package-card {
-    padding: 18px 16px;
-    border-radius: 10px;
-  }
-  
-  .package-card h4 {
-    font-size: 1rem;
-  }
-  
-  .package-card .package-for {
-    font-size: 0.78rem;
-    margin-bottom: 10px;
-  }
-  
-  .package-card ul li {
-    font-size: 0.8rem;
-    padding: 4px 0;
-  }
-  
-  .package-card .btn-navy,
-  .package-card .btn-outline-navy {
-    padding: 10px 12px !important;
-    font-size: 0.82rem !important;
-    border-radius: 6px !important;
-  }
-  
-  .package-badge {
-    font-size: 0.55rem;
-    padding: 3px 12px;
-    top: -10px;
-    right: 12px;
-  }
-  
-  .package-card .package-tag {
-    font-size: 0.6rem;
-  }
-  
-  /* Grid 1 kolom di mobile */
-  .row.g-4 > .col-md-6.col-lg-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-}
-
-/* Mobile kecil (xs) */
-@media (max-width: 575px) {
-  .package-card {
-    padding: 16px 14px;
-  }
-  
-  .package-card h4 {
-    font-size: 0.95rem;
-  }
-  
-  .package-card ul li {
-    font-size: 0.78rem;
-    padding: 3px 0;
-  }
-  
-  .package-card .btn-navy,
-  .package-card .btn-outline-navy {
-    padding: 8px 10px !important;
-    font-size: 0.78rem !important;
-  }
-}
-
-/* ========================================
-   TRANSISI HALUS
-   ======================================== */
 .package-card,
 .package-card .btn-navy,
 .package-card .btn-outline-navy,
@@ -785,345 +518,928 @@ textarea:focus-visible {
 }
 
 /* ==========================================================================
-   RESPONSIVE FIX - Semua Button Full 100% di Mobile
+   TESTIMONIAL
    ========================================================================== */
-
-/* Button di Hero - jadi full di mobile */
-@media (max-width: 576px) {
-  .hero .d-flex.flex-wrap.gap-3 {
-    flex-direction: column !important;
-    width: 100% !important;
-  }
-  
-  .hero .d-flex.flex-wrap.gap-3 a {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-  }
-  
-  /* Hero stats - stack di mobile */
-  .hero-stats {
-    flex-direction: column !important;
-    gap: 12px !important;
-    align-items: flex-start !important;
-  }
+.testi-card {
+  background: var(--navy-050);
+  border-radius: var(--radius);
+  padding: 34px 36px;
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto;
 }
 
-/* Button di About */
-@media (max-width: 576px) {
-  .section .btn-outline-navy,
-  .section .btn-navy {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
+.testi-card p.quote {
+  font-size: 1.08rem;
+  color: var(--ink);
+  font-style: italic;
+  margin-bottom: 20px;
 }
 
-/* Button di Value Proposition */
-@media (max-width: 576px) {
-  .value-card .btn-outline-navy,
-  .value-card .btn-navy {
-    width: 100% !important;
-    text-align: center !important;
-  }
+.testi-card .stamp {
+  margin: 0 auto 18px;
+  width: 84px;
+  height: 84px;
 }
 
-/* Button di Product Cards */
-@media (max-width: 576px) {
-  .product-card .btn-order {
-    width: 100% !important;
-    justify-content: center !important;
-    padding: 10px !important;
-    background: var(--navy-050);
-    border-radius: 6px;
-  }
+.testi-card .stamp .stamp-title { font-size: 0.5rem; }
+.testi-card .name { font-weight: 700; color: var(--navy-900); }
+.testi-card .role { color: var(--ink-soft); font-size: 0.85rem; }
+
+.testi-nav-btn {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: var(--white);
+  border: 1.5px solid var(--gray-200);
+  color: var(--navy-800);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .15s ease, border-color .15s ease, color .15s ease;
 }
 
-/* Button "Lihat Semua Produk" */
-@media (max-width: 576px) {
-  .d-flex.flex-wrap.justify-content-between .btn-outline-navy {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
+.testi-nav-btn:hover {
+  background: var(--navy-800);
+  border-color: var(--navy-800);
+  color: var(--white);
 }
 
-/* CTA Section - button full */
-@media (max-width: 576px) {
-  .cta-section .btn-wa {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-}
-
-/* Footer - button full */
-@media (max-width: 576px) {
-  .footer-atk .btn-wa {
-    width: 100% !important;
-    justify-content: center !important;
-  }
-}
+.testi-nav-btn i { font-size: 1.1rem; }
 
 /* ==========================================================================
-   PAKET PENGADAAN - Sudah full, tapi dipastikan
+   FAQ
    ========================================================================== */
-@media (max-width: 576px) {
-  .package-card .btn-navy,
-  .package-card .btn-outline-navy {
-    padding: 12px 10px !important;
-    font-size: 0.85rem !important;
-  }
+.accordion-atk .accordion-button {
+  font-weight: 700;
+  color: var(--navy-900);
+  background: var(--white);
+  font-family: var(--font-display);
+  padding: 18px 20px;
 }
 
-/* ==========================================================================
-   GRID - 1 Kolom di Mobile untuk semua section
-   ========================================================================== */
-@media (max-width: 576px) {
-  /* Product cards - 1 kolom */
-  .product-card {
-    max-width: 100%;
-  }
-  
-  /* Value cards - 1 kolom */
-  .value-card {
-    max-width: 100%;
-  }
-  
-  /* Package cards - 1 kolom (sudah ada) */
-  .row.g-4 > .col-md-6.col-lg-3 {
-    flex: 0 0 100%;
-    max-width: 100%;
-  }
-  
-  /* About section - gambar stack */
-  .col-lg-6 .row.g-3 {
-    flex-direction: column !important;
-  }
-  
-  .col-lg-6 .col-7,
-  .col-lg-6 .col-5 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-  
-  .col-lg-6 .col-5 {
-    flex-direction: row !important;
-  }
-  
-  .col-lg-6 .col-5 img {
-    height: 120px !important;
-  }
+.accordion-atk .accordion-button:not(.collapsed) {
+  background: var(--navy-050);
+  color: var(--navy-800);
+  box-shadow: none;
 }
 
-/* ==========================================================================
-   NAVBAR - Mobile fix
-   ========================================================================== */
-@media (max-width: 991px) {
-  .navbar-atk .navbar-collapse {
-    padding: 16px 0;
-  }
-  
-  .navbar-atk .btn-wa {
-    width: 100% !important;
-    justify-content: center !important;
-    margin-top: 8px;
-  }
-  
-  .navbar-atk .navbar-nav {
-    width: 100%;
-  }
-  
-  .navbar-atk .nav-link {
-    padding: 10px 14px !important;
-    width: 100%;
-  }
-}
+.accordion-atk .accordion-button:focus { box-shadow: none; border-color: var(--gray-200); }
 
-/* ==========================================================================
-   TESTIMONI - Mobile fix
-   ========================================================================== */
-@media (max-width: 576px) {
-  .testi-card {
-    padding: 20px 16px !important;
-  }
-  
-  .testi-card .quote {
-    font-size: 0.92rem !important;
-  }
-  
-  .testi-card .stamp {
-    width: 70px !important;
-    height: 70px !important;
-  }
-}
-
-/* ==========================================================================
-   FAQ - Mobile fix
-   ========================================================================== */
-@media (max-width: 576px) {
-  .accordion-atk .accordion-button {
-    font-size: 0.9rem !important;
-    padding: 14px 16px !important;
-  }
-  
-  .accordion-atk .accordion-body {
-    padding: 0 16px 16px !important;
-    font-size: 0.88rem !important;
-  }
-}
-
-/* ==========================================================================
-   HERO - Mobile fix (tambahan)
-   ========================================================================== */
-@media (max-width: 576px) {
-  .hero {
-    padding: 60px 0 80px !important;
-    min-height: 90vh !important;
-  }
-  
-  .hero h1 {
-    font-size: 1.6rem !important;
-  }
-  
-  .hero .lead-text {
-    font-size: 0.95rem !important;
-  }
-  
-  .hero .eyebrow {
-    font-size: 0.65rem !important;
-  }
-}
-
-/* ==========================================================================
-   CTA - Mobile fix
-   ========================================================================== */
-@media (max-width: 576px) {
-  .cta-section {
-    padding: 40px 0 !important;
-  }
-  
-  .cta-section h2 {
-    font-size: 1.4rem !important;
-  }
-  
-  .cta-section p {
-    font-size: 0.95rem !important;
-  }
-}
-
-/* ==========================================================================
-   ABOUT - Gambar Rapi & Tidak Mepet
-   ========================================================================== */
-
-.about-image-wrapper {
-  position: relative;
-  border-radius: 16px;
+.accordion-atk .accordion-item {
+  border: 1px solid var(--gray-200);
+  border-radius: 8px !important;
   overflow: hidden;
-  box-shadow: 0 12px 40px rgba(11, 31, 59, 0.10);
-}
-
-.about-image-wrapper img {
-  display: block;
-  transition: transform 0.4s ease;
-}
-
-.about-image-wrapper:hover img {
-  transform: scale(1.02);
-}
-
-/* Desktop - spacing lebih lega */
-@media (min-width: 992px) {
-  .section .row.gy-5.gx-5 {
-    --bs-gutter-x: 4rem !important;
-    --bs-gutter-y: 3rem !important;
-  }
-}
-
-/* Tablet */
-@media (max-width: 991px) {
-  .about-image-wrapper img {
-    height: 320px !important;
-  }
-  .section .row.gy-5.gx-5 {
-    --bs-gutter-y: 2.5rem !important;
-  }
-}
-
-/* Mobile */
-@media (max-width: 767px) {
-  .about-image-wrapper {
-    padding: 0 4px !important;
-  }
-  .about-image-wrapper img {
-    height: 260px !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .about-image-wrapper img {
-    height: 220px !important;
-  }
-  .section .row.gy-5.gx-5 {
-    --bs-gutter-y: 2rem !important;
-  }
+  margin-bottom: 12px;
 }
 
 /* ==========================================================================
-   RESPONSIVE FULL - SEMUA HALAMAN
-   Mobile First · Tablet · Desktop
+   CTA SECTION
    ========================================================================== */
+.cta-section {
+  background: linear-gradient(120deg, var(--maroon) 0%, var(--red) 100%);
+  color: var(--white);
+  padding: 64px 0;
+  text-align: center;
+}
+
+.cta-section h2 { color: var(--white); }
+.cta-section p { color: rgba(255,255,255,0.88); }
+.cta-section .btn-wa { background: var(--white); color: var(--maroon) !important; }
+.cta-section .btn-wa:hover { background: var(--navy-900); color: var(--white) !important; }
+
+/* ==========================================================================
+   FOOTER - CENTER ON MOBILE, LEFT ON DESKTOP (FIXED)
+   ========================================================================== */
+.footer-atk {
+  background: var(--navy-900);
+  color: rgba(255,255,255,0.75);
+  padding: 56px 0 24px;
+}
+
+.footer-atk h6 {
+  color: var(--white);
+  font-family: var(--font-display);
+  margin-bottom: 16px;
+  font-weight: 700;
+}
+
+.footer-atk a {
+  color: rgba(255,255,255,0.7);
+  transition: color 0.2s ease, transform 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-atk a:hover {
+  color: var(--white);
+}
+
+.footer-atk ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-atk ul li {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.footer-atk ul li a {
+  display: inline-block;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.footer-atk ul li a:hover {
+  transform: translateX(4px);
+  color: var(--white);
+}
+
+.footer-atk ul li i {
+  width: 20px;
+  color: rgba(255,255,255,0.5);
+}
+
+.footer-atk .footer-bottom {
+  border-top: 1px solid rgba(255,255,255,0.08);
+  margin-top: 36px;
+  padding-top: 20px;
+  font-size: 0.8rem;
+  color: rgba(255,255,255,0.4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.footer-atk .badge-navy {
+  background: rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.footer-pillar-link {
+  display: inline-flex;
+  align-items: center;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--white);
+  font-weight: 600;
+  font-size: 0.82rem;
+  padding: 8px 14px;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.footer-pillar-link:hover {
+  background: rgba(255,255,255,0.12);
+  border-color: rgba(255,255,255,0.25);
+  transform: translateY(-2px);
+  color: var(--white);
+}
+
+.footer-pillar-link i {
+  font-size: 0.9rem;
+}
 
 /* ========================================
-   1. CONTAINER & SPACING
+   FOOTER - DESKTOP (rata kiri)
    ======================================== */
-@media (max-width: 576px) {
-  .container {
+@media (min-width: 992px) {
+  .footer-atk .row {
+    text-align: left !important;
+  }
+
+  .footer-atk .col-lg-4,
+  .footer-atk .col-lg-2,
+  .footer-atk .col-lg-3 {
+    text-align: left !important;
+  }
+
+  .footer-atk h6 {
+    text-align: left !important;
+  }
+
+  .footer-atk ul {
+    text-align: left !important;
+  }
+
+  .footer-atk ul li {
+    text-align: left !important;
+  }
+
+  .footer-atk .btn-wa {
+    display: inline-flex !important;
+    width: auto !important;
+  }
+
+  .footer-pillar-link {
+    display: inline-flex !important;
+    width: auto !important;
+  }
+
+  .footer-atk .footer-bottom {
+    flex-direction: row !important;
+    text-align: left !important;
+  }
+}
+
+/* ========================================
+   FOOTER - MOBILE & TABLET (center SEMUA)
+   ======================================== */
+@media (max-width: 991px) {
+  .footer-atk {
+    text-align: center !important;
+    padding: 40px 0 20px !important;
+  }
+
+  .footer-atk .container {
     padding-left: 16px !important;
     padding-right: 16px !important;
   }
-  
-  .section {
-    padding: 48px 0 !important;
+
+  .footer-atk .row {
+    text-align: center !important;
   }
-  
-  .section-title {
-    font-size: 1.5rem !important;
-  }
-  
-  .section-lead {
-    font-size: 0.95rem !important;
+
+  /* FORCE semua kolom jadi FULL WIDTH dan CENTER */
+  .footer-atk .col-lg-4,
+  .footer-atk .col-lg-2,
+  .footer-atk .col-lg-3 {
+    flex: 0 0 100% !important;
     max-width: 100% !important;
+    text-align: center !important;
+    margin-bottom: 28px !important;
   }
-}
 
-@media (min-width: 577px) and (max-width: 768px) {
-  .section {
-    padding: 60px 0 !important;
+  .footer-atk .col-lg-4:last-child,
+  .footer-atk .col-lg-2:last-child,
+  .footer-atk .col-lg-3:last-child {
+    margin-bottom: 0 !important;
   }
-}
 
-@media (min-width: 769px) and (max-width: 991px) {
-  .section {
-    padding: 70px 0 !important;
+  .footer-atk h6 {
+    text-align: center !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 12px !important;
+  }
+
+  .footer-atk ul {
+    padding: 0 !important;
+    text-align: center !important;
+  }
+
+  .footer-atk ul li {
+    text-align: center !important;
+    font-size: 0.85rem !important;
+    margin-bottom: 8px !important;
+  }
+
+  .footer-atk ul li a {
+    display: inline-block !important;
+  }
+
+  .footer-atk ul li a:hover {
+    transform: none !important;
+  }
+
+  .footer-atk ul li i {
+    width: auto !important;
+    margin-right: 4px !important;
+  }
+
+  .footer-atk .badge-navy {
+    display: inline-block !important;
+    margin: 0 auto !important;
+  }
+
+  .footer-atk .btn-wa {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px 16px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+  }
+
+  .footer-pillar-link {
+    justify-content: center !important;
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .footer-atk .footer-bottom {
+    flex-direction: column !important;
+    text-align: center !important;
+    gap: 6px !important;
+    font-size: 0.7rem !important;
+    padding-top: 16px !important;
+    margin-top: 24px !important;
+  }
+
+  .footer-atk .footer-bottom span {
+    display: block !important;
+    text-align: center !important;
+  }
+
+  .footer-atk p {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+
+  .footer-atk .small {
+    text-align: center !important;
+  }
+
+  .footer-atk .d-flex.gap-3 {
+    justify-content: center !important;
+  }
+
+  .footer-atk .navbar-brand {
+    justify-content: center !important;
+    display: inline-flex !important;
   }
 }
 
 /* ========================================
-   2. NAVBAR - FULL RESPONSIVE
+   FOOTER - TABLET (2 kolom untuk menu)
    ======================================== */
+@media (min-width: 768px) and (max-width: 991px) {
+  .footer-atk .col-lg-4 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .footer-atk .col-lg-2,
+  .footer-atk .col-lg-3 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* ========================================
+   FOOTER - MOBILE SMALL
+   ======================================== */
+@media (max-width: 576px) {
+  .footer-atk {
+    padding: 30px 0 16px !important;
+  }
+
+  .footer-atk .container {
+    padding-left: 12px !important;
+    padding-right: 12px !important;
+  }
+
+  .footer-atk h6 {
+    font-size: 0.85rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  .footer-atk ul li {
+    font-size: 0.8rem !important;
+    margin-bottom: 6px !important;
+  }
+
+  .footer-atk .col-lg-4,
+  .footer-atk .col-lg-2,
+  .footer-atk .col-lg-3 {
+    margin-bottom: 20px !important;
+  }
+
+  .footer-pillar-link {
+    font-size: 0.75rem !important;
+    padding: 6px 12px !important;
+  }
+
+  .footer-atk .btn-wa {
+    padding: 8px 14px !important;
+    font-size: 0.82rem !important;
+  }
+
+  .footer-atk .badge-navy {
+    font-size: 0.7rem !important;
+    padding: 4px 12px !important;
+  }
+
+  .footer-atk p.small {
+    font-size: 0.78rem !important;
+  }
+
+  .footer-atk .footer-bottom {
+    font-size: 0.65rem !important;
+    gap: 4px !important;
+  }
+}
+
+/* ========================================
+   FOOTER - PRINT
+   ======================================== */
+@media print {
+  .footer-atk {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   SCROLL TO TOP BUTTON
+   ========================================================================== */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 95px;
+  right: 24px;
+  z-index: 1040;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--navy-800);
+  color: var(--white);
+  border: 2px solid rgba(255,255,255,0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(12, 38, 71, 0.25);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px) scale(0.8);
+  text-decoration: none !important;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.scroll-top-btn:hover {
+  background: var(--navy-900);
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 30px rgba(12, 38, 71, 0.35);
+  color: var(--white);
+}
+
+.scroll-top-btn:active {
+  transform: scale(0.92);
+}
+
+.scroll-top-btn i,
+.scroll-top-btn svg {
+  pointer-events: none;
+  line-height: 1;
+}
+
+/* Scroll Top - Mobile */
+@media (max-width: 576px) {
+  .scroll-top-btn {
+    width: 46px !important;
+    height: 46px !important;
+    font-size: 1.2rem !important;
+    bottom: 80px !important;
+    right: 16px !important;
+  }
+}
+
+/* Scroll Top - Tablet */
+@media (min-width: 577px) and (max-width: 991px) {
+  .scroll-top-btn {
+    width: 48px !important;
+    height: 48px !important;
+    bottom: 90px !important;
+    right: 20px !important;
+  }
+}
+
+/* ==========================================================================
+   WA FLOAT BUTTON
+   ========================================================================== */
+.wa-float {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  z-index: 1050;
+  background: #25D366;
+  color: var(--white);
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-md);
+  font-size: 1.5rem;
+  animation: pulseWa 2.4s infinite;
+  transition: transform 0.2s ease;
+}
+
+.wa-float:hover {
+  transform: scale(1.08);
+  color: var(--white);
+}
+
+@keyframes pulseWa {
+  0% { box-shadow: 0 0 0 0 rgba(37,211,102,0.5); }
+  70% { box-shadow: 0 0 0 14px rgba(37,211,102,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+}
+
+@media (max-width: 576px) {
+  .wa-float {
+    width: 52px !important;
+    height: 52px !important;
+    font-size: 1.3rem !important;
+    bottom: 18px !important;
+    right: 16px !important;
+  }
+}
+
+/* ==========================================================================
+   PAGE HEADER - WITH BACKGROUND IMAGE
+   ========================================================================== */
+
+.page-header {
+  background: var(--navy-900);
+  color: var(--white);
+  padding: 54px 0;
+  position: relative;
+  overflow: hidden;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+}
+
+/* 🔥 TAMBAHKAN INI - Support background image dengan overlay */
+.page-header.has-bg {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 45vh;
+}
+
+.page-header.has-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 31, 59, 0.65);
+  z-index: 1;
+}
+
+.page-header .container {
+  position: relative;
+  z-index: 2;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute;
+  right: -80px;
+  bottom: -80px;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  border: 40px solid rgba(255,255,255,0.05);
+  z-index: 1;
+}
+
+.page-header .breadcrumb-atk {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 8px;
+}
+
+.page-header .breadcrumb-atk a {
+  color: rgba(255,255,255,0.75);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.page-header .breadcrumb-atk a:hover {
+  color: var(--white);
+}
+
+.page-header h1 {
+  color: var(--white);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
+  margin-top: 4px;
+  line-height: 1.2;
+}
+
+.page-header p {
+  color: rgba(255,255,255,0.8);
+  font-size: 1.05rem;
+  max-width: 580px;
+  margin-top: 4px;
+}
+
+/* ========================================
+   PAGE HEADER - RESPONSIVE
+   ======================================== */
+
 @media (max-width: 991px) {
+  .page-header {
+    padding: 40px 0 !important;
+    min-height: 35vh !important;
+  }
+
+  .page-header.has-bg {
+    min-height: 40vh !important;
+  }
+
+  .page-header h1 {
+    font-size: 1.7rem !important;
+  }
+
+  .page-header p {
+    font-size: 0.95rem !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .page-header {
+    padding: 30px 0 !important;
+    min-height: 30vh !important;
+  }
+
+  .page-header.has-bg {
+    min-height: 35vh !important;
+  }
+
+  .page-header h1 {
+    font-size: 1.3rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .page-header p {
+    font-size: 0.82rem !important;
+    max-width: 100% !important;
+  }
+
+  .page-header .breadcrumb-atk {
+    font-size: 0.65rem !important;
+  }
+
+  .page-header::after {
+    width: 120px;
+    height: 120px;
+    right: -40px;
+    bottom: -40px;
+    border-width: 25px;
+  }
+}
+
+@media (max-width: 400px) {
+  .page-header {
+    padding: 24px 0 !important;
+    min-height: 25vh !important;
+  }
+
+  .page-header h1 {
+    font-size: 1.1rem !important;
+  }
+
+  .page-header p {
+    font-size: 0.75rem !important;
+  }
+}
+
+/* ==========================================================================
+   PAGE HEADER
+   ========================================================================== */
+.page-header {
+  background: var(--navy-900);
+  color: var(--white);
+  padding: 54px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-header::after {
+  content: "";
+  position: absolute; right: -80px; bottom: -80px;
+  width: 260px; height: 260px; border-radius: 50%;
+  border: 40px solid rgba(255,255,255,0.05);
+}
+
+.page-header .breadcrumb-atk {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.page-header .breadcrumb-atk a { color: rgba(255,255,255,0.75); }
+.page-header h1 { color: var(--white); font-size: clamp(1.7rem, 3vw, 2.3rem); margin-top: 8px; }
+
+/* ==========================================================================
+   CATEGORY FILTER
+   ========================================================================== */
+.chip-filter {
+  border: 1px solid var(--gray-200);
+  background: var(--white);
+  color: var(--ink-soft);
+  border-radius: 20px;
+  padding: 8px 18px;
+  font-size: 0.86rem;
+  font-weight: 600;
+  transition: all .15s ease;
+}
+
+.chip-filter:hover,
+.chip-filter.active {
+  background: var(--navy-800);
+  border-color: var(--navy-800);
+  color: var(--white);
+}
+
+/* ==========================================================================
+   BLOG
+   ========================================================================== */
+.blog-card {
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  overflow: hidden;
+  height: 100%;
+  background: var(--white);
+  transition: box-shadow .18s ease, transform .18s ease;
+}
+
+.blog-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+.blog-card .blog-img {
+  height: 190px;
+  overflow: hidden;
+}
+
+.blog-card .blog-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform .35s ease;
+}
+
+.blog-card:hover .blog-img img {
+  transform: scale(1.05);
+}
+
+.blog-card .blog-body { padding: 20px 20px 22px; }
+
+.blog-card .blog-meta {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--navy-600);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 8px;
+}
+
+.blog-card h5 { font-size: 1.05rem; line-height: 1.4; }
+.blog-card .read-more { font-weight: 700; font-size: 0.86rem; color: var(--navy-800); }
+.blog-card .read-more:hover { color: var(--red); }
+
+/* ==========================================================================
+   CONTACT
+   ========================================================================== */
+.contact-form-card {
+  background: var(--white);
+  border: 1px solid var(--gray-200);
+  border-radius: var(--radius);
+  padding: 34px;
+  box-shadow: var(--shadow-sm);
+}
+
+.form-control-atk {
+  border: 1.5px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: 0.94rem;
+}
+
+.form-control-atk:focus {
+  border-color: var(--navy-700);
+  box-shadow: 0 0 0 3px var(--navy-050);
+}
+
+.form-label-atk {
+  font-weight: 600;
+  font-size: 0.88rem;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+
+.info-strip {
+  background: var(--navy-050);
+  border-radius: var(--radius);
+  padding: 26px;
+}
+
+.info-strip .info-item {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  margin-bottom: 18px;
+}
+
+.info-strip .info-item:last-child { margin-bottom: 0; }
+
+.info-strip .info-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: var(--navy-800);
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+.badge-navy {
+  background: var(--navy-050);
+  color: var(--navy-800);
+  font-weight: 600;
+  font-size: 0.78rem;
+  padding: 6px 12px;
+  border-radius: 6px;
+}
+
+.divider-dash { border-top: 1px dashed var(--gray-200); margin: 0; }
+
+/* ==========================================================================
+   ACCESSIBILITY
+   ========================================================================== */
+a:focus-visible,
+button:focus-visible,
+.form-control-atk:focus-visible,
+.chip-filter:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--navy-600);
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+.btn-wa:focus-visible,
+.btn-navy:focus-visible,
+.btn-outline-navy:focus-visible {
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   SCROLL REVEAL
+   ========================================================================== */
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
+
+/* ==========================================================================
+   HERO PATTERN
+   ========================================================================== */
+.hero {
+  background-image:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.05) 0, transparent 45%),
+    linear-gradient(160deg, var(--navy-900) 0%, var(--navy-700) 60%, var(--navy-600) 100%);
+}
+
+/* ==========================================================================
+   RESPONSIVE - FULL
+   ========================================================================== */
+
+@media (max-width: 991px) {
+  .section { padding: 60px 0; }
+  .hero-po-card { margin-top: 36px; }
+
+  /* Navbar mobile */
   .navbar-atk {
     padding: 10px 0 !important;
   }
-  
+
   .navbar-atk .navbar-brand {
     font-size: 1rem !important;
   }
-  
-  .navbar-atk .navbar-brand img {
-    height: 32px !important;
-  }
-  
+
   .navbar-atk .navbar-collapse {
     padding: 12px 0 !important;
     background: var(--white);
@@ -1131,25 +1447,30 @@ textarea:focus-visible {
     margin-top: 8px;
     box-shadow: 0 8px 30px rgba(0,0,0,0.08);
   }
-  
+
   .navbar-atk .navbar-nav {
     width: 100% !important;
     padding: 0 12px !important;
+    gap: 2px;
   }
-  
+
   .navbar-atk .nav-link {
     padding: 10px 14px !important;
     width: 100% !important;
     border-radius: 8px !important;
     font-size: 0.9rem !important;
   }
-  
+
+  .navbar-atk .nav-link.active::after {
+    display: none;
+  }
+
   .navbar-atk .nav-link:hover,
   .navbar-atk .nav-link.active {
     background: var(--navy-050) !important;
     color: var(--navy-800) !important;
   }
-  
+
   .navbar-atk .btn-wa {
     width: 100% !important;
     justify-content: center !important;
@@ -1157,285 +1478,140 @@ textarea:focus-visible {
     padding: 10px !important;
     font-size: 0.9rem !important;
   }
-  
+
   .navbar-toggler {
     border: none !important;
     padding: 6px 10px !important;
   }
-  
+
   .navbar-toggler:focus {
     box-shadow: none !important;
   }
-}
 
-@media (max-width: 576px) {
-  .navbar-atk .navbar-brand {
-    font-size: 0.9rem !important;
+  /* Package cards */
+  .package-card {
+    padding: 20px 18px !important;
   }
-  
-  .navbar-atk .navbar-brand img {
-    height: 28px !important;
-  }
-}
 
-/* ========================================
-   3. HERO - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .hero {
-    padding: 60px 0 80px !important;
-    min-height: 90vh !important;
+  .package-card h4 {
+    font-size: 1.05rem !important;
   }
-  
-  .hero h1 {
-    font-size: 2rem !important;
-  }
-  
-  .hero .lead-text {
-    font-size: 1rem !important;
-    max-width: 100% !important;
-  }
-  
-  .hero .eyebrow {
-    font-size: 0.65rem !important;
-  }
-}
 
-@media (max-width: 576px) {
-  .hero {
-    padding: 50px 0 70px !important;
-    min-height: 85vh !important;
+  .package-card ul li {
+    font-size: 0.82rem !important;
+    padding: 4px 0 !important;
   }
-  
-  .hero h1 {
-    font-size: 1.5rem !important;
-    line-height: 1.25 !important;
-  }
-  
-  .hero .lead-text {
-    font-size: 0.9rem !important;
-  }
-  
-  .hero .d-flex.flex-wrap.gap-3 {
-    flex-direction: column !important;
-    width: 100% !important;
-  }
-  
-  .hero .d-flex.flex-wrap.gap-3 a {
-    width: 100% !important;
-    justify-content: center !important;
-    text-align: center !important;
-    padding: 12px 16px !important;
-  }
-  
-  .hero-stats {
-    flex-direction: column !important;
-    gap: 10px !important;
-    align-items: flex-start !important;
-    margin-top: 20px !important;
-  }
-  
-  .hero-stats .num {
-    font-size: 1.4rem !important;
-  }
-  
-  .hero-stats .label {
-    font-size: 0.7rem !important;
-  }
-}
 
-/* ========================================
-   4. ABOUT - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .about-image-wrapper img {
-    height: 320px !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .about-image-wrapper {
-    padding: 0 4px !important;
-  }
-  .about-image-wrapper img {
-    height: 260px !important;
-  }
-  
-  .section .row.gy-5.gx-5 {
-    --bs-gutter-y: 2rem !important;
-    --bs-gutter-x: 1.5rem !important;
-  }
-  
-  .col-lg-6 .row.g-3 {
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-  }
-  
-  .col-lg-6 .col-6 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .about-image-wrapper img {
-    height: 220px !important;
-  }
-  
-  .section .row.gy-5.gx-5 {
-    --bs-gutter-y: 1.5rem !important;
-    --bs-gutter-x: 1rem !important;
-  }
-  
-  .col-lg-6 .col-6 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-  
-  .col-lg-6 .d-flex.align-items-start.gap-2 {
+  .package-card .btn-navy,
+  .package-card .btn-outline-navy {
+    padding: 10px 14px !important;
     font-size: 0.85rem !important;
   }
-  
-  .section .btn-outline-navy,
-  .section .btn-navy {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
-}
 
-/* ========================================
-   5. VALUE PROPOSITION - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
+  /* Product cards */
+  .product-card .product-img {
+    height: 150px !important;
+  }
+
+  .product-card .product-body {
+    padding: 14px 16px 18px !important;
+  }
+
+  .product-card h6 {
+    font-size: 0.92rem !important;
+  }
+
+  .product-card p {
+    font-size: 0.82rem !important;
+  }
+
+  /* Value cards */
   .value-card {
     padding: 24px 20px !important;
   }
-  
+
   .value-card h5 {
     font-size: 0.98rem !important;
   }
-  
+
   .value-card p {
     font-size: 0.88rem !important;
   }
-  
+
   .value-card .icon-wrap {
     width: 44px !important;
     height: 44px !important;
     font-size: 1.1rem !important;
   }
-}
 
-@media (max-width: 576px) {
-  .value-card {
-    padding: 18px 16px !important;
+  /* Testimonial */
+  .testi-card {
+    padding: 28px 24px !important;
   }
-  
-  .value-card h5 {
-    font-size: 0.92rem !important;
+
+  .testi-card .quote {
+    font-size: 1rem !important;
   }
-  
-  .value-card p {
-    font-size: 0.82rem !important;
-  }
-  
-  .value-card .icon-wrap {
-    width: 38px !important;
-    height: 38px !important;
+
+  /* FAQ */
+  .accordion-atk .accordion-button {
     font-size: 0.95rem !important;
-    margin-bottom: 10px !important;
+    padding: 16px 18px !important;
   }
-  
-  .row.g-4 > .col-md-6.col-lg-4 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-}
 
-/* ========================================
-   6. PRODUCT CARDS - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .product-card .product-img {
-    height: 150px !important;
+  .accordion-atk .accordion-body {
+    font-size: 0.9rem !important;
+    padding: 0 18px 18px !important;
   }
-  
-  .product-card .product-body {
-    padding: 14px 16px 18px !important;
-  }
-  
-  .product-card h6 {
-    font-size: 0.92rem !important;
-  }
-  
-  .product-card p {
-    font-size: 0.82rem !important;
-  }
-  
-  .product-card .btn-order {
-    font-size: 0.8rem !important;
-  }
-}
 
-@media (max-width: 576px) {
-  .product-card .product-img {
-    height: 180px !important;
+  /* CTA */
+  .cta-section {
+    padding: 50px 0 !important;
   }
-  
-  .product-card .product-body {
-    padding: 12px 14px 16px !important;
-  }
-  
-  .product-card h6 {
-    font-size: 0.88rem !important;
-  }
-  
-  .product-card p {
-    font-size: 0.78rem !important;
-  }
-  
-  .product-card .btn-order {
-    width: 100% !important;
-    justify-content: center !important;
-    padding: 10px !important;
-    background: var(--navy-050);
-    border-radius: 6px;
-  }
-  
-  .col-sm-6.col-lg-3 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-  
-  .d-flex.flex-wrap.justify-content-between .btn-outline-navy {
-    width: 100% !important;
-    text-align: center !important;
-    justify-content: center !important;
-  }
-}
 
-/* ========================================
-   7. PACKAGE CARDS - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .package-card {
-    padding: 20px 18px !important;
+  .cta-section h2 {
+    font-size: 1.8rem !important;
   }
-  
-  .package-card h4 {
-    font-size: 1.05rem !important;
+
+  .cta-section p {
+    font-size: 1rem !important;
   }
-  
-  .package-card ul li {
-    font-size: 0.82rem !important;
-    padding: 4px 0 !important;
+
+  /* Page header */
+  .page-header {
+    padding: 40px 0 !important;
   }
-  
-  .package-card .btn-navy,
-  .package-card .btn-outline-navy {
-    padding: 10px 14px !important;
-    font-size: 0.85rem !important;
+
+  .page-header h1 {
+    font-size: 1.8rem !important;
+  }
+
+  /* Contact */
+  .contact-form-card {
+    padding: 24px !important;
+  }
+
+  .info-strip {
+    padding: 20px !important;
+  }
+
+  /* Blog */
+  .blog-card .blog-img {
+    height: 160px !important;
+  }
+
+  .blog-card .blog-body {
+    padding: 16px 18px 18px !important;
+  }
+
+  .blog-card h5 {
+    font-size: 0.95rem !important;
+  }
+
+  /* Grid 2 kolom di tablet */
+  .row.g-4 > .col-md-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
   }
 }
 
@@ -1444,436 +1620,393 @@ textarea:focus-visible {
     padding: 18px 16px !important;
     border-radius: 10px !important;
   }
-  
+
   .package-card h4 {
     font-size: 1rem !important;
   }
-  
+
   .package-card .package-for {
     font-size: 0.78rem !important;
     margin-bottom: 10px !important;
   }
-  
+
   .package-card ul li {
     font-size: 0.8rem !important;
     padding: 4px 0 !important;
   }
-  
+
   .package-card .btn-navy,
   .package-card .btn-outline-navy {
     padding: 10px 12px !important;
     font-size: 0.82rem !important;
     border-radius: 6px !important;
   }
-  
+
   .package-badge {
     font-size: 0.55rem !important;
     padding: 3px 12px !important;
     top: -10px !important;
     right: 12px !important;
   }
-  
-  .package-card .package-tag {
-    font-size: 0.6rem !important;
-  }
-  
+
   .row.g-4 > .col-md-6.col-lg-3 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
+
+  /* About image */
+  .about-image-wrapper {
+    padding: 0 4px !important;
+  }
+  .about-image-wrapper img {
+    height: 260px !important;
+  }
+
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-y: 2rem !important;
+    --bs-gutter-x: 1.5rem !important;
+  }
+
+  .col-lg-6 .row.g-3 {
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+  }
+
+  .col-lg-6 .col-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
 }
 
 @media (max-width: 576px) {
+  .container {
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .section {
+    padding: 48px 0 !important;
+  }
+
+  .section-title {
+    font-size: 1.5rem !important;
+  }
+
+  .section-lead {
+    font-size: 0.95rem !important;
+    max-width: 100% !important;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 50px 0 70px !important;
+    min-height: 85vh !important;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem !important;
+    line-height: 1.25 !important;
+  }
+
+  .hero .lead-text {
+    font-size: 0.9rem !important;
+  }
+
+  .hero .d-flex.flex-wrap.gap-3 {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .hero .d-flex.flex-wrap.gap-3 a {
+    width: 100% !important;
+    justify-content: center !important;
+    text-align: center !important;
+    padding: 12px 16px !important;
+  }
+
+  .hero-stats {
+    flex-direction: column !important;
+    gap: 10px !important;
+    align-items: flex-start !important;
+    margin-top: 20px !important;
+  }
+
+  .hero-stats .num {
+    font-size: 1.4rem !important;
+  }
+
+  .hero-stats .label {
+    font-size: 0.7rem !important;
+  }
+
+  .hero .eyebrow {
+    font-size: 0.65rem !important;
+  }
+
+  /* About */
+  .about-image-wrapper img {
+    height: 220px !important;
+  }
+
+  .section .row.gy-5.gx-5 {
+    --bs-gutter-y: 1.5rem !important;
+    --bs-gutter-x: 1rem !important;
+  }
+
+  .col-lg-6 .col-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .col-lg-6 .d-flex.align-items-start.gap-2 {
+    font-size: 0.85rem !important;
+  }
+
+  .section .btn-outline-navy,
+  .section .btn-navy {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Value cards */
+  .value-card {
+    padding: 18px 16px !important;
+  }
+
+  .value-card h5 {
+    font-size: 0.92rem !important;
+  }
+
+  .value-card p {
+    font-size: 0.82rem !important;
+  }
+
+  .value-card .icon-wrap {
+    width: 38px !important;
+    height: 38px !important;
+    font-size: 0.95rem !important;
+    margin-bottom: 10px !important;
+  }
+
+  /* Product cards */
+  .product-card .product-img {
+    height: 180px !important;
+  }
+
+  .product-card .product-body {
+    padding: 12px 14px 16px !important;
+  }
+
+  .product-card h6 {
+    font-size: 0.88rem !important;
+  }
+
+  .product-card p {
+    font-size: 0.78rem !important;
+  }
+
+  .product-card .btn-order {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 10px !important;
+    background: var(--navy-050);
+    border-radius: 6px;
+  }
+
+  .col-sm-6.col-lg-3 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  .d-flex.flex-wrap.justify-content-between .btn-outline-navy {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+  }
+
+  /* Package cards */
   .package-card {
     padding: 16px 14px !important;
   }
-  
+
   .package-card h4 {
     font-size: 0.95rem !important;
   }
-  
+
   .package-card ul li {
     font-size: 0.78rem !important;
     padding: 3px 0 !important;
   }
-  
+
   .package-card .btn-navy,
   .package-card .btn-outline-navy {
     padding: 8px 10px !important;
     font-size: 0.78rem !important;
   }
-}
 
-/* ========================================
-   8. TESTIMONI - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .testi-card {
-    padding: 28px 24px !important;
-  }
-  
-  .testi-card .quote {
-    font-size: 1rem !important;
-  }
-}
-
-@media (max-width: 576px) {
+  /* Testimonial */
   .testi-card {
     padding: 20px 16px !important;
   }
-  
+
   .testi-card .quote {
     font-size: 0.9rem !important;
   }
-  
+
   .testi-card .stamp {
     width: 70px !important;
     height: 70px !important;
   }
-  
+
   .testi-card .stamp .stamp-title {
     font-size: 0.45rem !important;
   }
-  
+
   .testi-card .name {
     font-size: 0.9rem !important;
   }
-  
+
   .testi-card .role {
     font-size: 0.78rem !important;
   }
-  
+
   .testi-nav-btn {
     width: 38px !important;
     height: 38px !important;
     font-size: 0.9rem !important;
   }
-}
 
-/* ========================================
-   9. FAQ - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .accordion-atk .accordion-button {
-    font-size: 0.95rem !important;
-    padding: 16px 18px !important;
-  }
-  
-  .accordion-atk .accordion-body {
-    font-size: 0.9rem !important;
-    padding: 0 18px 18px !important;
-  }
-}
-
-@media (max-width: 576px) {
+  /* FAQ */
   .accordion-atk .accordion-button {
     font-size: 0.85rem !important;
     padding: 14px 14px !important;
   }
-  
+
   .accordion-atk .accordion-body {
     font-size: 0.82rem !important;
     padding: 0 14px 14px !important;
   }
-  
+
   .col-lg-4 .btn-wa {
     width: 100% !important;
     justify-content: center !important;
   }
-}
 
-/* ========================================
-   10. CTA - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .cta-section {
-    padding: 50px 0 !important;
-  }
-  
-  .cta-section h2 {
-    font-size: 1.8rem !important;
-  }
-  
-  .cta-section p {
-    font-size: 1rem !important;
-  }
-}
-
-@media (max-width: 576px) {
+  /* CTA */
   .cta-section {
     padding: 40px 0 !important;
   }
-  
+
   .cta-section h2 {
     font-size: 1.3rem !important;
   }
-  
+
   .cta-section p {
     font-size: 0.9rem !important;
     padding: 0 16px !important;
   }
-  
+
   .cta-section .btn-wa {
     width: 100% !important;
     justify-content: center !important;
     padding: 12px !important;
   }
-}
 
-/* ========================================
-   11. FOOTER - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .footer-atk {
-    padding: 40px 0 20px !important;
-  }
-  
-  .footer-atk h6 {
-    font-size: 0.95rem !important;
-  }
-  
-  .footer-atk ul li {
-    font-size: 0.85rem !important;
-  }
-}
-
-@media (max-width: 767px) {
-  .footer-atk .col-lg-2.col-6,
-  .footer-atk .col-lg-3.col-6 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-  }
-  
-  .footer-atk .col-lg-4 {
-    flex: 0 0 100% !important;
-    max-width: 100% !important;
-  }
-}
-
-@media (max-width: 576px) {
-  .footer-atk {
-    padding: 30px 0 16px !important;
-  }
-  
-  .footer-atk h6 {
-    font-size: 0.85rem !important;
-    margin-bottom: 10px !important;
-  }
-  
-  .footer-atk ul li {
-    font-size: 0.8rem !important;
-    margin-bottom: 6px !important;
-  }
-  
-  .footer-atk .btn-wa {
-    width: 100% !important;
-    justify-content: center !important;
-    padding: 10px !important;
-  }
-  
-  .footer-atk .footer-pillar-link {
-    font-size: 0.78rem !important;
-    padding: 6px 12px !important;
-  }
-  
-  .footer-bottom {
-    flex-direction: column !important;
-    text-align: center !important;
-    gap: 6px !important;
-    font-size: 0.7rem !important;
-  }
-}
-
-/* ========================================
-   12. SCROLL TOP BUTTON - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
-  .scroll-top-btn {
-    width: 44px !important;
-    height: 44px !important;
-    font-size: 1.1rem !important;
-    bottom: 85px !important;
-    right: 20px !important;
-  }
-}
-
-/* ========================================
-   13. WA FLOAT - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
-  .wa-float {
-    width: 50px !important;
-    height: 50px !important;
-    font-size: 1.3rem !important;
-    bottom: 18px !important;
-    right: 18px !important;
-  }
-}
-
-/* ========================================
-   14. PAGE HEADER - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .page-header {
-    padding: 40px 0 !important;
-  }
-  
-  .page-header h1 {
-    font-size: 1.8rem !important;
-  }
-}
-
-@media (max-width: 576px) {
+  /* Page header */
   .page-header {
     padding: 30px 0 !important;
   }
-  
+
   .page-header h1 {
     font-size: 1.4rem !important;
   }
-  
+
   .page-header .breadcrumb-atk {
     font-size: 0.7rem !important;
   }
-}
 
-/* ========================================
-   15. CONTACT FORM - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .contact-form-card {
-    padding: 24px !important;
-  }
-  
-  .info-strip {
-    padding: 20px !important;
-  }
-}
-
-@media (max-width: 576px) {
+  /* Contact */
   .contact-form-card {
     padding: 18px !important;
   }
-  
+
   .form-control-atk {
     padding: 10px 12px !important;
     font-size: 0.85rem !important;
   }
-  
+
   .form-label-atk {
     font-size: 0.82rem !important;
   }
-  
+
   .info-strip {
     padding: 16px !important;
   }
-  
+
   .info-strip .info-item {
     gap: 10px !important;
     margin-bottom: 12px !important;
   }
-  
+
   .info-strip .info-icon {
     width: 36px !important;
     height: 36px !important;
     font-size: 0.9rem !important;
   }
-}
 
-/* ========================================
-   16. BLOG - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 991px) {
-  .blog-card .blog-img {
-    height: 160px !important;
-  }
-  
-  .blog-card .blog-body {
-    padding: 16px 18px 18px !important;
-  }
-  
-  .blog-card h5 {
-    font-size: 0.95rem !important;
-  }
-}
-
-@media (max-width: 576px) {
+  /* Blog */
   .blog-card .blog-img {
     height: 200px !important;
   }
-  
+
   .blog-card .blog-body {
     padding: 14px 14px 16px !important;
   }
-  
+
   .blog-card h5 {
     font-size: 0.88rem !important;
   }
-  
+
   .blog-card .blog-meta {
     font-size: 0.6rem !important;
   }
-  
+
   .blog-card .read-more {
     font-size: 0.8rem !important;
   }
-}
 
-/* ========================================
-   17. CATEGORY FILTER CHIPS - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
+  /* Category filter */
   .chip-filter {
     padding: 6px 14px !important;
     font-size: 0.78rem !important;
     margin: 2px !important;
   }
-  
+
   .d-flex.flex-wrap.gap-2 {
     gap: 6px !important;
   }
-}
 
-/* ========================================
-   18. GRID SYSTEM - FULL RESPONSIVE
-   ======================================== */
-/* Tablet ke bawah - 2 kolom */
-@media (max-width: 991px) {
-  .row.g-4 > .col-md-6 {
-    flex: 0 0 50% !important;
-    max-width: 50% !important;
-  }
-}
-
-/* Mobile - 1 kolom */
-@media (max-width: 576px) {
+  /* Grid 1 kolom */
   .row.g-4 > .col-md-6,
   .row.g-4 > .col-lg-3,
   .row.g-4 > .col-lg-4 {
     flex: 0 0 100% !important;
     max-width: 100% !important;
   }
-}
 
-/* ========================================
-   19. EYEBROW - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
+  /* Eyebrow */
   .eyebrow {
     font-size: 0.65rem !important;
     gap: 6px !important;
   }
-  
+
   .eyebrow::before {
     width: 16px !important;
     height: 2px !important;
   }
-}
 
-/* ========================================
-   20. BUTTONS - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
+  /* Buttons */
   .btn-navy,
   .btn-outline-navy,
   .btn-wa {
@@ -1883,67 +2016,70 @@ textarea:focus-visible {
     justify-content: center !important;
     text-align: center !important;
   }
-  
+
   .d-inline-block {
     display: block !important;
     width: 100% !important;
   }
-}
 
-/* ========================================
-   21. TABEL - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
+  /* Text alignment */
+  .text-center-mobile {
+    text-align: center !important;
+  }
+
+  /* Gap */
+  .gap-3 {
+    gap: 0.75rem !important;
+  }
+  .gap-4 {
+    gap: 1rem !important;
+  }
+
+  /* Padding */
+  .p-4 {
+    padding: 1rem !important;
+  }
+  .p-5 {
+    padding: 1.5rem !important;
+  }
+
+  /* Margin */
+  .mt-5 {
+    margin-top: 1.5rem !important;
+  }
+  .mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Table */
   .table-responsive-mobile {
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
   }
-  
   .table-responsive-mobile table {
     min-width: 500px !important;
   }
 }
 
-/* ========================================
-   22. MISC - FULL RESPONSIVE
-   ======================================== */
-@media (max-width: 576px) {
-  /* Text alignment */
-  .text-center-mobile {
-    text-align: center !important;
+/* ==========================================================================
+   REDUCED MOTION
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
   }
-  
-  /* Gap adjustments */
-  .gap-3 {
-    gap: 0.75rem !important;
-  }
-  
-  .gap-4 {
-    gap: 1rem !important;
-  }
-  
-  /* Padding adjustments */
-  .p-4 {
-    padding: 1rem !important;
-  }
-  
-  .p-5 {
-    padding: 1.5rem !important;
-  }
-  
-  /* Margin adjustments */
-  .mt-5 {
-    margin-top: 1.5rem !important;
-  }
-  
-  .mb-5 {
-    margin-bottom: 1.5rem !important;
+
+  .reveal {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
-/* ========================================
-   23. PRINT - FULL RESPONSIVE
-   ======================================== */
+/* ==========================================================================
+   PRINT
+   ========================================================================== */
 @media print {
   .navbar-atk,
   .wa-float,
@@ -1952,8 +2088,216 @@ textarea:focus-visible {
   .cta-section {
     display: none !important;
   }
-  
+
   .section {
     padding: 20px 0 !important;
+  }
+}
+
+/* ==========================================================================
+   FILTER BUTTON - FULL WIDTH DI MOBILE
+   ========================================================================== */
+
+/* Desktop: filter inline */
+@media (min-width: 992px) {
+  .filter-wrapper .chip-filter {
+    flex: 0 0 auto;
+    width: auto;
+  }
+}
+
+/* Mobile: filter full width */
+@media (max-width: 991px) {
+  .filter-wrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .filter-wrapper .chip-filter {
+    width: 100% !important;
+    text-align: center !important;
+    justify-content: center !important;
+    padding: 10px 16px !important;
+    font-size: 0.85rem !important;
+    border-radius: 8px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+  }
+
+  /* Active state untuk mobile */
+  .filter-wrapper .chip-filter.active {
+    background: var(--navy-800);
+    color: var(--white);
+    border-color: var(--navy-800);
+  }
+}
+
+/* Mobile kecil */
+@media (max-width: 576px) {
+  .filter-wrapper .chip-filter {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+  }
+}
+
+/* ==========================================================================
+   PRODUCT GRID - 4 KOLOM DESKTOP, 2 KOLOM TABLET, 1 KOLOM MOBILE
+   ========================================================================== */
+
+/* Desktop: 4 kolom */
+@media (min-width: 992px) {
+  #productGrid .col-lg-4 {
+    flex: 0 0 25% !important;
+    max-width: 25% !important;
+  }
+}
+
+/* Tablet: 2 kolom */
+@media (min-width: 576px) and (max-width: 991px) {
+  #productGrid .col-sm-6 {
+    flex: 0 0 50% !important;
+    max-width: 50% !important;
+  }
+}
+
+/* Mobile: 1 kolom */
+@media (max-width: 575px) {
+  #productGrid .col-sm-6 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* ============================================================
+   PAKET - TOMBOL LIHAT DETAIL (FIX)
+   ============================================================ */
+
+/* Tombol di paket card */
+.paket-card .btn-order {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  color: var(--navy-800) !important;
+  font-weight: 700 !important;
+  font-size: 0.86rem !important;
+  padding: 10px 18px !important;
+  background: var(--navy-050) !important;
+  border-radius: 8px !important;
+  border: 1.5px solid var(--gray-200) !important;
+  transition: all 0.25s ease !important;
+  text-decoration: none !important;
+  width: 100% !important;
+  justify-content: center !important;
+  margin-top: 8px !important;
+}
+
+.paket-card .btn-order:hover {
+  background: var(--navy-800) !important;
+  color: var(--white) !important;
+  border-color: var(--navy-800) !important;
+  transform: translateY(-2px) !important;
+  box-shadow: var(--shadow-sm) !important;
+}
+
+.paket-card .btn-order i {
+  transition: transform 0.25s ease !important;
+}
+
+.paket-card .btn-order:hover i {
+  transform: translateX(4px) !important;
+}
+
+/* Pastikan tombol terlihat di mobile */
+@media (max-width: 576px) {
+  .paket-card .btn-order {
+    font-size: 0.82rem !important;
+    padding: 10px 14px !important;
+  }
+}
+
+/* ============================================================
+   TOMBOL DETAIL PAKET - FIX
+   ============================================================ */
+
+.detail-card .btn-wa {
+  flex: 1;
+  min-width: 180px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  background: var(--red);
+  color: var(--white) !important;
+  font-weight: 700;
+  border: none;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.detail-card .btn-wa:hover {
+  background: var(--maroon);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(216, 28, 28, 0.3);
+  color: var(--white) !important;
+}
+
+.detail-card .btn-wa:active {
+  transform: scale(0.97);
+}
+
+.detail-card .btn-wa i {
+  font-size: 1.1rem;
+}
+
+.detail-card .btn-back {
+  flex: 0 0 auto;
+  min-width: 140px;
+  justify-content: center;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 14px 24px;
+  font-size: 0.95rem;
+  border-radius: 8px;
+  border: 1.5px solid var(--gray-200);
+  background: transparent;
+  color: var(--ink-soft);
+  font-weight: 600;
+  transition: all 0.25s ease;
+  text-decoration: none;
+}
+
+.detail-card .btn-back:hover {
+  background: var(--gray-100);
+  border-color: var(--gray-300);
+  color: var(--ink);
+  transform: translateY(-2px);
+}
+
+.detail-card .btn-back:active {
+  transform: scale(0.97);
+}
+
+.detail-card .btn-back i {
+  font-size: 0.9rem;
+}
+
+/* ============================================================
+   RESPONSIVE TOMBOL
+   ============================================================ */
+@media (max-width: 576px) {
+  .detail-card .btn-wa,
+  .detail-card .btn-back {
+    width: 100% !important;
+    flex: 1 1 100% !important;
+    justify-content: center !important;
+    padding: 12px 20px !important;
+    font-size: 0.9rem !important;
   }
 }

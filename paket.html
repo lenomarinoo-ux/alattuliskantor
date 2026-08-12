@@ -3,27 +3,245 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Paket Pengadaan ATK | Alat Tulis Kantor - Sekolah, Kampus, Perusahaan, Pemerintah</title>
-<meta name="description" content="Paket pengadaan alat tulis kantor untuk sekolah, kampus, kantor, perusahaan, dan instansi pemerintah. Konsultasi gratis via WhatsApp.">
-<meta name="keywords" content="alat tulis kantor 60500, vendor alat tulis kantor, distributor alat tulis kantor, supplier ATK kantor, pengadaan alat tulis kantor, grosir alat tulis kantor">
-<link rel="canonical" href="https://alattuliskantor.web.id/">
-<meta property="og:title" content="Paket Pengadaan ATK | Alat Tulis Kantor - Sekolah, Kampus, Perusahaan, Pemerintah">
-<meta property="og:description" content="Paket pengadaan alat tulis kantor untuk sekolah, kampus, kantor, perusahaan, dan instansi pemerintah. Konsultasi gratis via WhatsApp.">
+<title>Paket Alat Tulis Kantor | Bundling Hemat ATK Kantor</title>
+<meta name="description" content="Paket bundling alat tulis kantor siap pakai: Paket Kebutuhan Kantor, Paket Pengarsipan & Dokumen, Paket Operasional & Packing, dan Paket Edukasi & Kreatif.">
+<meta name="keywords" content="paket alat tulis kantor, bundling ATK, paket ATK kantor, paket pengadaan ATK, paket hemat alat tulis kantor">
+<link rel="canonical" href="https://alattuliskantor.web.id/paket.html">
+<meta property="og:title" content="Paket Alat Tulis Kantor | Bundling Hemat ATK Kantor">
+<meta property="og:description" content="Paket bundling alat tulis kantor siap pakai untuk kebutuhan kantor, pengarsipan, operasional, hingga acara & kreatif.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="id_ID">
-<meta property="og:image" content="https://alattuliskantor.web.id/assets/img/logo-atk.svg">
+<meta property="og:image" content="https://alattuliskantor.web.id/assets/img/logo.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="assets/img/logo.webp">
   <link rel="stylesheet" href="assets/css/main.css">
 
+  <style>
+    /* ============================================================
+       PAKET CARD - RAPI & PROFESIONAL
+       ============================================================ */
+    
+    .paket-card {
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.3s ease;
+    }
+
+    .paket-card .product-img {
+      height: 200px;
+      overflow: hidden;
+      background: var(--navy-050);
+      flex-shrink: 0;
+    }
+
+    .paket-card .product-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+
+    .paket-card:hover .product-img img {
+      transform: scale(1.05);
+    }
+
+    .paket-card .product-body {
+      padding: 18px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      background: var(--white);
+      border-radius: 0 0 var(--radius) var(--radius);
+    }
+
+    .paket-card .sku-tag {
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      color: var(--navy-600);
+      background: var(--navy-050);
+      padding: 4px 12px;
+      border-radius: 4px;
+      display: inline-block;
+      margin-bottom: 8px;
+      letter-spacing: 0.03em;
+      align-self: flex-start;
+    }
+
+    .paket-card h6 {
+      font-weight: 700;
+      margin-bottom: 4px;
+      font-size: 1rem;
+      color: var(--navy-900);
+      line-height: 1.3;
+    }
+
+    .paket-card .paket-sub {
+      font-size: 0.82rem;
+      color: var(--ink-soft);
+      margin-bottom: 10px;
+    }
+
+    .paket-isi {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px 0;
+      flex: 1;
+    }
+
+    .paket-isi li {
+      display: flex;
+      gap: 0.6rem;
+      align-items: flex-start;
+      padding: 4px 0;
+      font-size: 0.85rem;
+      color: var(--ink);
+      line-height: 1.4;
+      border-bottom: 1px dashed var(--gray-100);
+    }
+
+    .paket-isi li:last-child {
+      border-bottom: none;
+    }
+
+    .paket-isi li i {
+      margin-top: 2px;
+      flex-shrink: 0;
+      color: var(--navy-700);
+      font-size: 0.9rem;
+    }
+
+    .paket-badge {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+      background: var(--maroon);
+      color: var(--white);
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: 20px;
+      letter-spacing: 0.04em;
+      z-index: 2;
+      text-transform: uppercase;
+      box-shadow: 0 2px 10px rgba(85, 0, 0, 0.25);
+    }
+
+    .paket-badge.best-value {
+      background: #1a7a3a;
+      box-shadow: 0 2px 10px rgba(26, 122, 58, 0.3);
+    }
+
+    /* ============================================================
+       TOMBOL LIHAT DETAIL - LINK KE FILE
+       ============================================================ */
+    .paket-card .btn-detail {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      background: var(--navy-050) !important;
+      color: var(--navy-800) !important;
+      font-weight: 700 !important;
+      font-size: 0.85rem !important;
+      padding: 10px 18px !important;
+      border-radius: 8px !important;
+      border: 1.5px solid var(--gray-200) !important;
+      text-decoration: none !important;
+      width: 100% !important;
+      margin-top: 6px !important;
+      transition: all 0.25s ease !important;
+      cursor: pointer !important;
+    }
+
+    .paket-card .btn-detail:hover {
+      background: var(--navy-800) !important;
+      color: var(--white) !important;
+      border-color: var(--navy-800) !important;
+      transform: translateY(-2px) !important;
+      box-shadow: 0 4px 16px rgba(12, 38, 71, 0.15) !important;
+    }
+
+    .paket-card .btn-detail:hover i {
+      transform: translateX(4px);
+    }
+
+    .paket-card .btn-detail i {
+      transition: transform 0.25s ease;
+      font-size: 0.9rem;
+    }
+
+    /* ============================================================
+       FILTER - FULL WIDTH DI MOBILE
+       ============================================================ */
+    @media (max-width: 991px) {
+      .filter-wrapper {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 8px !important;
+        width: 100% !important;
+      }
+      .filter-wrapper .chip-filter {
+        width: 100% !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 10px 16px !important;
+        font-size: 0.85rem !important;
+        border-radius: 8px !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+      }
+      .filter-wrapper .chip-filter.active {
+        background: var(--navy-800);
+        color: var(--white);
+        border-color: var(--navy-800);
+      }
+    }
+
+    @media (max-width: 576px) {
+      .filter-wrapper .chip-filter {
+        padding: 8px 14px !important;
+        font-size: 0.8rem !important;
+      }
+    }
+
+    /* ============================================================
+       GRID - 3 KOLOM DESKTOP, 2 TABLET, 1 MOBILE
+       ============================================================ */
+    @media (min-width: 992px) {
+      #paketGrid .col-lg-4 {
+        flex: 0 0 33.333333%;
+        max-width: 33.333333%;
+      }
+    }
+
+    @media (min-width: 576px) and (max-width: 991px) {
+      #paketGrid .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+      }
+    }
+
+    @media (max-width: 575px) {
+      #paketGrid .col-sm-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+      }
+    }
+  </style>
 
 </head>
 <body>
 
+<!-- ============================================================ -->
+<!-- NAVBAR -->
+<!-- ============================================================ -->
 <nav class="navbar navbar-expand-lg navbar-atk sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -35,12 +253,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
-        <li class="nav-item"><a class="nav-link " href="index.html">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link " href="tentang-kami.html">Tentang Kami</a></li>
-        <li class="nav-item"><a class="nav-link " href="produk.html">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
         <li class="nav-item"><a class="nav-link active" href="paket.html">Paket</a></li>
-        <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
-        <li class="nav-item"><a class="nav-link " href="kontak.html">Kontak</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="kontak.html">Kontak</a></li>
       </ul>
       <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa">
         <i class="bi bi-whatsapp"></i> Hubungi Kami
@@ -49,97 +267,286 @@
   </div>
 </nav>
 
-
-<section class="page-header">
+<!-- ============================================================ -->
+<!-- PAGE HEADER - PAKET -->
+<!-- ============================================================ -->
+<section class="page-header has-bg" style="background-image: url('assets/img/hero-paket.webp');">
   <div class="container">
-    <div class="breadcrumb-atk"><a href="index.html">Beranda</a> / Paket</div>
-    <h1>Paket Pengadaan Alat Tulis Kantor</h1>
-    <p class="mb-0 mt-2" style="color:rgba(255,255,255,0.78); max-width:640px;">Pilih paket ATK yang sesuai dengan jenis instansi Anda, atau konsultasikan kebutuhan khusus melalui tim kami.</p>
+    <div class="breadcrumb-atk">
+      <a href="index.html">Beranda</a> / Paket
+    </div>
+    <h1>Paket Alat Tulis Kantor</h1>
+    <p>Bundling ATK siap pakai yang sudah disusun sesuai kebutuhan, lebih praktis dan hemat dibanding beli satuan.</p>
   </div>
 </section>
 
+<!-- ============================================================ -->
+<!-- FILTER KATEGORI -->
+<!-- ============================================================ -->
+<section class="section-sm border-bottom">
+  <div class="container">
+    <div class="d-flex flex-wrap gap-2 filter-wrapper">
+      <button class="chip-filter active" data-filter="semua">Semua Paket</button>
+      <button class="chip-filter" data-filter="kebutuhan-kantor">Kebutuhan Kantor</button>
+      <button class="chip-filter" data-filter="pengarsipan-dokumen">Pengarsipan &amp; Dokumen</button>
+      <button class="chip-filter" data-filter="operasional-packing">Operasional &amp; Packing</button>
+      <button class="chip-filter" data-filter="edukasi-kreatif">Edukasi &amp; Kreatif</button>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================ -->
+<!-- GRID PAKET - TANPA DETAIL SECTION -->
+<!-- ============================================================ -->
 <section class="section">
   <div class="container">
-    <div class="row g-4">
-      
-    <div class="col-md-6 col-lg-4">
-      <div class="package-card">
-        
-        <span class="package-tag">Sekolah</span>
-        <h4>Paket ATK Sekolah</h4>
-        <p class="package-for">Cocok untuk kebutuhan siswa & pengajar</p>
-        <ul><li>Alat tulis harian siswa</li>\n<li>Perlengkapan administrasi sekolah</li>\n<li>Kertas & bahan cetak ujian</li></ul>
-        <a href="https://wa.me/6288989643555?text=Halo%2C%20saya%20ingin%20konsultasi%20mengenai%20Paket%20ATK%20Sekolah" target="_blank" rel="noopener" class="btn-outline-navy w-100 text-center d-block">Konsultasi Paket</a>
+    <div class="row g-4" id="paketGrid">
+
+      <!-- ========================================================== -->
+      <!-- KATEGORI 1: KEBUTUHAN KANTOR -->
+      <!-- ========================================================== -->
+
+      <!-- Paket Meja Baru -->
+      <div class="col-sm-6 col-lg-4" data-category="kebutuhan-kantor">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=500&q=80" alt="Paket Meja Baru">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Kebutuhan Kantor</span>
+            <h6>Paket Meja Baru</h6>
+            <p class="paket-sub">New Desk Setup Kit — Perlengkapan awal untuk meja kerja baru.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Tempat pulpen (pen holder)</li>
+              <li><i class="bi bi-check-circle"></i>Penggaris</li>
+              <li><i class="bi bi-check-circle"></i>Stapler kecil No. 10</li>
+              <li><i class="bi bi-check-circle"></i>Kalkulator 12 digit</li>
+              <li><i class="bi bi-check-circle"></i>Gunting</li>
+              <li><i class="bi bi-check-circle"></i>Catatan tempel (sticky notes)</li>
+            </ul>
+            <!-- LINK KE FILE DETAIL -->
+            <a href="detail-paket-meja-baru.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>\n
-    <div class="col-md-6 col-lg-4">
-      <div class="package-card featured">
-        <span class="package-badge">Rekomendasi</span>
-        <span class="package-tag">Kampus</span>
-        <h4>Paket ATK Kampus</h4>
-        <p class="package-for">Cocok untuk kebutuhan administrasi kampus</p>
-        <ul><li>ATK kebutuhan akademik</li>\n<li>Perlengkapan administrasi fakultas</li>\n<li>Paket dalam jumlah besar per semester</li></ul>
-        <a href="https://wa.me/6288989643555?text=Halo%2C%20saya%20ingin%20konsultasi%20mengenai%20Paket%20ATK%20Kampus" target="_blank" rel="noopener" class="btn-navy w-100 text-center d-block">Konsultasi Paket</a>
+
+      <!-- Paket Ruang Rapat -->
+      <div class="col-sm-6 col-lg-4" data-category="kebutuhan-kantor">
+        <div class="product-card paket-card">
+          <span class="paket-badge">⭐ Populer</span>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1497032628192-86f99bcd76bc?w=500&q=80" alt="Paket Ruang Rapat">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Kebutuhan Kantor</span>
+            <h6>Paket Ruang Rapat</h6>
+            <p class="paket-sub">Meeting Room Bundle — Perlengkapan lengkap untuk ruang rapat.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Spidol papan tulis (whiteboard)</li>
+              <li><i class="bi bi-check-circle"></i>Penghapus papan</li>
+              <li><i class="bi bi-check-circle"></i>Penanda (highlighter)</li>
+              <li><i class="bi bi-check-circle"></i>Buku memo catatan</li>
+            </ul>
+            <a href="detail-paket-ruang-rapat.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>\n
-    <div class="col-md-6 col-lg-4">
-      <div class="package-card">
-        
-        <span class="package-tag">Kantor</span>
-        <h4>Paket ATK Kantor</h4>
-        <p class="package-for">Cocok untuk operasional kantor harian</p>
-        <ul><li>ATK operasional harian</li>\n<li>Perlengkapan filing & arsip</li>\n<li>Peralatan meeting dasar</li></ul>
-        <a href="https://wa.me/6288989643555?text=Halo%2C%20saya%20ingin%20konsultasi%20mengenai%20Paket%20ATK%20Kantor" target="_blank" rel="noopener" class="btn-outline-navy w-100 text-center d-block">Konsultasi Paket</a>
+
+      <!-- Paket Administrasi & Keuangan -->
+      <div class="col-sm-6 col-lg-4" data-category="kebutuhan-kantor">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1583485088034-697b5bc36b62?w=500&q=80" alt="Paket Administrasi & Keuangan">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Kebutuhan Kantor</span>
+            <h6>Paket Administrasi &amp; Keuangan</h6>
+            <p class="paket-sub">Finance &amp; Admin Kit — Perlengkapan untuk bagian keuangan.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Buku kuitansi</li>
+              <li><i class="bi bi-check-circle"></i>Nota kontan</li>
+              <li><i class="bi bi-check-circle"></i>Kertas karbon</li>
+              <li><i class="bi bi-check-circle"></i>Pulpen meja (dengan tali)</li>
+              <li><i class="bi bi-check-circle"></i>Kalkulator kantor</li>
+            </ul>
+            <a href="detail-paket-administrasi-keuangan.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>\n
-    <div class="col-md-6 col-lg-4">
-      <div class="package-card">
-        
-        <span class="package-tag">Perusahaan</span>
-        <h4>Paket Pengadaan Perusahaan</h4>
-        <p class="package-for">Cocok untuk kebutuhan korporat skala menengah-besar</p>
-        <ul><li>Kebutuhan ATK multi-divisi</li>\n<li>Perlengkapan meeting & rapat</li>\n<li>Souvenir & branding kantor</li></ul>
-        <a href="https://wa.me/6288989643555?text=Halo%2C%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Pengadaan%20Perusahaan" target="_blank" rel="noopener" class="btn-outline-navy w-100 text-center d-block">Konsultasi Paket</a>
+
+      <!-- ========================================================== -->
+      <!-- KATEGORI 2: PENGARSIPAN & DOKUMEN -->
+      <!-- ========================================================== -->
+
+      <!-- Paket Audit / Berkas Besar -->
+      <div class="col-sm-6 col-lg-4" data-category="pengarsipan-dokumen">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1568205612837-017257d2310a?w=500&q=80" alt="Paket Audit / Berkas Besar">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Pengarsipan &amp; Dokumen</span>
+            <h6>Paket Audit / Berkas Besar</h6>
+            <p class="paket-sub">Archiving Bundle — Solusi arsip dokumen skala besar.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Ordner (map tebal besar)</li>
+              <li><i class="bi bi-check-circle"></i>Box file (karton/plastik)</li>
+              <li><i class="bi bi-check-circle"></i>Map snelhechter</li>
+              <li><i class="bi bi-check-circle"></i>Amplop cokelat besar</li>
+            </ul>
+            <a href="detail-paket-audit-berkas.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>\n
-    <div class="col-md-6 col-lg-4">
-      <div class="package-card">
-        
-        <span class="package-tag">Pemerintah</span>
-        <h4>Paket Instansi Pemerintah</h4>
-        <p class="package-for">Cocok untuk kebutuhan pengadaan instansi</p>
-        <ul><li>Sesuai standar pengadaan instansi</li>\n<li>Dokumen & quotation lengkap</li>\n<li>Kapasitas pengadaan besar</li></ul>
-        <a href="https://wa.me/6288989643555?text=Halo%2C%20saya%20ingin%20konsultasi%20mengenai%20Paket%20Instansi%20Pemerintah" target="_blank" rel="noopener" class="btn-outline-navy w-100 text-center d-block">Konsultasi Paket</a>
+
+      <!-- Paket Distribusi Dokumen -->
+      <div class="col-sm-6 col-lg-4" data-category="pengarsipan-dokumen">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=500&q=80" alt="Paket Distribusi Dokumen">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Pengarsipan &amp; Dokumen</span>
+            <h6>Paket Distribusi Dokumen</h6>
+            <p class="paket-sub">Daily Filing Kit — Perlengkapan filing harian.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Map plastik kancing</li>
+              <li><i class="bi bi-check-circle"></i>Clear sleeve</li>
+              <li><i class="bi bi-check-circle"></i>Paper clip &amp; binder clip</li>
+            </ul>
+            <a href="detail-paket-distribusi-dokumen.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
       </div>
-    </div>
+
+      <!-- ========================================================== -->
+      <!-- KATEGORI 3: OPERASIONAL & PACKING -->
+      <!-- ========================================================== -->
+
+      <!-- Paket Logistik / Packing -->
+      <div class="col-sm-6 col-lg-4" data-category="operasional-packing">
+        <div class="product-card paket-card">
+          <span class="paket-badge best-value">🔥 Best Value</span>
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=500&q=80" alt="Paket Logistik / Packing">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Operasional &amp; Packing</span>
+            <h6>Paket Logistik / Packing</h6>
+            <p class="paket-sub">Logistics Packing Bundle — Kebutuhan packing dan pengiriman.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Lakban cokelat</li>
+              <li><i class="bi bi-check-circle"></i>Lakban hitam (kain)</li>
+              <li><i class="bi bi-check-circle"></i>Pisau cutter + isi ulang</li>
+              <li><i class="bi bi-check-circle"></i>Tali rafia</li>
+            </ul>
+            <a href="detail-paket-logistik-packing.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paket Cetak & Fotokopi -->
+      <div class="col-sm-6 col-lg-4" data-category="operasional-packing">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1519406596751-0a3ccc4937fe?w=500&q=80" alt="Paket Cetak & Fotokopi">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Operasional &amp; Packing</span>
+            <h6>Paket Cetak &amp; Fotokopi</h6>
+            <p class="paket-sub">Bulk Paper Bundle — Stok kertas cetak dalam jumlah besar.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Bundel kertas HVS A4 &amp; F4</li>
+              <li><i class="bi bi-check-circle"></i>Gramasi 70gr / 80gr</li>
+              <li><i class="bi bi-check-circle"></i>Bonus selotip bening</li>
+            </ul>
+            <a href="detail-paket-cetak-fotokopi.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========================================================== -->
+      <!-- KATEGORI 4: EDUKASI & KREATIF -->
+      <!-- ========================================================== -->
+
+      <!-- Paket Seminar / Pelatihan -->
+      <div class="col-sm-6 col-lg-4" data-category="edukasi-kreatif">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1607083206968-13611e3d76db?w=500&q=80" alt="Paket Seminar / Pelatihan">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Edukasi &amp; Kreatif</span>
+            <h6>Paket Seminar / Pelatihan</h6>
+            <p class="paket-sub">Seminar Event Kit — Perlengkapan peserta seminar.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Amplop putih polos</li>
+              <li><i class="bi bi-check-circle"></i>Notebook jilid spiral</li>
+              <li><i class="bi bi-check-circle"></i>Pulpen cetek</li>
+              <li><i class="bi bi-check-circle"></i>Highlighter warna pastel</li>
+            </ul>
+            <a href="detail-paket-seminar-pelatihan.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Paket Gambar & Kreatif -->
+      <div class="col-sm-6 col-lg-4" data-category="edukasi-kreatif">
+        <div class="product-card paket-card">
+          <div class="product-img">
+            <img src="https://images.unsplash.com/photo-1587145820266-a5951ee6f620?w=500&q=80" alt="Paket Gambar & Kreatif">
+          </div>
+          <div class="product-body">
+            <span class="sku-tag">Edukasi &amp; Kreatif</span>
+            <h6>Paket Gambar &amp; Kreatif</h6>
+            <p class="paket-sub">Basic Drafting Kit — Perlengkapan dasar menggambar.</p>
+            <ul class="paket-isi">
+              <li><i class="bi bi-check-circle"></i>Pensil kayu (2B/HB)</li>
+              <li><i class="bi bi-check-circle"></i>Pensil mekanik + isi ulang</li>
+              <li><i class="bi bi-check-circle"></i>Penggaris besi panjang</li>
+              <li><i class="bi bi-check-circle"></i>Penghapus karet</li>
+            </ul>
+            <a href="detail-paket-gambar-kreatif.html" class="btn-detail">
+              <span>Lihat Detail</span> <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
 
-<section class="section bg-soft">
-  <div class="container">
-    <div class="row align-items-center gy-4">
-      <div class="col-lg-7 reveal">
-        <span class="eyebrow">Paket Kustom</span>
-        <h2 class="section-title mt-2">Butuh Paket ATK di Luar Daftar Ini?</h2>
-        <p class="section-lead">Setiap instansi memiliki kebutuhan yang berbeda. Tim kami siap membantu menyusun paket ATK khusus sesuai spesifikasi, jumlah, dan anggaran pengadaan Anda, lengkap dengan dokumen quotation resmi.</p>
-      </div>
-      <div class="col-lg-5 text-lg-end">
-        <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa"><i class="bi bi-whatsapp"></i> Konsultasi Paket Kustom</a>
-      </div>
-    </div>
-  </div>
-</section>
-
+<!-- ============================================================ -->
+<!-- CTA SECTION -->
+<!-- ============================================================ -->
 <section class="cta-section">
   <div class="container">
-    <h2 class="mb-2">Butuh Supplier Alat Tulis Kantor Terpercaya?</h2>
-    <p class="mb-4">Konsultasikan kebutuhan ATK kantor Anda sekarang.</p>
+    <h2 class="mb-2">Butuh Paket Custom Sesuai Kebutuhan Kantor Anda?</h2>
+    <p class="mb-4">Sampaikan kebutuhan spesifik Anda, tim kami akan bantu susunkan paket ATK yang paling sesuai.</p>
     <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa"><i class="bi bi-whatsapp"></i> Hubungi WhatsApp</a>
   </div>
 </section>
 
-
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
 <footer class="footer-atk">
   <div class="container">
     <div class="row g-4">
@@ -183,14 +590,71 @@
   </div>
 </footer>
 
+<!-- ============================================================ -->
+<!-- FLOATING BUTTONS -->
+<!-- ============================================================ -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Kembali ke atas" title="Kembali ke atas">
+  <i class="bi bi-chevron-up"></i>
+</button>
 
 <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp">
   <i class="bi bi-whatsapp"></i>
 </a>
 
+<!-- ============================================================ -->
+<!-- SCRIPTS -->
+<!-- ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+<script>
+  // ============================================================
+  // FILTER PAKET
+  // ============================================================
+  (function() {
+    var filterButtons = document.querySelectorAll('.filter-wrapper .chip-filter');
+    var packageCards = document.querySelectorAll('#paketGrid .col-sm-6');
+
+    if (!filterButtons.length || !packageCards.length) return;
+
+    var applyFilter = function(filterValue, activeButton) {
+      filterButtons.forEach(function(btn) {
+        btn.classList.remove('active');
+      });
+      if (activeButton) {
+        activeButton.classList.add('active');
+      }
+
+      var visibleCount = 0;
+      packageCards.forEach(function(card) {
+        var category = card.getAttribute('data-category');
+        if (filterValue === 'semua' || category === filterValue) {
+          card.style.display = 'block';
+          card.style.animation = 'fadeInUp 0.4s ease ' + (visibleCount * 0.06) + 's forwards';
+          visibleCount++;
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    };
+
+    filterButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        var filterValue = this.getAttribute('data-filter');
+        applyFilter(filterValue, this);
+      });
+    });
+
+    // Default
+    var defaultButton = document.querySelector('.filter-wrapper .chip-filter.active');
+    if (!defaultButton) {
+      defaultButton = document.querySelector('.filter-wrapper .chip-filter[data-filter="semua"]');
+    }
+    if (defaultButton) {
+      applyFilter('semua', defaultButton);
+    }
+  })();
+</script>
 
 </body>
 </html>
