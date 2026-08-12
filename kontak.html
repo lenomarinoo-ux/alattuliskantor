@@ -6,7 +6,7 @@
 <title>Kontak | Hubungi Supplier Alat Tulis Kantor Terpercaya</title>
 <meta name="description" content="Hubungi Alat Tulis Kantor melalui WhatsApp atau formulir untuk mendapatkan quotation pengadaan ATK kantor, sekolah, dan instansi pemerintah.">
 <meta name="keywords" content="alat tulis kantor 60500, vendor alat tulis kantor, distributor alat tulis kantor, supplier ATK kantor, pengadaan alat tulis kantor, grosir alat tulis kantor">
-<link rel="canonical" href="https://alattuliskantor.web.id/">
+<link rel="canonical" href="https://alattuliskantor.web.id/kontak.html">
 <meta property="og:title" content="Kontak | Hubungi Supplier Alat Tulis Kantor Terpercaya">
 <meta property="og:description" content="Hubungi Alat Tulis Kantor melalui WhatsApp atau formulir untuk mendapatkan quotation pengadaan ATK kantor, sekolah, dan instansi pemerintah.">
 <meta property="og:type" content="website">
@@ -20,10 +20,117 @@
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.webp">
   <link rel="stylesheet" href="assets/css/main.css">
 
+  <style>
+    /* ============================================================
+       KONTAK - STYLING KONSISTEN
+       ============================================================ */
+
+    .contact-form-card {
+      background: var(--white);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: 34px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .info-strip {
+      background: var(--navy-050);
+      border-radius: var(--radius);
+      padding: 26px;
+      height: 100%;
+    }
+
+    .info-strip .info-item {
+      display: flex;
+      gap: 14px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .info-strip .info-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .info-strip .info-icon {
+      width: 42px;
+      height: 42px;
+      border-radius: 10px;
+      background: var(--navy-800);
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-strip .info-item .fw-bold {
+      color: var(--navy-900);
+      font-weight: 700;
+    }
+
+    .btn-wa-full {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      padding: 14px;
+      font-size: 0.95rem;
+      border-radius: 8px;
+      background: var(--red);
+      color: var(--white) !important;
+      font-weight: 700;
+      border: none;
+      transition: all 0.25s ease;
+      text-decoration: none;
+    }
+
+    .btn-wa-full:hover {
+      background: var(--maroon);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(216, 28, 28, 0.3);
+      color: var(--white) !important;
+    }
+
+    /* Responsive */
+    @media (max-width: 991px) {
+      .contact-form-card {
+        padding: 24px;
+      }
+      .info-strip {
+        padding: 20px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .contact-form-card {
+        padding: 18px;
+      }
+      .info-strip {
+        padding: 16px;
+      }
+      .info-strip .info-item {
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .info-strip .info-icon {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+      }
+      .btn-wa-full {
+        padding: 12px;
+        font-size: 0.88rem;
+      }
+    }
+  </style>
 
 </head>
 <body>
 
+<!-- ============================================================ -->
+<!-- NAVBAR -->
+<!-- ============================================================ -->
 <nav class="navbar navbar-expand-lg navbar-atk sticky-top">
   <div class="container">
     <a class="navbar-brand" href="index.html">
@@ -35,11 +142,11 @@
     </button>
     <div class="collapse navbar-collapse" id="navMain">
       <ul class="navbar-nav mx-auto align-items-lg-center gap-1">
-        <li class="nav-item"><a class="nav-link " href="index.html">Beranda</a></li>
-        <li class="nav-item"><a class="nav-link " href="tentang-kami.html">Tentang Kami</a></li>
-        <li class="nav-item"><a class="nav-link " href="produk.html">Produk</a></li>
-        <li class="nav-item"><a class="nav-link " href="paket.html">Paket</a></li>
-        <li class="nav-item"><a class="nav-link " href="blog.html">Blog</a></li>
+        <li class="nav-item"><a class="nav-link" href="index.html">Beranda</a></li>
+        <li class="nav-item"><a class="nav-link" href="tentang-kami.html">Tentang Kami</a></li>
+        <li class="nav-item"><a class="nav-link" href="produk.html">Produk</a></li>
+        <li class="nav-item"><a class="nav-link" href="paket.html">Paket</a></li>
+        <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
         <li class="nav-item"><a class="nav-link active" href="kontak.html">Kontak</a></li>
       </ul>
       <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa">
@@ -49,54 +156,77 @@
   </div>
 </nav>
 
-
-<section class="page-header">
+<!-- ============================================================ -->
+<!-- PAGE HEADER - DENGAN BACKGROUND -->
+<!-- ============================================================ -->
+<section class="page-header has-bg" style="background-image: url('assets/img/hero-kontak.webp');">
   <div class="container">
-    <div class="breadcrumb-atk"><a href="index.html">Beranda</a> / Kontak</div>
+    <div class="breadcrumb-atk">
+      <a href="index.html">Beranda</a>
+      <span class="separator">/</span>
+      <span class="current">Kontak</span>
+    </div>
     <h1>Hubungi Supplier Alat Tulis Kantor</h1>
-    <p class="mb-0 mt-2" style="color:rgba(255,255,255,0.78); max-width:620px;">Sampaikan kebutuhan pengadaan ATK Anda, tim kami akan merespons dengan quotation sesuai kebutuhan instansi atau perusahaan Anda.</p>
+    <p>Sampaikan kebutuhan pengadaan ATK Anda, tim kami akan merespons dengan quotation sesuai kebutuhan instansi atau perusahaan Anda.</p>
   </div>
 </section>
 
+<!-- ============================================================ -->
+<!-- KONTAK - FORM & INFO -->
+<!-- ============================================================ -->
 <section class="section">
   <div class="container">
     <div class="row g-4">
+
+      <!-- ===== KOLOM KIRI: FORM ===== -->
       <div class="col-lg-7 reveal">
         <div class="contact-form-card">
           <span class="eyebrow">Formulir Permintaan Penawaran</span>
           <h2 class="section-title mt-2" style="font-size:1.5rem;">Isi Data untuk Mendapatkan Quotation</h2>
+
           <form id="contactForm" class="row g-3 mt-2 needs-validation" novalidate>
+
             <div class="col-md-6">
-              <label class="form-label-atk" for="cfNama">Nama</label>
-              <input type="text" class="form-control form-control-atk" id="cfNama" required>
+              <label class="form-label-atk" for="cfNama">Nama Lengkap</label>
+              <input type="text" class="form-control form-control-atk" id="cfNama" placeholder="Nama Anda" required>
               <div class="invalid-feedback">Nama wajib diisi.</div>
             </div>
+
             <div class="col-md-6">
               <label class="form-label-atk" for="cfPerusahaan">Perusahaan / Instansi</label>
-              <input type="text" class="form-control form-control-atk" id="cfPerusahaan" required>
+              <input type="text" class="form-control form-control-atk" id="cfPerusahaan" placeholder="Nama instansi" required>
               <div class="invalid-feedback">Nama perusahaan/instansi wajib diisi.</div>
             </div>
+
             <div class="col-md-6">
               <label class="form-label-atk" for="cfEmail">Email</label>
-              <input type="email" class="form-control form-control-atk" id="cfEmail" required>
+              <input type="email" class="form-control form-control-atk" id="cfEmail" placeholder="email@domain.com" required>
               <div class="invalid-feedback">Masukkan email yang valid.</div>
             </div>
+
             <div class="col-md-6">
               <label class="form-label-atk" for="cfWa">Nomor WhatsApp</label>
-              <input type="tel" class="form-control form-control-atk" id="cfWa" required>
+              <input type="tel" class="form-control form-control-atk" id="cfWa" placeholder="0889-8964-3555" required>
               <div class="invalid-feedback">Nomor WhatsApp wajib diisi.</div>
             </div>
+
             <div class="col-12">
               <label class="form-label-atk" for="cfPesan">Pesan / Kebutuhan ATK</label>
               <textarea class="form-control form-control-atk" id="cfPesan" rows="4" placeholder="Contoh: Kami membutuhkan paket ATK untuk 50 pegawai, mohon dikirimkan penawaran." required></textarea>
               <div class="invalid-feedback">Mohon jelaskan kebutuhan Anda.</div>
             </div>
+
             <div class="col-12">
-              <button type="submit" class="btn-navy w-100"><i class="bi bi-whatsapp me-2"></i>Kirim &amp; Chat WhatsApp Sekarang</button>
+              <button type="submit" class="btn-navy w-100" style="display: flex; align-items: center; justify-content: center; gap: 8px; padding: 14px; font-size: 0.95rem;">
+                <i class="bi bi-whatsapp"></i> Kirim &amp; Chat WhatsApp Sekarang
+              </button>
             </div>
+
           </form>
         </div>
       </div>
+
+      <!-- ===== KOLOM KANAN: INFO ===== -->
       <div class="col-lg-5">
         <div class="info-strip">
           <div class="info-item">
@@ -106,6 +236,7 @@
               <div class="small" style="color:var(--ink-soft);">0889-8964-3555</div>
             </div>
           </div>
+
           <div class="info-item">
             <div class="info-icon"><i class="bi bi-clock"></i></div>
             <div>
@@ -113,6 +244,15 @@
               <div class="small" style="color:var(--ink-soft);">Senin - Sabtu, 08.00 - 17.00 WIB</div>
             </div>
           </div>
+
+          <div class="info-item">
+            <div class="info-icon"><i class="bi bi-geo-alt"></i></div>
+            <div>
+              <div class="fw-bold">Alamat</div>
+              <div class="small" style="color:var(--ink-soft);">Jalan Raya Gampeng No.45, Gampengrejo, Kabupaten Kediri, Jawa Timur 64182</div>
+            </div>
+          </div>
+
           <div class="info-item">
             <div class="info-icon"><i class="bi bi-truck"></i></div>
             <div>
@@ -120,8 +260,8 @@
               <div class="small" style="color:var(--ink-soft);">Malang, Surabaya, Jakarta, Denpasar, Makassar, dan seluruh Indonesia</div>
             </div>
           </div>
-        </div>
-        <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa w-100 justify-content-center mt-4">
+        <!-- Tombol WhatsApp -->
+        <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa-full mt-4">
           <i class="bi bi-whatsapp"></i> Chat WhatsApp Sekarang
         </a>
       </div>
@@ -129,7 +269,20 @@
   </div>
 </section>
 
+<!-- ============================================================ -->
+<!-- CTA SECTION -->
+<!-- ============================================================ -->
+<section class="cta-section">
+  <div class="container">
+    <h2 class="mb-2">Butuh Penawaran Khusus untuk Pengadaan ATK?</h2>
+    <p class="mb-4">Tim kami siap memberikan quotation sesuai kebutuhan instansi atau perusahaan Anda.</p>
+    <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa"><i class="bi bi-whatsapp"></i> Hubungi WhatsApp</a>
+  </div>
+</section>
 
+<!-- ============================================================ -->
+<!-- FOOTER -->
+<!-- ============================================================ -->
 <footer class="footer-atk">
   <div class="container">
     <div class="row g-4">
@@ -173,13 +326,10 @@
   </div>
 </footer>
 
-<!-- Scroll to Top Button -->
-<button 
-  id="scrollTopBtn" 
-  class="scroll-top-btn" 
-  aria-label="Kembali ke atas"
-  title="Kembali ke atas"
->
+<!-- ============================================================ -->
+<!-- FLOATING BUTTONS -->
+<!-- ============================================================ -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Kembali ke atas" title="Kembali ke atas">
   <i class="bi bi-chevron-up"></i>
 </button>
 
@@ -187,9 +337,72 @@
   <i class="bi bi-whatsapp"></i>
 </a>
 
+<!-- ============================================================ -->
+<!-- SCRIPTS -->
+<!-- ============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+<script>
+  // ============================================================
+  // CONTACT FORM - WHATSAPP REDIRECT
+  // ============================================================
+  (function() {
+    var contactForm = document.getElementById('contactForm');
+    if (!contactForm) return;
+
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      if (!this.checkValidity()) {
+        this.classList.add('was-validated');
+        return;
+      }
+
+      var nama = document.getElementById('cfNama');
+      var perusahaan = document.getElementById('cfPerusahaan');
+      var email = document.getElementById('cfEmail');
+      var wa = document.getElementById('cfWa');
+      var pesan = document.getElementById('cfPesan');
+
+      var text = 'Halo Alat Tulis Kantor, saya ' +
+                 (nama ? nama.value : '') +
+                 ' dari ' +
+                 (perusahaan ? perusahaan.value : '') +
+                 '. Email: ' +
+                 (email ? email.value : '') +
+                 ', WhatsApp: ' +
+                 (wa ? wa.value : '') +
+                 '. ' +
+                 (pesan ? pesan.value : '');
+
+      window.open(
+        'https://wa.me/6288989643555?text=' + encodeURIComponent(text),
+        '_blank'
+      );
+    });
+  })();
+
+  // ============================================================
+  // BACK TO TOP
+  // ============================================================
+  (function() {
+    const backBtn = document.getElementById('scrollTopBtn');
+    if (!backBtn) return;
+
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 300) {
+        backBtn.classList.add('visible');
+      } else {
+        backBtn.classList.remove('visible');
+      }
+    });
+
+    backBtn.addEventListener('click', function() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  })();
+</script>
 
 </body>
 </html>
