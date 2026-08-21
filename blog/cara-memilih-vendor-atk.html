@@ -172,6 +172,83 @@
       border-top: 1px solid var(--gray-200);
     }
 
+
+    /* ---------- DAFTAR ISI (TOC) ---------- */
+    .toc-widget {
+      background: var(--gray-100);
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      margin-bottom: 1.5rem;
+      overflow: hidden;
+    }
+    .toc-widget .toc-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.6rem;
+      background: none;
+      border: none;
+      padding: 0.9rem 1.2rem;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--navy-900);
+      cursor: pointer;
+      text-align: left;
+    }
+    .toc-widget .toc-toggle .toc-label { display: flex; align-items: center; }
+    .toc-widget .toc-toggle .toc-label i { color: var(--maroon); margin-right: 0.5rem; }
+    .toc-widget .toc-toggle .toc-chevron {
+      transition: transform 0.25s ease;
+      color: var(--ink-soft);
+      font-size: 0.85rem;
+      flex-shrink: 0;
+    }
+    .toc-widget.collapsed .toc-toggle .toc-chevron { transform: rotate(-90deg); }
+    .toc-widget .toc-body {
+      max-height: 1200px;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s ease, opacity 0.25s ease;
+      padding: 0 1.2rem 1.1rem;
+      opacity: 1;
+    }
+    .toc-widget.collapsed .toc-body {
+      max-height: 0;
+      padding: 0 1.2rem;
+      opacity: 0;
+    }
+    .toc-widget .toc-main { list-style: none; margin: 0; padding: 0; counter-reset: toc-count; }
+    .toc-widget .toc-main > li { counter-increment: toc-count; margin: 0.4rem 0; }
+    .toc-widget .toc-main > li > a {
+      color: var(--navy-700);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .toc-widget .toc-main > li > a::before {
+      content: counter(toc-count) ". ";
+      color: var(--maroon);
+      font-weight: 700;
+    }
+    .toc-widget .toc-main > li > a:hover { color: var(--maroon); text-decoration: underline; }
+    .toc-widget .toc-sub { list-style: none; margin: 0.3rem 0 0.3rem 1.3rem; padding: 0; }
+    .toc-widget .toc-sub li { margin: 0.28rem 0; }
+    .toc-widget .toc-sub a {
+      color: var(--ink-soft);
+      text-decoration: none;
+      font-size: 0.82rem;
+      line-height: 1.5;
+    }
+    .toc-widget .toc-sub a::before { content: "\203A\00A0"; color: var(--maroon); }
+    .toc-widget .toc-sub a:hover { color: var(--maroon); text-decoration: underline; }
+    @media (max-width: 575.98px) {
+      .toc-widget .toc-toggle { padding: 0.8rem 1rem; font-size: 0.88rem; }
+      .toc-widget .toc-body { padding: 0 1rem 1rem; }
+      .toc-widget.collapsed .toc-body { padding: 0 1rem; }
+    }
+
     .blog-article .content-body {
       color: var(--ink);
       font-size: 1rem;
@@ -761,6 +838,15 @@
             <div class="caption">Proses seleksi vendor ATK yang tepat untuk kebutuhan pengadaan instansi Anda.</div>
           </div>
 
+          <!-- ===== DAFTAR ISI (TOC) ===== -->
+          <div class="toc-widget" id="tocWidget">
+            <button class="toc-toggle" type="button" id="tocToggle" aria-expanded="true" aria-controls="tocBody">
+              <span class="toc-label"><i class="bi bi-list-ul"></i> Daftar Isi</span>
+              <i class="bi bi-chevron-down toc-chevron"></i>
+            </button>
+            <div class="toc-body" id="tocBody"></div>
+          </div>
+
           <!-- Konten -->
           <div class="content-body">
 
@@ -1245,6 +1331,86 @@
       alert('Gagal menyalin link. Silakan copy manual.');
     });
   }
+
+  // Daftar Isi (Table of Contents) - auto generate dari h2 & h3 di dalam artikel
+  (function() {
+    const contentBody = document.querySelector('.blog-article .content-body');
+    const tocWidget = document.getElementById('tocWidget');
+    const tocBody = document.getElementById('tocBody');
+    const tocToggle = document.getElementById('tocToggle');
+    if (!contentBody || !tocWidget || !tocBody || !tocToggle) return;
+
+    const headings = contentBody.querySelectorAll('h2, h3');
+    if (headings.length === 0) {
+      tocWidget.style.display = 'none';
+      return;
+    }
+
+    const usedIds = {};
+    function slugify(text) {
+      let base = text.toLowerCase().trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-');
+      if (!base) base = 'bagian';
+      let slug = base, i = 2;
+      while (usedIds[slug]) { slug = base + '-' + i; i++; }
+      usedIds[slug] = true;
+      return slug;
+    }
+
+    const ol = document.createElement('ol');
+    ol.className = 'toc-main';
+    let currentLi = null;
+    let currentSubUl = null;
+
+    headings.forEach(function(heading) {
+      const text = heading.textContent.trim();
+      if (!heading.id) heading.id = 'toc-' + slugify(text);
+
+      if (heading.tagName === 'H2') {
+        currentSubUl = null;
+        currentLi = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = text;
+        currentLi.appendChild(a);
+        ol.appendChild(currentLi);
+      } else if (heading.tagName === 'H3') {
+        if (!currentLi) return;
+        if (!currentSubUl) {
+          currentSubUl = document.createElement('ul');
+          currentSubUl.className = 'toc-sub';
+          currentLi.appendChild(currentSubUl);
+        }
+        const subLi = document.createElement('li');
+        const a = document.createElement('a');
+        a.href = '#' + heading.id;
+        a.textContent = text;
+        subLi.appendChild(a);
+        currentSubUl.appendChild(subLi);
+      }
+    });
+
+    tocBody.appendChild(ol);
+
+    tocBody.querySelectorAll('a').forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.getElementById(this.getAttribute('href').substring(1));
+        if (target) {
+          const offset = 90;
+          const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+          window.scrollTo({ top: top, behavior: 'smooth' });
+        }
+      });
+    });
+
+    tocToggle.addEventListener('click', function() {
+      const isCollapsed = tocWidget.classList.toggle('collapsed');
+      tocToggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+    });
+  })();
 </script>
 
 </body>
