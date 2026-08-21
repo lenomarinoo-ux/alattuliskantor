@@ -26,6 +26,8 @@
 <meta name="twitter:image" content="https://alattuliskantor.web.id/assets/img/logo.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="../assets/img/hero-blog-sm.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -62,8 +64,14 @@
       position: relative;
       padding: 130px 0 50px;
       background: linear-gradient(135deg, rgba(12, 38, 71, 0.92) 0%, rgba(15, 49, 96, 0.80) 100%),
-                  url('../assets/img/hero-blog.webp') center center / cover no-repeat;
+                  url('../assets/img/hero-blog-sm.webp') center center / cover no-repeat;
       overflow: hidden;
+    }
+    @media (min-width: 992px) {
+      .blog-detail-hero {
+        background: linear-gradient(135deg, rgba(12, 38, 71, 0.92) 0%, rgba(15, 49, 96, 0.80) 100%),
+                    url('../assets/img/hero-blog.webp') center center / cover no-repeat;
+      }
     }
     .blog-detail-hero::before {
       content: '';
@@ -839,7 +847,7 @@
 
           <!-- Featured Image -->
           <div class="featured-image">
-            <img src="../assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah.webp" alt="Tips Pengadaan ATK untuk Instansi Pemerintah">
+            <img src="../assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah-sm.webp" srcset="../assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah-sm.webp 760w, ../assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah.webp 1720w" sizes="(max-width: 768px) 100vw, 700px" width="1720" height="960" fetchpriority="high" loading="eager" decoding="async" alt="Tips Pengadaan ATK untuk Instansi Pemerintah">
             <div class="caption">Pengadaan ATK untuk instansi pemerintah membutuhkan perencanaan dan dokumen yang lengkap.</div>
           </div>
 
@@ -942,7 +950,7 @@
             </p>
 
             <div class="blog-image">
-              <img src="../assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah-2.webp" alt="Dokumen pengadaan ATK">
+              <img src="../assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah-2.webp" alt="Dokumen pengadaan ATK" width="1376" height="768" loading="lazy" decoding="async">
               <div class="caption">Dokumen pengadaan ATK untuk instansi pemerintah harus lengkap dan sesuai regulasi.</div>
             </div>
 
@@ -1158,7 +1166,7 @@
           <h4 class="widget-title"><i class="bi bi-journal-text"></i> Artikel Terkait</h4>
 
           <a href="../blog/cara-memilih-vendor-atk.html" class="related-item">
-            <img src="../assets/img/blog/detail-blog-cara-memilih-vendor-atk.webp" alt="Cara Memilih Vendor ATK">
+            <img src="../assets/img/blog/detail-blog-cara-memilih-vendor-atk.webp" alt="Cara Memilih Vendor ATK" width="1720" height="960" loading="lazy" decoding="async">
             <div class="info">
               <h5>Cara Memilih Vendor ATK yang Tepat</h5>
               <div class="date">25 Juli 2026</div>
@@ -1166,7 +1174,7 @@
           </a>
 
           <a href="../blog/distributor-alat-tulis-kantor-terpercaya-di-malang.html" class="related-item">
-            <img src="../assets/img/blog/detail-blog-distributor-alat-tulis-kantor-terpercaya-di-malang.webp" alt="Distributor ATK Malang">
+            <img src="../assets/img/blog/detail-blog-distributor-alat-tulis-kantor-terpercaya-di-malang.webp" alt="Distributor ATK Malang" width="1720" height="960" loading="lazy" decoding="async">
             <div class="info">
               <h5>Distributor ATK Terpercaya di Malang</h5>
               <div class="date">12 Agustus 2026</div>
@@ -1174,7 +1182,7 @@
           </a>
 
           <a href="../blog/supplier-atk-kantor-untuk-perusahaan-di-surabaya.html" class="related-item">
-            <img src="../assets/img/blog/detail-blog-supplier-atk-kantor-untuk-perusahaan-di-surabaya.webp" alt="Supplier ATK Surabaya">
+            <img src="../assets/img/blog/detail-blog-supplier-atk-kantor-untuk-perusahaan-di-surabaya.webp" alt="Supplier ATK Surabaya" width="1720" height="960" loading="lazy" decoding="async">
             <div class="info">
               <h5>Supplier ATK Kantor untuk Perusahaan di Surabaya</h5>
               <div class="date">8 Agustus 2026</div>
@@ -1196,7 +1204,7 @@
       <div class="row g-4">
         <div class="col-md-4">
           <a href="../detail-paket-audit-berkas.html" class="bottom-card">
-            <img src="../assets/img/paket/paket-audit-berkas.webp" alt="Paket Audit / Berkas Besar">
+            <img src="../assets/img/paket/paket-audit-berkas.webp" alt="Paket Audit / Berkas Besar" width="560" height="313" loading="lazy" decoding="async">
             <div class="body">
               <span class="tag">Pengarsipan &amp; Dokumen</span>
               <h4>Paket Audit / Berkas Besar</h4>
@@ -1207,7 +1215,7 @@
         </div>
         <div class="col-md-4">
           <a href="../detail-paket-distribusi-dokumen.html" class="bottom-card">
-            <img src="../assets/img/paket/paket-distribusi-dokumen.webp" alt="Paket Distribusi Dokumen">
+            <img src="../assets/img/paket/paket-distribusi-dokumen.webp" alt="Paket Distribusi Dokumen" width="560" height="313" loading="lazy" decoding="async">
             <div class="body">
               <span class="tag">Pengarsipan &amp; Dokumen</span>
               <h4>Paket Distribusi Dokumen</h4>
@@ -1218,7 +1226,7 @@
         </div>
         <div class="col-md-4">
           <a href="../detail-paket-cetak-fotokopi.html" class="bottom-card">
-            <img src="../assets/img/paket/paket-cetak-fotokopi.webp" alt="Paket Cetak &amp; Fotokopi">
+            <img src="../assets/img/paket/paket-cetak-fotokopi.webp" alt="Paket Cetak &amp; Fotokopi" width="560" height="313" loading="lazy" decoding="async">
             <div class="body">
               <span class="tag">Operasional &amp; Packing</span>
               <h4>Paket Cetak &amp; Fotokopi</h4>
@@ -1301,8 +1309,8 @@
 <!-- ============================================================ -->
 <!-- SCRIPTS -->
 <!-- ============================================================ -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-<script src="../js/script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+<script src="../js/script.js" defer></script>
 
 <script>
   // Back to top

@@ -26,6 +26,8 @@
 <meta name="twitter:image" content="https://alattuliskantor.web.id/assets/img/logo.webp">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preload" as="image" href="assets/img/hero-index-sm.webp" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
@@ -44,6 +46,10 @@
   "description": "Distributor dan supplier alat tulis kantor (ATK) terpercaya untuk kebutuhan pengadaan instansi pemerintah, pendidikan, dan perusahaan di Malang, Surabaya, Jakarta, Denpasar, dan Makassar.",
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Jalan Raya Gampeng No.45, Gampengrejo",
+    "addressLocality": "Kabupaten Kediri",
+    "addressRegion": "Jawa Timur",
+    "postalCode": "64182",
     "addressCountry": "ID"
   },
   "areaServed": ["Malang", "Surabaya", "Jakarta", "Denpasar", "Makassar", "Indonesia"],
@@ -106,7 +112,7 @@
 
 
 <!-- HERO -->
-<section class="hero" style="background-image: url('assets/img/hero-index.webp'); background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; display: flex; align-items: center; padding: 80px 0;">
+<section class="hero bg-hero-index" style="background-size: cover; background-position: center; background-repeat: no-repeat; min-height: 100vh; display: flex; align-items: center; padding: 80px 0;">
   <div class="hero-overlay" style="position: absolute; inset: 0; background: rgba(11, 31, 59, 0.6); z-index: 1;"></div>
 
   <div class="container position-relative" style="z-index: 2;">
@@ -188,7 +194,7 @@
           <img src="assets/img/index.webp" 
                class="rounded-3 w-100" 
                style="height: 380px; width: 100%; object-fit: cover; box-shadow: 0 8px 30px rgba(11, 31, 59, 0.10);" 
-               alt="Gudang penyimpanan stok alat tulis kantor">
+               alt="Gudang penyimpanan stok alat tulis kantor" width="900" height="502" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -263,7 +269,7 @@
     <div class="row g-4">
       <div class="col-sm-6 col-lg-3">
         <div class="product-card">
-          <div class="product-img"><img src="assets/img/produk/pulpen.webp" alt="Pulpen kantor untuk kebutuhan administrasi"></div>
+          <div class="product-img"><img src="assets/img/produk/pulpen.webp" alt="Pulpen kantor untuk kebutuhan administrasi" width="560" height="313" loading="lazy" decoding="async"></div>
           <div class="product-body">
             <span class="sku-tag">SKU: ATK-PLP</span>
             <h6>Pulpen &amp; Alat Tulis</h6>
@@ -274,7 +280,7 @@
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="product-card">
-          <div class="product-img"><img src="assets/img/produk/kertas-hvs.webp" alt="Kertas HVS untuk kebutuhan percetakan kantor"></div>
+          <div class="product-img"><img src="assets/img/produk/kertas-hvs.webp" alt="Kertas HVS untuk kebutuhan percetakan kantor" width="560" height="313" loading="lazy" decoding="async"></div>
           <div class="product-body">
             <span class="sku-tag">SKU: ATK-HVS</span>
             <h6>Kertas HVS</h6>
@@ -285,7 +291,7 @@
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="product-card">
-          <div class="product-img"><img src="assets/img/produk/map-dokumen.webp" alt="Map folder untuk filing dan arsip dokumen kantor"></div>
+          <div class="product-img"><img src="assets/img/produk/map-dokumen.webp" alt="Map folder untuk filing dan arsip dokumen kantor" width="560" height="313" loading="lazy" decoding="async"></div>
           <div class="product-body">
             <span class="sku-tag">SKU: ATK-MAP</span>
             <h6>Map Folder</h6>
@@ -296,7 +302,7 @@
       </div>
       <div class="col-sm-6 col-lg-3">
         <div class="product-card">
-          <div class="product-img"><img src="assets/img/produk/stapler-isi-staples.webp" alt="Stapler dan perlengkapan kantor lainnya"></div>
+          <div class="product-img"><img src="assets/img/produk/stapler-isi-staples.webp" alt="Stapler dan perlengkapan kantor lainnya" width="560" height="313" loading="lazy" decoding="async"></div>
           <div class="product-body">
             <span class="sku-tag">SKU: ATK-STP</span>
             <h6>Stapler &amp; Perlengkapan</h6>
@@ -532,8 +538,8 @@
 </a>
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="js/script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" defer></script>
+  <script src="js/script.js" defer></script>
 
 </body>
 </html>
