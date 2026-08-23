@@ -500,8 +500,9 @@
 
     .related-card img {
       width: 100%;
-      aspect-ratio: 4/3;
+      aspect-ratio: 16/9;
       object-fit: cover;
+      background: var(--gray-100);
     }
 
     .related-card .body {
@@ -514,8 +515,14 @@
     .related-card .body h6 {
       font-weight: 700;
       font-size: 0.95rem;
+      line-height: 1.35;
       color: var(--navy-900);
       margin-bottom: 4px;
+      min-height: 2.7em;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
     }
 
     .related-card .body .price {
@@ -952,51 +959,6 @@
       </a>
     </div>
 
-    <!-- ========================================================== -->
-    <!-- PAKET LAINNYA - RELATED -->
-    <!-- ========================================================== -->
-    <h3 class="section-title mt-5 mb-4" style="font-size:1.2rem; font-weight:700; color:var(--navy-900);">
-      <i class="bi bi-grid-3x3-gap me-2" style="color:var(--maroon);"></i> Paket Lainnya yang Mungkin Anda Suka
-    </h3>
-
-    <div class="row g-4" id="relatedGrid">
-      <!-- Paket Ruang Rapat -->
-      <div class="col-md-4">
-        <a href="detail-paket-ruang-rapat.html" class="related-card">
-          <img src="assets/img/paket-thumbnail/paket-ruang-rapat/paket-ruang-rapat-hero.webp" alt="Paket Ruang Rapat" width="900" height="502" loading="lazy" decoding="async">
-          <div class="body">
-            <h6>Paket Ruang Rapat</h6>
-            <div class="price">Rp 85.000</div>
-            <div class="meta"><i class="bi bi-clock me-1"></i>4 item · Kebutuhan Kantor</div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Paket Administrasi & Keuangan -->
-      <div class="col-md-4">
-        <a href="detail-paket-administrasi-keuangan.html" class="related-card">
-          <img src="assets/img/paket-thumbnail/paket-administrasi-&-keuangan/paket-administras-&-keuangan-hero.webp" alt="Paket Administrasi & Keuangan" width="900" height="502" loading="lazy" decoding="async">
-          <div class="body">
-            <h6>Paket Administrasi &amp; Keuangan</h6>
-            <div class="price">Rp 95.000</div>
-            <div class="meta"><i class="bi bi-clock me-1"></i>5 item · Kebutuhan Kantor</div>
-          </div>
-        </a>
-      </div>
-
-      <!-- Paket Logistik / Packing -->
-      <div class="col-md-4">
-        <a href="detail-paket-logistik-packing.html" class="related-card">
-          <img src="assets/img/paket-thumbnail/paket-logistik/paket-logistik-hero.webp" alt="Paket Logistik / Packing" width="900" height="502" loading="lazy" decoding="async">
-          <div class="body">
-            <h6>Paket Logistik / Packing</h6>
-            <div class="price">Rp 110.000</div>
-            <div class="meta"><i class="bi bi-clock me-1"></i>4 item · Operasional &amp; Packing</div>
-          </div>
-        </a>
-      </div>
-    </div>
-
   </div>
 </section>
 
@@ -1045,9 +1007,6 @@
           <li><i class="bi bi-whatsapp me-2"></i>0889-8964-3555</li>
           <li><i class="bi bi-geo-alt me-2"></i>Melayani pengiriman ke seluruh Indonesia</li>
         </ul>
-        <a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="btn-wa mt-2">
-          <i class="bi bi-whatsapp"></i> Chat WhatsApp
-        </a>
       </div>
     </div>
     <div class="footer-bottom d-flex flex-wrap justify-content-between gap-2">
