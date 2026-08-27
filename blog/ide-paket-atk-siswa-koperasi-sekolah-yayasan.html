@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -639,8 +639,23 @@
 <script>
   function toggleTOC() {
     const tocWidget = document.getElementById('tocWidget');
-    tocWidget.classList.toggle('collapsed');
+    if (!tocWidget) return;
+    const isCollapsed = tocWidget.classList.toggle('collapsed');
+    const tocToggle = document.querySelector('.toc-toggle');
+    if (tocToggle) tocToggle.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
   }
+
+  document.querySelectorAll('#tocBody a').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const target = document.getElementById(this.getAttribute('href').substring(1));
+      if (target) {
+        const offset = 90;
+        const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
 </script>
 <!-- Scroll to Top Button -->
 <button id="scrollTopBtn" class="scroll-top-btn" aria-label="Kembali ke atas" title="Kembali ke atas">
