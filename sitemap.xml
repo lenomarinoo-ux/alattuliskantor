@@ -24,7 +24,7 @@
 
   <url>
     <loc>https://alattuliskantor.web.id/blog.html</loc>
-    <lastmod>2026-08-26</lastmod>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -201,6 +201,28 @@
   <url>
     <loc>https://alattuliskantor.web.id/blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.html</loc>
     <lastmod>2026-08-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Artikel Hari Ke-4 (2026-08-27) -->
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html</loc>
+    <lastmod>2026-08-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/10-merk-pulpen-terbaik-menulis-cepat.html</loc>
+    <lastmod>2026-08-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

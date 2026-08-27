@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="id">
 <head>
 <meta charset="UTF-8">
@@ -757,7 +757,6 @@
       .baca-juga ul li a { font-size: 0.82rem; }
     }
   </style>
-
 </head>
 <body>
 
@@ -1244,13 +1243,6 @@
 <!-- ============================================================ -->
 <!-- FLOATING BUTTONS -->
 <!-- ============================================================ -->
-<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Kembali ke atas" title="Kembali ke atas">
-  <i class="bi bi-chevron-up"></i>
-</button>
-
-<a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp">
-  <i class="bi bi-whatsapp"></i>
-</a>
 
 <!-- ============================================================ -->
 <!-- SCRIPTS -->
@@ -1259,17 +1251,6 @@
 <script src="../js/script.js" defer></script>
 
 <script>
-  // Back to top
-  const backBtn = document.getElementById('scrollTopBtn');
-  window.addEventListener('scroll', function() {
-    if (window.scrollY > 300) {
-      backBtn.classList.add('visible');
-    } else {
-      backBtn.classList.remove('visible');
-    }
-  });
-  backBtn.addEventListener('click', function() {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   });
 
   // Copy link function
@@ -1362,6 +1343,14 @@
     });
   })();
 </script>
+<!-- Scroll to Top Button -->
+<button id="scrollTopBtn" class="scroll-top-btn" aria-label="Kembali ke atas" title="Kembali ke atas">
+  <i class="bi bi-chevron-up"></i>
+</button>
 
+<!-- WA Float Button -->
+<a href="https://wa.me/6288989643555" target="_blank" rel="noopener" class="wa-float" aria-label="Chat WhatsApp">
+  <i class="bi bi-whatsapp"></i>
+</a>
 </body>
 </html>
