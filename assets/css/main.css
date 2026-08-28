@@ -2403,3 +2403,17 @@ textarea:focus-visible {
 .blog-article h4 {
     scroll-margin-top: 90px;
 }
+
+.blog-article .content-body a,
+.content-body a {
+    color: #1d4ed8;
+    font-weight: 600;
+    text-decoration: none;
+    transition: color .25s ease;
+}
+
+.blog-article .content-body a:hover,
+.content-body a:hover {
+    color: var(--maroon);
+    text-decoration: none;
+}
