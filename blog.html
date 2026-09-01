@@ -2,13 +2,16 @@
 <html lang="id">
 
 <head>
-<!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-XXXXXXX');</script>
-<!-- End Google Tag Manager -->
+  <!-- Google Tag Manager -->
+  <script>(function (w, d, s, l, i) {
+      w[l] = w[l] || []; w[l].push({
+        'gtm.start':
+          new Date().getTime(), event: 'gtm.js'
+      }); var f = d.getElementsByTagName(s)[0],
+        j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+    })(window, document, 'script', 'dataLayer', 'GTM-XXXXXXX');</script>
+  <!-- End Google Tag Manager -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Blog Pengadaan ATK & Office Supply Procurement Tips Indonesia | Alat Tulis Kantor</title>
@@ -104,8 +107,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap"
     rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" as="style" onload="this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"></noscript>
+  <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" as="style"
+    onload="this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+  </noscript>
   <link rel="apple-touch-icon" sizes="180x180" href="assets/img/logo.webp">
   <link rel="icon" type="image/webp" sizes="192x192" href="assets/img/logo.webp">
   <link rel="icon" type="image/svg+xml" href="assets/img/logo.webp">
@@ -548,7 +554,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       cursor: pointer;
     }
 
-    .tag-chip:hover, .tag-chip.active {
+    .tag-chip:hover,
+    .tag-chip.active {
       background: var(--navy-800) !important;
       color: var(--white) !important;
       border-color: var(--navy-800) !important;
@@ -619,10 +626,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-XXXXXXX" height="0" width="0"
+      style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
   <!-- ============================================================ -->
   <!-- NAVBAR -->
@@ -685,7 +692,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </section>
 
   <!-- ============================================================ -->
-  <!-- BLOG GRID - 20 ARTIKEL DENGAN SIDEBAR FILTER (COLLAPSIBLE) -->
+  <!-- BLOG GRID - DENGAN SIDEBAR FILTER (COLLAPSIBLE) -->
   <!-- ============================================================ -->
   <section class="section">
     <div class="container">
@@ -700,135 +707,243 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <!-- 1. SEARCH WIDGET -->
             <div class="blog-sidebar-widget search-widget mb-4">
               <div class="search-input-group position-relative">
-                <input type="text" id="blogSearchInput" class="form-control form-control-atk ps-5" placeholder="Cari artikel ATK..." aria-label="Cari artikel ATK">
+                <input type="text" id="blogSearchInput" class="form-control form-control-atk ps-5"
+                  placeholder="Cari artikel ATK..." aria-label="Cari artikel ATK">
                 <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-                <button type="button" class="btn-clear-search d-none" id="clearSearchBtn" title="Hapus pencarian"><i class="bi bi-x-circle-fill"></i></button>
+                <button type="button" class="btn-clear-search d-none" id="clearSearchBtn" title="Hapus pencarian"><i
+                    class="bi bi-x-circle-fill"></i></button>
               </div>
             </div>
 
-            <!-- 2. PRODUK TERLARIS WIDGET (WITH CUSTOM SCROLLBAR) -->
+            <!-- 2. KATEGORI FILTER WIDGET (DESKTOP SIDEBAR) -->
+            <div class="blog-sidebar-widget mb-4">
+              <div class="blog-filter-card rounded-3 border shadow-sm overflow-hidden" id="blogFilterCard">
+                <div class="filter-card-header" onclick="toggleFilterPanel()" title="Klik untuk ciutkan/perluas">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-funnel-fill text-warning"></i>
+                    <h5>KATEGORI ARTIKEL</h5>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <button type="button"
+                      class="btn btn-link p-0 text-decoration-none text-white-50 small fw-bold d-none"
+                      id="resetFilterBtn" onclick="event.stopPropagation(); resetBlogFilter();" title="Reset Filter"
+                      style="font-size:0.72rem;">
+                      <i class="bi bi-arrow-counterclockwise"></i> Reset
+                    </button>
+                    <span class="badge filter-status-badge">Terbuka</span>
+                    <i class="bi bi-chevron-down filter-chevron"></i>
+                  </div>
+                </div>
+                <div class="filter-card-body">
+                  <div class="filter-list d-flex flex-column gap-1">
+                    <button type="button" class="btn-filter-item active" data-filter="all">
+                      <span><i class="bi bi-grid-fill me-2 category-icon"></i> Semua Artikel</span>
+                      <span class="badge rounded-pill filter-count">29</span>
+                    </button>
+                    <button type="button" class="btn-filter-item" data-filter="sekolah">
+                      <span><i class="bi bi-mortarboard me-2 category-icon"></i> ATK Sekolah &amp; PAUD/TK</span>
+                      <span class="badge rounded-pill filter-count">6</span>
+                    </button>
+                    <button type="button" class="btn-filter-item" data-filter="pemerintah">
+                      <span><i class="bi bi-building me-2 category-icon"></i> Pengadaan Pemerintah</span>
+                      <span class="badge rounded-pill filter-count">5</span>
+                    </button>
+                    <button type="button" class="btn-filter-item" data-filter="kantor">
+                      <span><i class="bi bi-inboxes me-2 category-icon"></i> Perlengkapan &amp; Arsip Kantor</span>
+                      <span class="badge rounded-pill filter-count">6</span>
+                    </button>
+                    <button type="button" class="btn-filter-item" data-filter="produk">
+                      <span><i class="bi bi-pen me-2 category-icon"></i> Produk &amp; Pulpen</span>
+                      <span class="badge rounded-pill filter-count">2</span>
+                    </button>
+                    <button type="button" class="btn-filter-item" data-filter="procurement">
+                      <span><i class="bi bi-clipboard-check me-2 category-icon"></i> Procurement &amp; B2B</span>
+                      <span class="badge rounded-pill filter-count">8</span>
+                    </button>
+                    <button type="button" class="btn-filter-item" data-filter="lokasi">
+                      <span><i class="bi bi-geo-alt me-2 category-icon"></i> Regional</span>
+                      <span class="badge rounded-pill filter-count">2</span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. PRODUK TERLARIS WIDGET (WITH CUSTOM SCROLLBAR) -->
             <div class="blog-sidebar-widget bestseller-widget bg-white p-3 rounded-3 border mb-4 shadow-sm">
-              <h6 class="fw-bold text-navy-900 border-bottom pb-2 mb-3 small d-flex align-items-center gap-2 m-0" style="font-size:0.85rem; letter-spacing:0.04em;">
+              <h6 class="fw-bold text-navy-900 border-bottom pb-2 mb-3 small d-flex align-items-center gap-2 m-0"
+                style="font-size:0.85rem; letter-spacing:0.04em;">
                 <i class="bi bi-star-fill text-warning"></i> PRODUK TERLARIS
               </h6>
               <div class="bestseller-list d-flex flex-column gap-2 mt-2 widget-scroll-container">
 
                 <!-- Item 1 -->
-                <a href="produk.html#kertas" class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
-                  <img src="assets/img/produk/kertas-hvs.webp" alt="Kertas HVS A4 PaperOne" class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
+                <a href="produk.html#kertas"
+                  class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
+                  <img src="assets/img/produk/kertas-hvs.webp" alt="Kertas HVS A4 PaperOne"
+                    class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
                   <div class="flex-grow-1 overflow-hidden">
                     <span class="badge-cat-tag">Kertas &amp; Catatan</span>
-                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate" style="font-size:0.8rem; line-height:1.25;">Kertas HVS A4 75gr PaperOne</h6>
+                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate"
+                      style="font-size:0.8rem; line-height:1.25;">Kertas HVS A4 75gr PaperOne</h6>
                     <div class="d-flex align-items-center justify-content-between">
-                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 48.500 <span class="text-muted fw-normal" style="font-size:0.68rem;">/rim</span></span>
-                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle" style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
+                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 48.500 <span
+                          class="text-muted fw-normal" style="font-size:0.68rem;">/rim</span></span>
+                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                        style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
                     </div>
                   </div>
                 </a>
 
                 <!-- Item 2 -->
-                <a href="produk.html#alat-tulis" class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
-                  <img src="assets/img/produk/pulpen.webp" alt="Pulpen Gel Black 0.5mm" class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
+                <a href="produk.html#alat-tulis"
+                  class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
+                  <img src="assets/img/produk/pulpen.webp" alt="Pulpen Gel Black 0.5mm"
+                    class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
                   <div class="flex-grow-1 overflow-hidden">
                     <span class="badge-cat-tag">Alat Tulis</span>
-                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate" style="font-size:0.8rem; line-height:1.25;">Pulpen Gel Black 0.5mm (Pack)</h6>
+                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate"
+                      style="font-size:0.8rem; line-height:1.25;">Pulpen Gel Black 0.5mm (Pack)</h6>
                     <div class="d-flex align-items-center justify-content-between">
-                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 24.000 <span class="text-muted fw-normal" style="font-size:0.68rem;">/pack</span></span>
-                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle" style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
+                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 24.000 <span
+                          class="text-muted fw-normal" style="font-size:0.68rem;">/pack</span></span>
+                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                        style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
                     </div>
                   </div>
                 </a>
 
                 <!-- Item 3 -->
-                <a href="produk.html#filing" class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
-                  <img src="assets/img/produk/ordner-box-file.webp" alt="Ordner Box File F4 75mm" class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
+                <a href="produk.html#filing"
+                  class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
+                  <img src="assets/img/produk/ordner-box-file.webp" alt="Ordner Box File F4 75mm"
+                    class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
                   <div class="flex-grow-1 overflow-hidden">
                     <span class="badge-cat-tag">Pengarsipan</span>
-                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate" style="font-size:0.8rem; line-height:1.25;">Ordner Box File F4 75mm</h6>
+                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate"
+                      style="font-size:0.8rem; line-height:1.25;">Ordner Box File F4 75mm</h6>
                     <div class="d-flex align-items-center justify-content-between">
-                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 22.500 <span class="text-muted fw-normal" style="font-size:0.68rem;">/pcs</span></span>
-                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle" style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
+                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 22.500 <span
+                          class="text-muted fw-normal" style="font-size:0.68rem;">/pcs</span></span>
+                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                        style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
                     </div>
                   </div>
                 </a>
 
                 <!-- Item 4 -->
-                <a href="produk.html#alat-tulis" class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
-                  <img src="assets/img/produk/stapler-isi-staples.webp" alt="Stapler &amp; Isi Staples HD-10" class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
+                <a href="produk.html#alat-tulis"
+                  class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
+                  <img src="assets/img/produk/stapler-isi-staples.webp" alt="Stapler &amp; Isi Staples HD-10"
+                    class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
                   <div class="flex-grow-1 overflow-hidden">
                     <span class="badge-cat-tag">Peralatan Kantor</span>
-                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate" style="font-size:0.8rem; line-height:1.25;">Stapler &amp; Isi Staples HD-10</h6>
+                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate"
+                      style="font-size:0.8rem; line-height:1.25;">Stapler &amp; Isi Staples HD-10</h6>
                     <div class="d-flex align-items-center justify-content-between">
-                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 14.500 <span class="text-muted fw-normal" style="font-size:0.68rem;">/set</span></span>
-                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle" style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
+                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 14.500 <span
+                          class="text-muted fw-normal" style="font-size:0.68rem;">/set</span></span>
+                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                        style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
                     </div>
                   </div>
                 </a>
 
                 <!-- Item 5 -->
-                <a href="produk.html#kertas" class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
-                  <img src="assets/img/produk/sticky-notes.webp" alt="Sticky Notes Post-it 3x3" class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
+                <a href="produk.html#kertas"
+                  class="bestseller-item d-flex gap-2 text-decoration-none align-items-center p-2 rounded-2">
+                  <img src="assets/img/produk/sticky-notes.webp" alt="Sticky Notes Post-it 3x3"
+                    class="rounded border flex-shrink-0" width="54" height="54" style="object-fit:cover;">
                   <div class="flex-grow-1 overflow-hidden">
                     <span class="badge-cat-tag">Kertas &amp; Catatan</span>
-                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate" style="font-size:0.8rem; line-height:1.25;">Sticky Notes Post-it 3x3 (Neon)</h6>
+                    <h6 class="bestseller-title small text-navy-900 fw-bold mb-1 text-truncate"
+                      style="font-size:0.8rem; line-height:1.25;">Sticky Notes Post-it 3x3 (Neon)</h6>
                     <div class="d-flex align-items-center justify-content-between">
-                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 8.500 <span class="text-muted fw-normal" style="font-size:0.68rem;">/pack</span></span>
-                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle" style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
+                      <span class="text-navy-800 fw-bold small" style="font-size:0.78rem;">Rp 8.500 <span
+                          class="text-muted fw-normal" style="font-size:0.68rem;">/pack</span></span>
+                      <span class="badge bg-danger-subtle text-danger border border-danger-subtle"
+                        style="font-size:0.62rem;"><i class="bi bi-fire"></i> Laris</span>
                     </div>
                   </div>
                 </a>
 
               </div>
-              <a href="produk.html" class="btn btn-outline-navy w-100 btn-sm mt-3 fw-bold d-inline-flex align-items-center justify-content-center gap-1" style="font-size:0.78rem; padding: 6px 12px; border-radius: 8px;">
+              <a href="produk.html"
+                class="btn btn-outline-navy w-100 btn-sm mt-3 fw-bold d-inline-flex align-items-center justify-content-center gap-1"
+                style="font-size:0.78rem; padding: 6px 12px; border-radius: 8px;">
                 <i class="bi bi-grid-fill me-1"></i> Lihat Semua Produk &rarr;
               </a>
             </div>
 
-            <!-- 3. ARTIKEL POPULER WIDGET -->
+            <!-- 4. ARTIKEL POPULER WIDGET -->
             <div class="blog-sidebar-widget popular-widget bg-white p-3 rounded-3 border mb-4 shadow-sm">
-              <h6 class="fw-bold text-navy-900 border-bottom pb-2 mb-3 small d-flex align-items-center gap-2" style="font-size:0.88rem; letter-spacing:0.04em;">
+              <h6 class="fw-bold text-navy-900 border-bottom pb-2 mb-3 small d-flex align-items-center gap-2"
+                style="font-size:0.88rem; letter-spacing:0.04em;">
                 <i class="bi bi-fire text-danger"></i> ARTIKEL POPULER
               </h6>
               <div class="popular-list d-flex flex-column gap-3">
-                <a href="blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html" class="popular-item d-flex gap-2 text-decoration-none align-items-center">
-                  <img src="assets/img/blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.webp" alt="E-Katalog Pemda" class="rounded" width="56" height="56" style="object-fit:cover;">
+                <a href="blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html"
+                  class="popular-item d-flex gap-2 text-decoration-none align-items-center">
+                  <img src="assets/img/blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.webp" alt="E-Katalog Pemda"
+                    class="rounded" width="56" height="56" style="object-fit:cover;">
                   <div>
-                    <h6 class="popular-title small text-navy-900 fw-bold mb-1" style="font-size:0.8rem; line-height:1.3;">Cara Transaksi ATK E-Katalog Pemda</h6>
-                    <span class="text-muted" style="font-size:0.7rem;"><i class="bi bi-clock me-1"></i> 5 mnt baca</span>
+                    <h6 class="popular-title small text-navy-900 fw-bold mb-1"
+                      style="font-size:0.8rem; line-height:1.3;">Cara Transaksi ATK E-Katalog Pemda</h6>
+                    <span class="text-muted" style="font-size:0.7rem;"><i class="bi bi-clock me-1"></i> 5 mnt
+                      baca</span>
                   </div>
                 </a>
-                <a href="blog/sop-pengadaan-atk-general-affair.html" class="popular-item d-flex gap-2 text-decoration-none align-items-center">
-                  <img src="assets/img/blog/sop-pengadaan-atk-general-affair.webp" alt="SOP GA" class="rounded" width="56" height="56" style="object-fit:cover;">
+                <a href="blog/sop-pengadaan-atk-general-affair.html"
+                  class="popular-item d-flex gap-2 text-decoration-none align-items-center">
+                  <img src="assets/img/blog/sop-pengadaan-atk-general-affair.webp" alt="SOP GA" class="rounded"
+                    width="56" height="56" style="object-fit:cover;">
                   <div>
-                    <h6 class="popular-title small text-navy-900 fw-bold mb-1" style="font-size:0.8rem; line-height:1.3;">SOP Pengadaan ATK Tim General Affair</h6>
-                    <span class="text-muted" style="font-size:0.7rem;"><i class="bi bi-clock me-1"></i> 6 mnt baca</span>
+                    <h6 class="popular-title small text-navy-900 fw-bold mb-1"
+                      style="font-size:0.8rem; line-height:1.3;">SOP Pengadaan ATK Tim General Affair</h6>
+                    <span class="text-muted" style="font-size:0.7rem;"><i class="bi bi-clock me-1"></i> 6 mnt
+                      baca</span>
                   </div>
                 </a>
-                <a href="blog/paket-atk-onboarding-kit-karyawan-baru.html" class="popular-item d-flex gap-2 text-decoration-none align-items-center">
-                  <img src="assets/img/blog/paket-atk-onboarding-kit-karyawan-baru.webp" alt="Onboarding Kit" class="rounded" width="56" height="56" style="object-fit:cover;">
+                <a href="blog/paket-atk-onboarding-kit-karyawan-baru.html"
+                  class="popular-item d-flex gap-2 text-decoration-none align-items-center">
+                  <img src="assets/img/blog/paket-atk-onboarding-kit-karyawan-baru.webp" alt="Onboarding Kit"
+                    class="rounded" width="56" height="56" style="object-fit:cover;">
                   <div>
-                    <h6 class="popular-title small text-navy-900 fw-bold mb-1" style="font-size:0.8rem; line-height:1.3;">Paket Onboarding Kit Karyawan Baru</h6>
-                    <span class="text-muted" style="font-size:0.7rem;"><i class="bi bi-clock me-1"></i> 4 mnt baca</span>
+                    <h6 class="popular-title small text-navy-900 fw-bold mb-1"
+                      style="font-size:0.8rem; line-height:1.3;">Paket Onboarding Kit Karyawan Baru</h6>
+                    <span class="text-muted" style="font-size:0.7rem;"><i class="bi bi-clock me-1"></i> 4 mnt
+                      baca</span>
                   </div>
                 </a>
               </div>
             </div>
 
-            <!-- 4. TAG POPULER WIDGET -->
+            <!-- 5. TAG POPULER WIDGET -->
             <div class="blog-sidebar-widget tags-widget bg-white p-3 rounded-3 border shadow-sm mb-4">
-              <h6 class="fw-bold text-navy-900 border-bottom pb-2 mb-3 small d-flex align-items-center gap-2" style="font-size:0.88rem; letter-spacing:0.04em;">
+              <h6 class="fw-bold text-navy-900 border-bottom pb-2 mb-3 small d-flex align-items-center gap-2"
+                style="font-size:0.88rem; letter-spacing:0.04em;">
                 <i class="bi bi-tags-fill text-navy-600"></i> TAG POPULER
               </h6>
               <div class="d-flex flex-wrap gap-1">
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="e-katalog">#E-Katalog</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="e-katalog">#E-Katalog</button>
                 <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="tkdn">#TKDN</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="kertas">#KertasHVS</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="sekolah">#ATKSekolah</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="sop">#SOPPengadaan</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="pulpen">#Pulpen</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="nota">#KlaimNota</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="malang">#Malang</button>
-                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="surabaya">#Surabaya</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="kertas">#KertasHVS</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="sekolah">#ATKSekolah</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="sop">#SOPPengadaan</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="pulpen">#Pulpen</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="meja rapat">#MejaRapat</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="nota">#KlaimNota</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="malang">#Malang</button>
+                <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+                  data-tag="surabaya">#Surabaya</button>
               </div>
             </div>
 
@@ -840,507 +955,633 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <!-- ============================================================ -->
         <div class="col-lg-9">
           <div class="row g-4 blog-grid">
-                              <!-- Article: Day 8 Slot 3 (17:00) -->
-          <div class="col-lg-4 col-md-6" data-category="sekolah" data-aos="fade-up" data-aos-delay="0">
-            <div class="blog-card">
-              <div class="blog-img">
-                <img src="assets/img/blog/atk-sekolah-4-hari-8.webp" alt="Daftar Alat Peraga Edukatif dan ATK Penunjang Belajar Siswa PAUD/TK" loading="lazy" decoding="async">
-              </div>
-              <div class="blog-body">
-                <span class="blog-meta"><i class="bi bi-palette"></i> ATK Sekolah &amp; PAUD/TK</span>
-                <h5><a href="blog/daftar-alat-peraga-edukatif-atk-paud-tk.html">Daftar Alat Peraga Edukatif &amp; ATK Belajar Siswa PAUD/TK</a></h5>
-                <p class="blog-excerpt">Daftar lengkap alat peraga edukatif dan ATK penunjang belajar siswa PAUD/TK, plus solusi bagi koperasi sekolah yang kekurangan pasokan buku tulis grosir murah.</p>
-                <a href="blog/daftar-alat-peraga-edukatif-atk-paud-tk.html" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-<!-- Article: Day 8 Slot 1 (08:00) -->
-          <div class="col-lg-4 col-md-6" data-category="procurement" data-aos="fade-up" data-aos-delay="0">
-            <div class="blog-card">
-              <div class="blog-img">
-                <img src="assets/img/blog/download-checklist-kebutuhan-atk-bulanan-2.webp" alt="Cara Mencegah Stok ATK Tiba-Tiba Habis: Checklist & Sistem Re-Order Point" loading="lazy" decoding="async">
-              </div>
-              <div class="blog-body">
-                <span class="blog-meta"><i class="bi bi-shield-check"></i> Pengadaan &amp; Procurement</span>
-                <h5><a href="blog/cara-mencegah-stok-atk-habis-checklist-reorder-point.html">Cara Mencegah Stok ATK Tiba-Tiba Habis: Checklist &amp; Sistem Re-Order Point</a></h5>
-                <p class="blog-excerpt">Cegah stok ATK tiba-tiba habis saat dibutuhkan dokumen penting dengan checklist kebutuhan bulanan yang disesuaikan jumlah karyawan kantor Anda.</p>
-                <a href="blog/cara-mencegah-stok-atk-habis-checklist-reorder-point.html" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+
+            <!-- ========================================================== -->
+            <!-- ARTIKEL 1: Membeli Kertas Gambar Grosir untuk Pelajaran Seni Budaya di Sekolah -->
+            <!-- ========================================================== -->
+            <div class="col-lg-4 col-md-6" data-category="sekolah" data-aos="fade-up" data-aos-delay="0">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/membeli-kertas-gambar-grosir-untuk-pelajaran-seni-budaya-di-sekolah.webp"
+                    alt="Membeli Kertas Gambar Grosir untuk Pelajaran Seni Budaya di Sekolah" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-palette"></i> ATK Sekolah &amp; PAUD/TK</span>
+                  <h5><a href="blog/membeli-kertas-gambar-grosir-untuk-pelajaran-seni-budaya-di-sekolah.html">Membeli
+                      Kertas Gambar Grosir untuk Pelajaran Seni Budaya di Sekolah</a></h5>
+                  <p class="blog-excerpt">Panduan membeli kertas gambar grosir untuk pelajaran seni budaya di sekolah,
+                    termasuk cara memastikan bahan pewarna yang digunakan aman dan bebas racun bagi siswa.</p>
+                  <a href="blog/membeli-kertas-gambar-grosir-untuk-pelajaran-seni-budaya-di-sekolah.html"
+                    class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
               </div>
             </div>
-          </div>
-<!-- New Article: Day 7 Slot 3 -->
-                    <!-- Article: Day 8 Slot 2 (13:00) -->
-          <div class="col-lg-4 col-md-6" data-category="kantor" data-aos="fade-up" data-aos-delay="10">
-            <div class="blog-card">
-              <div class="blog-img">
-                <img src="assets/img/blog/daftar-atk-divisi-keuangan-2.webp" alt="Paket ATK Arsip Pajak Divisi Keuangan: Standar Bebas Lapuk 10 Tahun" loading="lazy" decoding="async">
-              </div>
-              <div class="blog-body">
-                <span class="blog-meta"><i class="bi bi-shield-lock"></i> Perlengkapan &amp; Arsip</span>
-                <h5><a href="blog/paket-atk-arsip-pajak-divisi-keuangan.html">Paket ATK Arsip Pajak Divisi Keuangan: Standar Bebas Lapuk 10 Tahun</a></h5>
-                <p class="blog-excerpt">Cegah dokumen arsip pajak tahunan rusak akibat folder yang cepat lapuk dengan memilih paket ATK kantor dan bahan arsip yang tepat untuk divisi keuangan.</p>
-                <a href="blog/paket-atk-arsip-pajak-divisi-keuangan.html" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
-              </div>
-            </div>
-          </div>
-<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="0">
-            <div class="blog-card">
-              <div class="blog-img">
-                <img src="assets/img/blog/daftar-atk-divisi-keuangan.webp" alt="Daftar ATK Divisi Keuangan yang Wajib Selalu Tersedia Setiap Akhir Bulan" loading="lazy" decoding="async">
-              </div>
-              <div class="blog-body">
-                <span class="blog-meta"><i class="bi bi-calculator"></i> Perlengkapan Kantor</span>
-                <h5><a href="blog/daftar-atk-divisi-keuangan-wajib-selalu-tersedia.html">Daftar ATK Divisi Keuangan yang Wajib Selalu Tersedia Setiap Akhir Bulan</a></h5>
-                <p class="blog-excerpt">Daftar lengkap ATK yang wajib selalu tersedia di divisi keuangan setiap akhir bulan, plus tips mengorganisir meja kerja agar tumpukan dokumen tidak berantakan.</p>
-                <a href="blog/daftar-atk-divisi-keuangan-wajib-selalu-tersedia.html" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+
+            <!-- ========================================================== -->
+            <!-- ARTIKEL 2: Menyusun Spesifikasi Teknis ATK Pemerintah yang Adil & Sesuai Aturan LKPP -->
+            <!-- ========================================================== -->
+            <div class="col-lg-4 col-md-6" data-category="pemerintah" data-aos="fade-up" data-aos-delay="10">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/Menyusun-Spesifikasi-Teknis-ATK-Pemerintah-yang-Adil-&-Sesuai-Aturan-LKPP.webp
+                  " alt="Menyusun Spesifikasi Teknis ATK Pemerintah yang Adil & Sesuai Aturan LKPP" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-building"></i> Pengadaan Pemerintah</span>
+                  <h5><a
+                      href="blog/Menyusun-Spesifikasi-Teknis-ATK-Pemerintah-yang-Adil-&-Sesuai-Aturan-LKPP.html">Menyusun
+                      Spesifikasi Teknis ATK Pemerintah yang Adil &amp; Sesuai Aturan LKPP</a></h5>
+                  <p class="blog-excerpt">Panduan menyusun spesifikasi teknis ATK pemerintah yang adil dan sesuai aturan
+                    LKPP, plus cara memastikan vendor tidak lambat mengirim dokumen BAST setelah barang sampai.</p>
+                  <a href="blog/Menyusun-Spesifikasi-Teknis-ATK-Pemerintah-yang-Adil-&-Sesuai-Aturan-LKPP.html"
+                    class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
               </div>
             </div>
-          </div>
-          <!-- New Article: Day 7 Slot 2 -->
-          <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="20">
-            <div class="blog-card">
-              <div class="blog-img">
-                <img src="assets/img/blog/download-checklist-kebutuhan-atk-bulanan.webp" alt="Download Checklist Kebutuhan ATK Bulanan Kantor Sesuai Jumlah Karyawan" loading="lazy" decoding="async">
+
+            <!-- Article: Day 9 Slot 1 (08:00) -->
+            <div class="col-lg-4 col-md-6" data-category="kantor" data-aos="fade-up" data-aos-delay="0">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img
+                    src="assets/img/blog/menata-peralatan-meja-rapat-yang-profesional-untuk-menyambut-klien-penting.webp"
+                    alt="Menata Peralatan Meja Rapat yang Profesional untuk Menyambut Klien Penting" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-easel"></i> Perlengkapan Kantor</span>
+                  <h5><a
+                      href="blog/menata-peralatan-meja-rapat-yang-profesional-untuk-menyambut-klien-penting.html">Menata
+                      Peralatan Meja Rapat yang Profesional untuk Menyambut Klien Penting</a></h5>
+                  <p class="blog-excerpt">Panduan menata peralatan meja rapat yang profesional untuk menyambut klien
+                    penting, lengkap dengan tips memilih kertas yang tidak memicu printer macet.</p>
+                  <a href="blog/menata-peralatan-meja-rapat-yang-profesional-untuk-menyambut-klien-penting.html"
+                    class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
               </div>
-              <div class="blog-body">
-                <span class="blog-meta"><i class="bi bi-journal-check"></i> Manajemen & Operasional</span>
-                <h5><a href="blog/download-checklist-kebutuhan-atk-bulanan-kantor-sesuai-jumlah-karyawan.html">Download Checklist Kebutuhan ATK Bulanan &amp; Estimasi Anggaran Kantor</a></h5>
-                <p class="blog-excerpt">Checklist kebutuhan ATK bulanan kantor sesuai jumlah karyawan, lengkap dengan tips menyederhanakan administrasi klaim nota pembelian yang sering merepotkan staf GA.</p>
-                <a href="blog/download-checklist-kebutuhan-atk-bulanan-kantor-sesuai-jumlah-karyawan.html" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            </div>
+
+            <!-- Article: Day 8 Slot 3 (17:00) -->
+            <div class="col-lg-4 col-md-6" data-category="sekolah" data-aos="fade-up" data-aos-delay="0">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/atk-sekolah-4-hari-8.webp"
+                    alt="Daftar Alat Peraga Edukatif dan ATK Penunjang Belajar Siswa PAUD/TK" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-palette"></i> ATK Sekolah &amp; PAUD/TK</span>
+                  <h5><a href="blog/daftar-alat-peraga-edukatif-atk-paud-tk.html">Daftar Alat Peraga Edukatif &amp; ATK
+                      Belajar Siswa PAUD/TK</a></h5>
+                  <p class="blog-excerpt">Daftar lengkap alat peraga edukatif dan ATK penunjang belajar siswa PAUD/TK,
+                    plus solusi bagi koperasi sekolah yang kekurangan pasokan buku tulis grosir murah.</p>
+                  <a href="blog/daftar-alat-peraga-edukatif-atk-paud-tk.html" class="read-more">Baca Selengkapnya <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
               </div>
             </div>
-          </div>
-        <!-- New Article: Day 7 Slot 1 -->
-        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="50">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/kelebihan-membeli-atk-di-grosir-atk-termurah.webp" alt="Kelebihan Membeli ATK di Grosir ATK Termurah dengan Sistem Pembayaran Tempo" loading="lazy" decoding="async">
+            <!-- Article: Day 8 Slot 1 (08:00) -->
+            <div class="col-lg-4 col-md-6" data-category="procurement" data-aos="fade-up" data-aos-delay="0">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/download-checklist-kebutuhan-atk-bulanan-2.webp"
+                    alt="Cara Mencegah Stok ATK Tiba-Tiba Habis: Checklist & Sistem Re-Order Point" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-shield-check"></i> Pengadaan &amp; Procurement</span>
+                  <h5><a href="blog/cara-mencegah-stok-atk-habis-checklist-reorder-point.html">Cara Mencegah Stok ATK
+                      Tiba-Tiba Habis: Checklist &amp; Sistem Re-Order Point</a></h5>
+                  <p class="blog-excerpt">Cegah stok ATK tiba-tiba habis saat dibutuhkan dokumen penting dengan
+                    checklist kebutuhan bulanan yang disesuaikan jumlah karyawan kantor Anda.</p>
+                  <a href="blog/cara-mencegah-stok-atk-habis-checklist-reorder-point.html" class="read-more">Baca
+                    Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-wallet2"></i> B2B Keuangan</span>
-              <h5><a href="blog/kelebihan-membeli-atk-di-grosir-atk-termurah-dengan-sistem-pembayaran-tempo.html">Kelebihan Membeli ATK di Grosir ATK Termurah dengan Sistem Pembayaran Tempo</a></h5>
-              <p class="blog-excerpt">Pelajari kelebihan membeli ATK di distributor alat tulis kantor dengan sistem pembayaran tempo, serta cara memilih supplier yang menyediakan diskon bulk terbaik.</p>
-              <a href="blog/kelebihan-membeli-atk-di-grosir-atk-termurah-dengan-sistem-pembayaran-tempo.html" class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+            <!-- New Article: Day 7 Slot 3 -->
+            <!-- Article: Day 8 Slot 2 (13:00) -->
+            <div class="col-lg-4 col-md-6" data-category="kantor" data-aos="fade-up" data-aos-delay="10">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/daftar-atk-divisi-keuangan-2.webp"
+                    alt="Paket ATK Arsip Pajak Divisi Keuangan: Standar Bebas Lapuk 10 Tahun" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-shield-lock"></i> Perlengkapan &amp; Arsip</span>
+                  <h5><a href="blog/paket-atk-arsip-pajak-divisi-keuangan.html">Paket ATK Arsip Pajak Divisi Keuangan:
+                      Standar Bebas Lapuk 10 Tahun</a></h5>
+                  <p class="blog-excerpt">Cegah dokumen arsip pajak tahunan rusak akibat folder yang cepat lapuk dengan
+                    memilih paket ATK kantor dan bahan arsip yang tepat untuk divisi keuangan.</p>
+                  <a href="blog/paket-atk-arsip-pajak-divisi-keuangan.html" class="read-more">Baca Selengkapnya <i
+                      class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
+            <!-- Article: Day 7 Slot 3 -->
+            <div class="col-lg-4 col-md-6" data-category="kantor" data-aos="fade-up" data-aos-delay="0">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/daftar-atk-divisi-keuangan.webp"
+                    alt="Daftar ATK Divisi Keuangan yang Wajib Selalu Tersedia Setiap Akhir Bulan" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-calculator"></i> Perlengkapan Kantor</span>
+                  <h5><a href="blog/daftar-atk-divisi-keuangan-wajib-selalu-tersedia.html">Daftar ATK Divisi Keuangan
+                      yang Wajib Selalu Tersedia Setiap Akhir Bulan</a></h5>
+                  <p class="blog-excerpt">Daftar lengkap ATK yang wajib selalu tersedia di divisi keuangan setiap akhir
+                    bulan, plus tips mengorganisir meja kerja agar tumpukan dokumen tidak berantakan.</p>
+                  <a href="blog/daftar-atk-divisi-keuangan-wajib-selalu-tersedia.html" class="read-more">Baca
+                    Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- New Article: Day 7 Slot 2 -->
+            <div class="col-lg-4 col-md-6" data-category="procurement" data-aos="fade-up" data-aos-delay="20">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/download-checklist-kebutuhan-atk-bulanan.webp"
+                    alt="Download Checklist Kebutuhan ATK Bulanan Kantor Sesuai Jumlah Karyawan" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-journal-check"></i> Manajemen & Operasional</span>
+                  <h5><a
+                      href="blog/download-checklist-kebutuhan-atk-bulanan-kantor-sesuai-jumlah-karyawan.html">Download
+                      Checklist Kebutuhan ATK Bulanan &amp; Estimasi Anggaran Kantor</a></h5>
+                  <p class="blog-excerpt">Checklist kebutuhan ATK bulanan kantor sesuai jumlah karyawan, lengkap dengan
+                    tips menyederhanakan administrasi klaim nota pembelian yang sering merepotkan staf GA.</p>
+                  <a href="blog/download-checklist-kebutuhan-atk-bulanan-kantor-sesuai-jumlah-karyawan.html"
+                    class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+            <!-- New Article: Day 7 Slot 1 -->
+            <div class="col-lg-4 col-md-6" data-category="procurement" data-aos="fade-up" data-aos-delay="50">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/kelebihan-membeli-atk-di-grosir-atk-termurah.webp"
+                    alt="Kelebihan Membeli ATK di Grosir ATK Termurah dengan Sistem Pembayaran Tempo" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-wallet2"></i> B2B Keuangan</span>
+                  <h5><a
+                      href="blog/kelebihan-membeli-atk-di-grosir-atk-termurah-dengan-sistem-pembayaran-tempo.html">Kelebihan
+                      Membeli ATK di Grosir ATK Termurah dengan Sistem Pembayaran Tempo</a></h5>
+                  <p class="blog-excerpt">Pelajari kelebihan membeli ATK di distributor alat tulis kantor dengan sistem
+                    pembayaran tempo, serta cara memilih supplier yang menyediakan diskon bulk terbaik.</p>
+                  <a href="blog/kelebihan-membeli-atk-di-grosir-atk-termurah-dengan-sistem-pembayaran-tempo.html"
+                    class="read-more">Baca Selengkapnya <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
 
-        <!-- ===== HARI 5 — ARTIKEL 1: Mengapa Kepatuhan TKDN ATK Sangat Menentukan Kemenangan Tender Pemerintah ===== -->
-        <div class="col-md-6 col-lg-4" data-category="pemerintah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/kepatuhan-tkdn-atk-tender-pemerintah-lpse.webp"
-                alt="Mengapa Kepatuhan TKDN ATK Sangat Menentukan Kemenangan Tender Pemerintah" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 5 — ARTIKEL 1: Mengapa Kepatuhan TKDN ATK Sangat Menentukan Kemenangan Tender Pemerintah ===== -->
+            <div class="col-md-6 col-lg-4" data-category="pemerintah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/kepatuhan-tkdn-atk-tender-pemerintah-lpse.webp"
+                    alt="Mengapa Kepatuhan TKDN ATK Sangat Menentukan Kemenangan Tender Pemerintah" width="1720"
+                    height="960" loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-shield-check"></i> Pengadaan Pemerintah</span>
+                  <h5><a href="blog/kepatuhan-tkdn-atk-tender-pemerintah-lpse.html">Mengapa Kepatuhan TKDN ATK Sangat
+                      Menentukan Kemenangan Tender Pemerintah</a></h5>
+                  <p class="blog-excerpt">Pentingnya sertifikat TKDN dalam evaluasi tender LPSE, rumus HEA, dan strategi
+                    memenangkan pengadaan barang kedinasan.</p>
+                  <a href="blog/kepatuhan-tkdn-atk-tender-pemerintah-lpse.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-shield-check"></i> Pengadaan Pemerintah</span>
-              <h5><a href="blog/kepatuhan-tkdn-atk-tender-pemerintah-lpse.html">Mengapa Kepatuhan TKDN ATK Sangat Menentukan Kemenangan Tender Pemerintah</a></h5>
-              <p class="blog-excerpt">Pentingnya sertifikat TKDN dalam evaluasi tender LPSE, rumus HEA, dan strategi memenangkan pengadaan barang kedinasan.</p>
-              <a href="blog/kepatuhan-tkdn-atk-tender-pemerintah-lpse.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 5 — ARTIKEL 2: Cara Menyimpan Kertas HVS Agar Tidak Lembap dan Macet di Mesin Fotokopi ===== -->
-        <div class="col-md-6 col-lg-4" data-category="produk">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/cara-menyimpan-kertas-hvs-tidak-lembap-macet.webp"
-                alt="Cara Menyimpan Kertas HVS Agar Tidak Lembap dan Macet di Mesin Fotokopi" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 5 — ARTIKEL 2: Cara Menyimpan Kertas HVS Agar Tidak Lembap dan Macet di Mesin Fotokopi ===== -->
+            <div class="col-md-6 col-lg-4" data-category="produk">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/cara-menyimpan-kertas-hvs-tidak-lembap-macet.webp"
+                    alt="Cara Menyimpan Kertas HVS Agar Tidak Lembap dan Macet di Mesin Fotokopi" width="1720"
+                    height="960" loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-file-earmark-text"></i> Panduan Produk</span>
+                  <h5><a href="blog/cara-menyimpan-kertas-hvs-tidak-lembap-macet.html">Cara Menyimpan Kertas HVS Agar
+                      Tidak Lembap dan Macet di Mesin Fotokopi</a></h5>
+                  <p class="blog-excerpt">Panduan teknis menyimpan kertas HVS rim &amp; kardus agar terhindar dari paper
+                    jam, gelombang, dan cetakan pudar.</p>
+                  <a href="blog/cara-menyimpan-kertas-hvs-tidak-lembap-macet.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-file-earmark-text"></i> Panduan Produk</span>
-              <h5><a href="blog/cara-menyimpan-kertas-hvs-tidak-lembap-macet.html">Cara Menyimpan Kertas HVS Agar Tidak Lembap dan Macet di Mesin Fotokopi</a></h5>
-              <p class="blog-excerpt">Panduan teknis menyimpan kertas HVS rim &amp; kardus agar terhindar dari paper jam, gelombang, dan cetakan pudar.</p>
-              <a href="blog/cara-menyimpan-kertas-hvs-tidak-lembap-macet.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 5 — ARTIKEL 3: Mencari Vendor ATK Terdekat di Kawasan Industri Jabodetabek: SLA & Ongkir ===== -->
-        <div class="col-md-6 col-lg-4" data-category="procurement">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/vendor-atk-terdekat-kawasan-industri-jabodetabek.webp"
-                alt="Mencari Vendor ATK Terdekat di Kawasan Industri Jabodetabek: SLA & Ongkir" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 5 — ARTIKEL 3: Mencari Vendor ATK Terdekat di Kawasan Industri Jabodetabek: SLA & Ongkir ===== -->
+            <div class="col-md-6 col-lg-4" data-category="procurement">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/vendor-atk-terdekat-kawasan-industri-jabodetabek.webp"
+                    alt="Mencari Vendor ATK Terdekat di Kawasan Industri Jabodetabek: SLA & Ongkir" width="1720"
+                    height="960" loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-truck"></i> Distributor B2B</span>
+                  <h5><a href="blog/vendor-atk-terdekat-kawasan-industri-jabodetabek.html">Mencari Vendor ATK Terdekat
+                      di Kawasan Industri Jabodetabek: SLA &amp; Ongkir</a></h5>
+                  <p class="blog-excerpt">Tips memilih distributor ATK terpercaya untuk pabrik di kawasan industri: lead
+                    time SLA, free delivery armada, dan sistem tempo.</p>
+                  <a href="blog/vendor-atk-terdekat-kawasan-industri-jabodetabek.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-truck"></i> Distributor B2B</span>
-              <h5><a href="blog/vendor-atk-terdekat-kawasan-industri-jabodetabek.html">Mencari Vendor ATK Terdekat di Kawasan Industri Jabodetabek: SLA &amp; Ongkir</a></h5>
-              <p class="blog-excerpt">Tips memilih distributor ATK terpercaya untuk pabrik di kawasan industri: lead time SLA, free delivery armada, dan sistem tempo.</p>
-              <a href="blog/vendor-atk-terdekat-kawasan-industri-jabodetabek.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 4 — ARTIKEL 1: Ide Paket ATK Siswa Termurah Koperasi Sekolah & Yayasan ===== -->
-        <div class="col-md-6 col-lg-4" data-category="sekolah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.webp"
-                alt="Ide Paket ATK Siswa Termurah untuk Koperasi Sekolah dan Yayasan" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 4 — ARTIKEL 1: Ide Paket ATK Siswa Termurah Koperasi Sekolah & Yayasan ===== -->
+            <div class="col-md-6 col-lg-4" data-category="sekolah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.webp"
+                    alt="Ide Paket ATK Siswa Termurah untuk Koperasi Sekolah dan Yayasan" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-mortarboard"></i> ATK Sekolah</span>
+                  <h5><a href="blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.html">Ide Paket ATK Siswa Termurah
+                      untuk Koperasi Sekolah dan Yayasan</a></h5>
+                  <p class="blog-excerpt">Panduan memilih paket ATK siswa termurah &amp; aman dengan krayon non-toxic
+                    untuk kebutuhan koperasi sekolah dan yayasan.</p>
+                  <a href="blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-mortarboard"></i> ATK Sekolah</span>
-              <h5><a href="blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.html">Ide Paket ATK Siswa Termurah untuk Koperasi Sekolah dan Yayasan</a></h5>
-              <p class="blog-excerpt">Panduan memilih paket ATK siswa termurah &amp; aman dengan krayon non-toxic untuk kebutuhan koperasi sekolah dan yayasan.</p>
-              <a href="blog/ide-paket-atk-siswa-koperasi-sekolah-yayasan.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 4 — ARTIKEL 2: Cara Transaksi ATK E-Katalog Pemerintah Daerah ===== -->
-        <div class="col-md-6 col-lg-4" data-category="pemerintah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.webp"
-                alt="Cara Transaksi ATK E-Katalog untuk Instansi Pemerintah Daerah" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 4 — ARTIKEL 2: Cara Transaksi ATK E-Katalog Pemerintah Daerah ===== -->
+            <div class="col-md-6 col-lg-4" data-category="pemerintah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.webp"
+                    alt="Cara Transaksi ATK E-Katalog untuk Instansi Pemerintah Daerah" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-building"></i> Pengadaan Pemerintah</span>
+                  <h5><a href="blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html">Cara Transaksi ATK E-Katalog
+                      untuk Instansi Pemerintah Daerah</a></h5>
+                  <p class="blog-excerpt">Panduan langkah demi langkah transaksi ATK e-katalog LKPP untuk instansi
+                    pemerintah daerah dan cara mempercepat BAST.</p>
+                  <a href="blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-building"></i> Pengadaan Pemerintah</span>
-              <h5><a href="blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html">Cara Transaksi ATK E-Katalog untuk Instansi Pemerintah Daerah</a></h5>
-              <p class="blog-excerpt">Panduan langkah demi langkah transaksi ATK e-katalog LKPP untuk instansi pemerintah daerah dan cara mempercepat BAST.</p>
-              <a href="blog/cara-transaksi-atk-e-katalog-pemerintah-daerah.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 4 — ARTIKEL 3: 10 Merk Pulpen Terbaik untuk Menulis Cepat Tanpa Macet ===== -->
-        <div class="col-md-6 col-lg-4" data-category="produk">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/10-merk-pulpen-terbaik-menulis-cepat.webp"
-                alt="10 Merk Pulpen Terbaik untuk Menulis Cepat Tanpa Tinta Macet" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 4 — ARTIKEL 3: 10 Merk Pulpen Terbaik untuk Menulis Cepat Tanpa Macet ===== -->
+            <div class="col-md-6 col-lg-4" data-category="produk">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/10-merk-pulpen-terbaik-menulis-cepat.webp"
+                    alt="10 Merk Pulpen Terbaik untuk Menulis Cepat Tanpa Tinta Macet" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-pen"></i> Rekomendasi Produk</span>
+                  <h5><a href="blog/10-merk-pulpen-terbaik-menulis-cepat.html">10 Merk Pulpen Terbaik untuk Menulis
+                      Cepat Tanpa Tinta Macet</a></h5>
+                  <p class="blog-excerpt">Daftar 10 merk pulpen terbaik untuk menulis cepat tanpa tinta macet, plus
+                    kombinasi ideal bersama kertas HVS grosir.</p>
+                  <a href="blog/10-merk-pulpen-terbaik-menulis-cepat.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-pen"></i> Rekomendasi Produk</span>
-              <h5><a href="blog/10-merk-pulpen-terbaik-menulis-cepat.html">10 Merk Pulpen Terbaik untuk Menulis Cepat Tanpa Tinta Macet</a></h5>
-              <p class="blog-excerpt">Daftar 10 merk pulpen terbaik untuk menulis cepat tanpa tinta macet, plus kombinasi ideal bersama kertas HVS grosir.</p>
-              <a href="blog/10-merk-pulpen-terbaik-menulis-cepat.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 3 — ARTIKEL 7: 15 Perlengkapan Kantor Wajib di Meja Kerja ===== -->
-        <div class="col-md-6 col-lg-4" data-category="kantor">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/perlengkapan-kantor-wajib-meja-kerja.webp"
-                alt="15 Perlengkapan Kantor Wajib Ada di Meja Kerja untuk Dukung Fokus" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 3 — ARTIKEL 7: 15 Perlengkapan Kantor Wajib di Meja Kerja ===== -->
+            <div class="col-md-6 col-lg-4" data-category="kantor">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/perlengkapan-kantor-wajib-meja-kerja.webp"
+                    alt="15 Perlengkapan Kantor Wajib Ada di Meja Kerja untuk Dukung Fokus" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-inboxes"></i> Perlengkapan Kantor</span>
+                  <h5><a href="blog/perlengkapan-kantor-wajib-meja-kerja.html">15 Perlengkapan Kantor Wajib Ada di Meja
+                      Kerja untuk Dukung Fokus</a></h5>
+                  <p class="blog-excerpt">Daftar 15 ATK wajib yang harus selalu ada di meja kerja agar produktivitas dan
+                    fokus kerja karyawan meningkat optimal.</p>
+                  <a href="blog/perlengkapan-kantor-wajib-meja-kerja.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-inboxes"></i> Perlengkapan Kantor</span>
-              <h5><a href="blog/perlengkapan-kantor-wajib-meja-kerja.html">15 Perlengkapan Kantor Wajib Ada di Meja
-                  Kerja untuk Dukung Fokus</a></h5>
-              <p class="blog-excerpt">Daftar 15 ATK wajib yang harus selalu ada di meja kerja agar produktivitas dan
-                fokus kerja karyawan meningkat optimal.</p>
-              <a href="blog/perlengkapan-kantor-wajib-meja-kerja.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 3 — ARTIKEL 8: Ide Paket ATK Siswa Termurah Koperasi Sekolah ===== -->
-        <div class="col-md-6 col-lg-4" data-category="sekolah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/ide-paket-atk-siswa-termurah-koperasi-sekolah.webp"
-                alt="Ide Paket ATK Siswa Termurah untuk Koperasi Sekolah dan Yayasan" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 3 — ARTIKEL 8: Ide Paket ATK Siswa Termurah Koperasi Sekolah ===== -->
+            <div class="col-md-6 col-lg-4" data-category="sekolah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/ide-paket-atk-siswa-termurah-koperasi-sekolah.webp"
+                    alt="Ide Paket ATK Siswa Termurah untuk Koperasi Sekolah dan Yayasan" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-mortarboard"></i> ATK Sekolah</span>
+                  <h5><a href="blog/ide-paket-atk-siswa-termurah-koperasi-sekolah.html">Strategi Pengadaan ATK Grosir
+                      untuk Koperasi Sekolah: Hemat Anggaran 20–40%</a></h5>
+                  <p class="blog-excerpt">Panduan teknis memilih dan memesan ATK secara grosir untuk koperasi sekolah
+                    dan yayasan, agar anggaran lebih efisien setiap tahun ajaran.</p>
+                  <a href="blog/ide-paket-atk-siswa-termurah-koperasi-sekolah.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-mortarboard"></i> ATK Sekolah</span>
-              <h5><a href="blog/ide-paket-atk-siswa-termurah-koperasi-sekolah.html">Strategi Pengadaan ATK Grosir untuk Koperasi Sekolah: Hemat Anggaran 20–40%</a></h5>
-              <p class="blog-excerpt">Panduan teknis memilih dan memesan ATK secara grosir untuk koperasi sekolah dan yayasan, agar anggaran lebih efisien setiap tahun ajaran.</p>
-              <a href="blog/ide-paket-atk-siswa-termurah-koperasi-sekolah.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== HARI 3 — ARTIKEL 9: Cara Transaksi ATK E-Katalog Instansi Pemerintah ===== -->
-        <div class="col-md-6 col-lg-4" data-category="pemerintah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.webp"
-                alt="Cara Transaksi ATK E-Katalog untuk Instansi Pemerintah Daerah" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== HARI 3 — ARTIKEL 9: Cara Transaksi ATK E-Katalog Instansi Pemerintah ===== -->
+            <div class="col-md-6 col-lg-4" data-category="pemerintah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.webp"
+                    alt="Cara Transaksi ATK E-Katalog untuk Instansi Pemerintah Daerah" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-building"></i> Pengadaan Pemerintah</span>
+                  <h5><a href="blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.html">Panduan Teknis E-Purchasing
+                      ATK via E-Katalog LKPP: 8 Tahap dari SP hingga SP2D</a></h5>
+                  <p class="blog-excerpt">Referensi teknis proses e-purchasing ATK di LKPP: dari persiapan akun SPSE,
+                    pembuatan Surat Pesanan, hingga pembayaran SP2D sesuai regulasi.</p>
+                  <a href="blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-building"></i> Pengadaan Pemerintah</span>
-              <h5><a href="blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.html">Panduan Teknis E-Purchasing ATK via E-Katalog LKPP: 8 Tahap dari SP hingga SP2D</a></h5>
-              <p class="blog-excerpt">Referensi teknis proses e-purchasing ATK di LKPP: dari persiapan akun SPSE, pembuatan Surat Pesanan, hingga pembayaran SP2D sesuai regulasi.</p>
-              <a href="blog/cara-transaksi-atk-e-katalog-instansi-pemerintah.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL BARU: SOP Pengadaan ATK Sekolah untuk Persiapan Tahun Ajaran Baru ===== -->
-        <div class="col-md-6 col-lg-4" data-category="sekolah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/sop-pengadaan-atk-sekolah.webp"
-                alt="SOP Pengadaan ATK Sekolah untuk Persiapan Tahun Ajaran Baru" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL BARU: SOP Pengadaan ATK Sekolah untuk Persiapan Tahun Ajaran Baru ===== -->
+            <div class="col-md-6 col-lg-4" data-category="sekolah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/sop-pengadaan-atk-sekolah.webp"
+                    alt="SOP Pengadaan ATK Sekolah untuk Persiapan Tahun Ajaran Baru" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-mortarboard"></i> ATK Sekolah</span>
+                  <h5><a href="blog/sop-pengadaan-atk-sekolah.html">SOP Pengadaan ATK Sekolah untuk Persiapan Tahun
+                      Ajaran
+                      Baru</a></h5>
+                  <p class="blog-excerpt">4 tahap SOP pengadaan ATK sekolah dengan sistem pre-packing per kelas yang
+                    memangkas waktu pengemasan hingga 80%.</p>
+                  <a href="blog/sop-pengadaan-atk-sekolah.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-mortarboard"></i> ATK Sekolah</span>
-              <h5><a href="blog/sop-pengadaan-atk-sekolah.html">SOP Pengadaan ATK Sekolah untuk Persiapan Tahun Ajaran
-                  Baru</a></h5>
-              <p class="blog-excerpt">4 tahap SOP pengadaan ATK sekolah dengan sistem pre-packing per kelas yang
-                memangkas waktu pengemasan hingga 80%.</p>
-              <a href="blog/sop-pengadaan-atk-sekolah.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL BARU: Paket ATK Kantor Rapi - Solusi Meja Kerja Bebas Tumpukan Kertas ===== -->
-        <div class="col-md-6 col-lg-4" data-category="kantor">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/paket-atk-meja-kerja-rapi.webp"
-                alt="Paket ATK Kantor Rapi: Solusi Meja Kerja Bebas Tumpukan Kertas" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL BARU: Paket ATK Kantor Rapi - Solusi Meja Kerja Bebas Tumpukan Kertas ===== -->
+            <div class="col-md-6 col-lg-4" data-category="kantor">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/paket-atk-meja-kerja-rapi.webp"
+                    alt="Paket ATK Kantor Rapi: Solusi Meja Kerja Bebas Tumpukan Kertas" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-inboxes"></i> Perlengkapan Kantor</span>
+                  <h5><a href="blog/paket-atk-meja-kerja-rapi.html">Paket ATK Kantor Rapi: Solusi Meja Kerja Bebas
+                      Tumpukan
+                      Kertas</a></h5>
+                  <p class="blog-excerpt">Isi paket ATK dengan organizer &amp; folder bersekat untuk mengatasi meja
+                    kerja
+                    karyawan baru yang berantakan.</p>
+                  <a href="blog/paket-atk-meja-kerja-rapi.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-inboxes"></i> Perlengkapan Kantor</span>
-              <h5><a href="blog/paket-atk-meja-kerja-rapi.html">Paket ATK Kantor Rapi: Solusi Meja Kerja Bebas Tumpukan
-                  Kertas</a></h5>
-              <p class="blog-excerpt">Isi paket ATK dengan organizer &amp; folder bersekat untuk mengatasi meja kerja
-                karyawan baru yang berantakan.</p>
-              <a href="blog/paket-atk-meja-kerja-rapi.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL BARU: SOP Pengadaan ATK - Solusi Klaim Nota Pembelian Tanpa Ribet Administrasi ===== -->
-        <div class="col-md-6 col-lg-4" data-category="procurement">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/solusi-klaim-nota-pengadaan-atk.webp"
-                alt="SOP Pengadaan ATK: Solusi Klaim Nota Pembelian Tanpa Ribet Administrasi" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL BARU: SOP Pengadaan ATK - Solusi Klaim Nota Pembelian Tanpa Ribet Administrasi ===== -->
+            <div class="col-md-6 col-lg-4" data-category="procurement">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/solusi-klaim-nota-pengadaan-atk.webp"
+                    alt="SOP Pengadaan ATK: Solusi Klaim Nota Pembelian Tanpa Ribet Administrasi" width="1720"
+                    height="960" loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-receipt"></i> Pengadaan &amp; Procurement</span>
+                  <h5><a href="blog/solusi-klaim-nota-pengadaan-atk.html">SOP Pengadaan ATK: Solusi Klaim Nota Pembelian
+                      Tanpa Ribet Administrasi</a></h5>
+                  <p class="blog-excerpt">Hilangkan ribetnya klaim nota pembelian ATK manual dengan sistem invoice
+                    konsolidasi bulanan dari satu vendor.</p>
+                  <a href="blog/solusi-klaim-nota-pengadaan-atk.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-receipt"></i> Pengadaan &amp; Procurement</span>
-              <h5><a href="blog/solusi-klaim-nota-pengadaan-atk.html">SOP Pengadaan ATK: Solusi Klaim Nota Pembelian
-                  Tanpa Ribet Administrasi</a></h5>
-              <p class="blog-excerpt">Hilangkan ribetnya klaim nota pembelian ATK manual dengan sistem invoice
-                konsolidasi bulanan dari satu vendor.</p>
-              <a href="blog/solusi-klaim-nota-pengadaan-atk.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL BARU 1: Paket ATK Onboarding Kit Karyawan Baru ===== -->
-        <div class="col-md-6 col-lg-4" data-category="kantor">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/paket-atk-onboarding-kit-karyawan-baru.webp"
-                alt="Rekomendasi Paket ATK Kantor untuk Onboarding Kit Karyawan Baru" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL BARU 1: Paket ATK Onboarding Kit Karyawan Baru ===== -->
+            <div class="col-md-6 col-lg-4" data-category="kantor">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/paket-atk-onboarding-kit-karyawan-baru.webp"
+                    alt="Rekomendasi Paket ATK Kantor untuk Onboarding Kit Karyawan Baru" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-box-seam"></i> Onboarding Kit</span>
+                  <h5><a href="blog/paket-atk-onboarding-kit-karyawan-baru.html">Rekomendasi Paket ATK Kantor untuk
+                      Onboarding Kit Karyawan Baru</a></h5>
+                  <p class="blog-excerpt">Paket ATK kantor hemat &amp; profesional untuk onboarding kit karyawan baru,
+                    lengkap dengan tabel harga dan cara pesan bulk.</p>
+                  <a href="blog/paket-atk-onboarding-kit-karyawan-baru.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-box-seam"></i> Onboarding Kit</span>
-              <h5><a href="blog/paket-atk-onboarding-kit-karyawan-baru.html">Rekomendasi Paket ATK Kantor untuk
-                  Onboarding Kit Karyawan Baru</a></h5>
-              <p class="blog-excerpt">Paket ATK kantor hemat &amp; profesional untuk onboarding kit karyawan baru,
-                lengkap dengan tabel harga dan cara pesan bulk.</p>
-              <a href="blog/paket-atk-onboarding-kit-karyawan-baru.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL BARU 2: SOP Pengadaan ATK General Affair ===== -->
-        <div class="col-md-6 col-lg-4" data-category="procurement">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/sop-pengadaan-atk-general-affair.webp"
-                alt="SOP Pengadaan Alat Tulis Kantor Bebas Selisih untuk Tim General Affair" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL BARU 2: SOP Pengadaan ATK General Affair ===== -->
+            <div class="col-md-6 col-lg-4" data-category="procurement">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/sop-pengadaan-atk-general-affair.webp"
+                    alt="SOP Pengadaan Alat Tulis Kantor Bebas Selisih untuk Tim General Affair" width="1720"
+                    height="960" loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-clipboard-check"></i> Procurement</span>
+                  <h5><a href="blog/sop-pengadaan-atk-general-affair.html">SOP Pengadaan ATK Bebas Selisih untuk Tim
+                      General
+                      Affair</a></h5>
+                  <p class="blog-excerpt">6 langkah SOP pengadaan alat tulis kantor yang teruji untuk menekan selisih
+                    anggaran bulanan tim GA.</p>
+                  <a href="blog/sop-pengadaan-atk-general-affair.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-clipboard-check"></i> Procurement</span>
-              <h5><a href="blog/sop-pengadaan-atk-general-affair.html">SOP Pengadaan ATK Bebas Selisih untuk Tim General
-                  Affair</a></h5>
-              <p class="blog-excerpt">6 langkah SOP pengadaan alat tulis kantor yang teruji untuk menekan selisih
-                anggaran bulanan tim GA.</p>
-              <a href="blog/sop-pengadaan-atk-general-affair.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL BARU 3: Distributor ATK Resmi B2B ===== -->
-        <div class="col-md-6 col-lg-4" data-category="procurement">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/distributor-alat-tulis-kantor-resmi-b2b.webp"
-                alt="Cara Menemukan Distributor Alat Tulis Kantor Resmi Berlegalitas B2B" width="1720" height="960"
-                loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL BARU 3: Distributor ATK Resmi B2B ===== -->
+            <div class="col-md-6 col-lg-4" data-category="procurement">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/distributor-alat-tulis-kantor-resmi-b2b.webp"
+                    alt="Cara Menemukan Distributor Alat Tulis Kantor Resmi Berlegalitas B2B" width="1720" height="960"
+                    loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-patch-check"></i> Distributor B2B</span>
+                  <h5><a href="blog/distributor-alat-tulis-kantor-resmi-b2b.html">Cara Menemukan Distributor ATK Resmi
+                      &amp;
+                      Berlegalitas B2B</a></h5>
+                  <p class="blog-excerpt">5 kriteria wajib memilih distributor alat tulis kantor resmi &amp;
+                    berlegalitas
+                    sebelum tanda tangan kontrak B2B.</p>
+                  <a href="blog/distributor-alat-tulis-kantor-resmi-b2b.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-patch-check"></i> Distributor B2B</span>
-              <h5><a href="blog/distributor-alat-tulis-kantor-resmi-b2b.html">Cara Menemukan Distributor ATK Resmi &amp;
-                  Berlegalitas B2B</a></h5>
-              <p class="blog-excerpt">5 kriteria wajib memilih distributor alat tulis kantor resmi &amp; berlegalitas
-                sebelum tanda tangan kontrak B2B.</p>
-              <a href="blog/distributor-alat-tulis-kantor-resmi-b2b.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL 1: Distributor ATK Internasional Terpercaya ===== -->
-        <div class="col-md-6 col-lg-4" data-category="lokasi">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/detail-blog-distributor-alat-tulis-kantor-terpercaya-di-malang.webp"
-                alt="distributor alat tulis kantor skala internasional" width="1720" height="960" loading="lazy"
-                decoding="async">
+            <!-- ===== ARTIKEL 1: Distributor ATK Internasional Terpercaya ===== -->
+            <div class="col-md-6 col-lg-4" data-category="lokasi">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/detail-blog-distributor-alat-tulis-kantor-terpercaya-di-malang.webp"
+                    alt="distributor alat tulis kantor skala internasional" width="1720" height="960" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-geo-alt"></i> Malang</span>
+                  <h5><a href="blog/distributor-alat-tulis-kantor-internasional.html">Distributor Alat Tulis Kantor
+                      Terpercaya di Malang</a></h5>
+                  <p class="blog-excerpt">Panduan memilih distributor ATK di Malang untuk kebutuhan pengadaan kantor,
+                    sekolah, dan instansi pemerintah.</p>
+                  <a href="blog/distributor-alat-tulis-kantor-internasional.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-geo-alt"></i> Malang</span>
-              <h5><a href="blog/distributor-alat-tulis-kantor-internasional.html">Distributor Alat Tulis Kantor
-                  Terpercaya di Malang</a></h5>
-              <p class="blog-excerpt">Panduan memilih distributor ATK di Malang untuk kebutuhan pengadaan kantor,
-                sekolah, dan instansi pemerintah.</p>
-              <a href="blog/distributor-alat-tulis-kantor-internasional.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL 2: Supplier ATK Kantor untuk Perusahaan di Surabaya ===== -->
-        <div class="col-md-6 col-lg-4" data-category="lokasi">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/detail-blog-supplier-atk-kantor-untuk-perusahaan-di-surabaya.webp"
-                alt="Supplier ATK Kantor untuk Perusahaan di Surabaya" width="1720" height="960" loading="lazy"
-                decoding="async">
+            <!-- ===== ARTIKEL 2: Supplier ATK Kantor untuk Perusahaan di Surabaya ===== -->
+            <div class="col-md-6 col-lg-4" data-category="lokasi">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/detail-blog-supplier-atk-kantor-untuk-perusahaan-di-surabaya.webp"
+                    alt="Supplier ATK Kantor untuk Perusahaan di Surabaya" width="1720" height="960" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-geo-alt"></i> Surabaya</span>
+                  <h5><a href="blog/supplier-atk-kantor-untuk-perusahaan-di-surabaya.html">Supplier ATK Kantor untuk
+                      Perusahaan di Surabaya</a></h5>
+                  <p class="blog-excerpt">Kenali kriteria supplier ATK yang tepat bagi perusahaan di Surabaya untuk
+                    mendukung operasional kantor.</p>
+                  <a href="blog/supplier-atk-kantor-untuk-perusahaan-di-surabaya.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-geo-alt"></i> Surabaya</span>
-              <h5><a href="blog/supplier-atk-kantor-untuk-perusahaan-di-surabaya.html">Supplier ATK Kantor untuk
-                  Perusahaan di Surabaya</a></h5>
-              <p class="blog-excerpt">Kenali kriteria supplier ATK yang tepat bagi perusahaan di Surabaya untuk
-                mendukung operasional kantor.</p>
-              <a href="blog/supplier-atk-kantor-untuk-perusahaan-di-surabaya.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL 3: Pengadaan ATK untuk Sekolah dan Kampus ===== -->
-        <div class="col-md-6 col-lg-4" data-category="sekolah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/detail-blog-pengadaan-atk-untuk-sekolah-dan-kampus.webp"
-                alt="Pengadaan Alat Tulis Kantor untuk Sekolah dan Kampus" width="1720" height="960" loading="lazy"
-                decoding="async">
+            <!-- ===== ARTIKEL 3: Pengadaan ATK untuk Sekolah dan Kampus ===== -->
+            <div class="col-md-6 col-lg-4" data-category="sekolah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/detail-blog-pengadaan-atk-untuk-sekolah-dan-kampus.webp"
+                    alt="Pengadaan Alat Tulis Kantor untuk Sekolah dan Kampus" width="1720" height="960" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-mortarboard"></i> Edukasi</span>
+                  <h5><a href="blog/pengadaan-atk-untuk-sekolah-dan-kampus.html">Pengadaan ATK untuk Sekolah dan
+                      Kampus</a>
+                  </h5>
+                  <p class="blog-excerpt">Tips menyusun kebutuhan ATK untuk sekolah dan kampus agar proses pengadaan
+                    lebih
+                    efisien dan tepat anggaran.</p>
+                  <a href="blog/pengadaan-atk-untuk-sekolah-dan-kampus.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-mortarboard"></i> Edukasi</span>
-              <h5><a href="blog/pengadaan-atk-untuk-sekolah-dan-kampus.html">Pengadaan ATK untuk Sekolah dan Kampus</a>
-              </h5>
-              <p class="blog-excerpt">Tips menyusun kebutuhan ATK untuk sekolah dan kampus agar proses pengadaan lebih
-                efisien dan tepat anggaran.</p>
-              <a href="blog/pengadaan-atk-untuk-sekolah-dan-kampus.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL 4: Cara Memilih Vendor ATK yang Tepat ===== -->
-        <div class="col-md-6 col-lg-4" data-category="procurement">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/detail-blog-cara-memilih-vendor-atk.webp"
-                alt="Cara Memilih Vendor ATK yang Tepat" width="1720" height="960" loading="lazy" decoding="async">
+            <!-- ===== ARTIKEL 4: Cara Memilih Vendor ATK yang Tepat ===== -->
+            <div class="col-md-6 col-lg-4" data-category="procurement">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/detail-blog-cara-memilih-vendor-atk.webp"
+                    alt="Cara Memilih Vendor ATK yang Tepat" width="1720" height="960" loading="lazy" decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-lightbulb"></i> Tips Vendor</span>
+                  <h5><a href="blog/cara-memilih-vendor-atk.html">Cara Memilih Vendor ATK yang Tepat</a></h5>
+                  <p class="blog-excerpt">Panduan praktis memilih vendor alat tulis kantor yang terpercaya untuk
+                    kebutuhan
+                    pengadaan instansi Anda.</p>
+                  <a href="blog/cara-memilih-vendor-atk.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-lightbulb"></i> Tips Vendor</span>
-              <h5><a href="blog/cara-memilih-vendor-atk.html">Cara Memilih Vendor ATK yang Tepat</a></h5>
-              <p class="blog-excerpt">Panduan praktis memilih vendor alat tulis kantor yang terpercaya untuk kebutuhan
-                pengadaan instansi Anda.</p>
-              <a href="blog/cara-memilih-vendor-atk.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
-            </div>
-          </div>
-        </div>
 
-        <!-- ===== ARTIKEL 5: Tips Pengadaan ATK untuk Instansi Pemerintah ===== -->
-        <div class="col-md-6 col-lg-4" data-category="pemerintah">
-          <div class="blog-card">
-            <div class="blog-img">
-              <img src="assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah.webp"
-                alt="Tips Pengadaan ATK untuk Instansi Pemerintah" width="1720" height="960" loading="lazy"
-                decoding="async">
+            <!-- ===== ARTIKEL 5: Tips Pengadaan ATK untuk Instansi Pemerintah ===== -->
+            <div class="col-md-6 col-lg-4" data-category="pemerintah">
+              <div class="blog-card">
+                <div class="blog-img">
+                  <img src="assets/img/blog/detail-blog-tips-pengadaan-atk-instansi-pemerintah.webp"
+                    alt="Tips Pengadaan ATK untuk Instansi Pemerintah" width="1720" height="960" loading="lazy"
+                    decoding="async">
+                </div>
+                <div class="blog-body">
+                  <span class="blog-meta"><i class="bi bi-building"></i> Instansi</span>
+                  <h5><a href="blog/tips-pengadaan-atk-instansi-pemerintah.html">Tips Pengadaan ATK untuk Instansi
+                      Pemerintah</a></h5>
+                  <p class="blog-excerpt">Panduan lengkap pengadaan alat tulis kantor untuk instansi pemerintah sesuai
+                    dengan regulasi yang berlaku.</p>
+                  <a href="blog/tips-pengadaan-atk-instansi-pemerintah.html" class="read-more">
+                    Baca Selengkapnya <i class="bi bi-arrow-right"></i>
+                  </a>
+                </div>
+              </div>
             </div>
-            <div class="blog-body">
-              <span class="blog-meta"><i class="bi bi-building"></i> Instansi</span>
-              <h5><a href="blog/tips-pengadaan-atk-instansi-pemerintah.html">Tips Pengadaan ATK untuk Instansi
-                  Pemerintah</a></h5>
-              <p class="blog-excerpt">Panduan lengkap pengadaan alat tulis kantor untuk instansi pemerintah sesuai
-                dengan regulasi yang berlaku.</p>
-              <a href="blog/tips-pengadaan-atk-instansi-pemerintah.html" class="read-more">
-                Baca Selengkapnya <i class="bi bi-arrow-right"></i>
-              </a>
+
+            <!-- EMPTY STATE JIKA HASIL FILTER KOSONG -->
+            <div id="no-articles-msg" class="col-12 text-center py-5 d-none">
+              <div class="p-4 bg-light rounded-3 border d-inline-block" style="max-width: 450px;">
+                <i class="bi bi-folder-x text-muted display-4 mb-3 d-block"></i>
+                <h5 class="fw-bold text-navy-900 mb-2">Belum Ada Artikel dalam Kategori Ini</h5>
+                <p class="text-muted small mb-0">Silakan pilih filter kategori artikel lainnya.</p>
+              </div>
             </div>
-          </div>
-        </div>
 
-        <!-- EMPTY STATE JIKA HASIL FILTER KOSONG -->
-        <div id="no-articles-msg" class="col-12 text-center py-5 d-none">
-          <div class="p-4 bg-light rounded-3 border d-inline-block" style="max-width: 450px;">
-            <i class="bi bi-folder-x text-muted display-4 mb-3 d-block"></i>
-            <h5 class="fw-bold text-navy-900 mb-2">Belum Ada Artikel dalam Kategori Ini</h5>
-            <p class="text-muted small mb-0">Silakan pilih filter kategori artikel lainnya.</p>
-          </div>
-        </div>
-
-        </div><!-- /.blog-grid -->
-      </div><!-- /.col-lg-9 -->
-    </div><!-- /.row g-4 -->
-  </div><!-- /.container -->
-</section>
+          </div><!-- /.blog-grid -->
+        </div><!-- /.col-lg-9 -->
+      </div><!-- /.row g-4 -->
+    </div><!-- /.container -->
+  </section>
 
   <!-- ============================================================ -->
   <!-- CTA SECTION -->
@@ -1399,13 +1640,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 
   <!-- FLOATING FILTER BUTTON (MELAYANG) -->
-  <button class="floating-filter-btn shadow-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas" aria-label="Buka Filter Kategori" title="Klik untuk menyaring artikel">
+  <button class="floating-filter-btn shadow-lg" type="button" data-bs-toggle="offcanvas"
+    data-bs-target="#filterOffcanvas" aria-controls="filterOffcanvas" aria-label="Buka Filter Kategori"
+    title="Klik untuk menyaring artikel">
     <i class="bi bi-funnel-fill text-warning fs-5"></i>
     <span>Filter Artikel</span>
   </button>
 
   <!-- FLOATING FILTER OFFCANVAS PANEL (DRAWER MELAYANG) -->
-  <div class="offcanvas offcanvas-start blog-filter-offcanvas" tabindex="-1" id="filterOffcanvas" aria-labelledby="filterOffcanvasLabel">
+  <div class="offcanvas offcanvas-start blog-filter-offcanvas" tabindex="-1" id="filterOffcanvas"
+    aria-labelledby="filterOffcanvasLabel">
     <div class="offcanvas-header bg-navy-900 text-white p-3">
       <div class="d-flex align-items-center gap-2">
         <i class="bi bi-funnel-fill text-warning fs-5"></i>
@@ -1419,9 +1663,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mb-4">
         <label class="form-label small fw-bold text-navy-900 mb-1">Cari Kata Kunci:</label>
         <div class="search-input-group position-relative">
-          <input type="text" id="offcanvasSearchInput" class="form-control form-control-atk ps-5" placeholder="Cari (e-katalog, SOP, pulpen...)" aria-label="Cari artikel ATK">
+          <input type="text" id="offcanvasSearchInput" class="form-control form-control-atk ps-5"
+            placeholder="Cari (e-katalog, SOP, pulpen...)" aria-label="Cari artikel ATK">
           <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-3 text-muted"></i>
-          <button type="button" class="btn-clear-search d-none" id="offcanvasClearSearchBtn" title="Hapus pencarian"><i class="bi bi-x-circle-fill"></i></button>
+          <button type="button" class="btn-clear-search d-none" id="offcanvasClearSearchBtn" title="Hapus pencarian"><i
+              class="bi bi-x-circle-fill"></i></button>
         </div>
       </div>
 
@@ -1429,26 +1675,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mb-4">
         <div class="d-flex justify-content-between align-items-center mb-2">
           <label class="form-label small fw-bold text-navy-900 m-0">Kategori Artikel:</label>
-          <button type="button" class="btn btn-link p-0 text-decoration-none small text-navy-600 fw-bold d-none" id="offcanvasResetBtn" onclick="resetBlogFilter()" style="font-size:0.75rem;">
+          <button type="button" class="btn btn-link p-0 text-decoration-none small text-navy-600 fw-bold d-none"
+            id="offcanvasResetBtn" onclick="resetBlogFilter()" style="font-size:0.75rem;">
             <i class="bi bi-arrow-counterclockwise"></i> Reset Filter
           </button>
         </div>
         <div class="filter-list d-flex flex-column gap-1">
           <button type="button" class="btn-filter-item active" data-filter="all">
             <span><i class="bi bi-grid-fill me-2 category-icon"></i> Semua Artikel</span>
-            <span class="badge rounded-pill filter-count">26</span>
+            <span class="badge rounded-pill filter-count">29</span>
           </button>
           <button type="button" class="btn-filter-item" data-filter="sekolah">
             <span><i class="bi bi-mortarboard me-2 category-icon"></i> ATK Sekolah &amp; PAUD/TK</span>
-            <span class="badge rounded-pill filter-count">5</span>
+            <span class="badge rounded-pill filter-count">6</span>
           </button>
           <button type="button" class="btn-filter-item" data-filter="pemerintah">
             <span><i class="bi bi-building me-2 category-icon"></i> Pengadaan Pemerintah</span>
-            <span class="badge rounded-pill filter-count">4</span>
+            <span class="badge rounded-pill filter-count">5</span>
           </button>
           <button type="button" class="btn-filter-item" data-filter="kantor">
             <span><i class="bi bi-inboxes me-2 category-icon"></i> Perlengkapan &amp; Arsip Kantor</span>
-            <span class="badge rounded-pill filter-count">5</span>
+            <span class="badge rounded-pill filter-count">6</span>
           </button>
           <button type="button" class="btn-filter-item" data-filter="produk">
             <span><i class="bi bi-pen me-2 category-icon"></i> Produk &amp; Pulpen</span>
@@ -1469,10 +1716,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="mb-4">
         <label class="form-label small fw-bold text-navy-900 mb-2">Tag Topik Populer:</label>
         <div class="d-flex flex-wrap gap-1">
-          <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="e-katalog">#E-Katalog</button>
-          <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="sekolah">#ATKSekolah</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+            data-tag="e-katalog">#E-Katalog</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+            data-tag="sekolah">#ATKSekolah</button>
           <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="sop">#SOPPengadaan</button>
           <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="pulpen">#Pulpen</button>
+          <button type="button" class="btn btn-sm btn-outline-secondary tag-chip"
+            data-tag="meja rapat">#MejaRapat</button>
           <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="nota">#KlaimNota</button>
           <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="malang">#Malang</button>
           <button type="button" class="btn btn-sm btn-outline-secondary tag-chip" data-tag="surabaya">#Surabaya</button>
@@ -1521,6 +1772,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       let currentCategory = 'all';
       let currentSearch = '';
 
+      // Cek URL parameter / hash saat halaman dimuat
+      const urlHash = window.location.hash.replace('#', '');
+      const urlParams = new URLSearchParams(window.location.search);
+      const initialCat = urlParams.get('category') || urlParams.get('cat') || urlHash;
+      if (initialCat && document.querySelector(`.btn-filter-item[data-filter="${initialCat}"]`)) {
+        currentCategory = initialCat;
+      }
+
       // Hitung & perbarui badge jumlah artikel secara dinamis
       filterBtns.forEach(btn => {
         const filter = btn.getAttribute('data-filter');
@@ -1534,6 +1793,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           }
         }
       });
+
+      // Jalankan filter awal
+      applyFilters();
 
       // Fungsi utama penyaringan artikel (Kategori + Search)
       function applyFilters() {
@@ -1640,14 +1902,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     });
   </script>
 
-
-
-
 </body>
 
 </html>
-
-
-
-
-
