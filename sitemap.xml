@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://alattuliskantor.web.id/</loc>
@@ -315,6 +315,24 @@
   <url>
     <loc>https://alattuliskantor.web.id/blog/Keunggulan-Sistem-Pengadaan-ATK-B2B-Berbasis-Aplikasi-E-Procurement.html</loc>
     <lastmod>2026-09-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Keunggulan-Sistem-E-Procurement-ATK-B2B.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Mengapa-Memilih-Supplier-ATK-Terlengkap-Sangat-Menghemat-Waktu-Procurement.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Menyusun-Spesifikasi-Teknis-ATK-Pemerintah-yang-Adil-&amp;-Sesuai-Aturan-LKPP.html</loc>
+    <lastmod>2026-09-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
