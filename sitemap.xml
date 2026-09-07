@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://alattuliskantor.web.id/</loc>
@@ -86,9 +86,15 @@
   </url>
   <url>
     <loc>https://alattuliskantor.web.id/blog.html</loc>
-    <lastmod>2026-09-01</lastmod>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Tips-Menyusun-Anggaran-ATK-Kantor-Tanpa-Mengorbankan-Kualitas-Kerja.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://alattuliskantor.web.id/blog/10-merk-pulpen-terbaik-menulis-cepat.html</loc>
@@ -333,6 +339,24 @@
   <url>
     <loc>https://alattuliskantor.web.id/blog/Menyusun-Spesifikasi-Teknis-ATK-Pemerintah-yang-Adil-&amp;-Sesuai-Aturan-LKPP.html</loc>
     <lastmod>2026-09-05</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Cerdas-Mengapa-Satu-Supplier-Lebih-Baik-dari-Banyak-Vendor.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Tips-Menyusun-Anggaran-ATK-Kantor-Tanpa-Mengorbankan-Kualitas-Kerja.html</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://alattuliskantor.web.id/blog/Memilih-Sticky-Notes-Grosir-dengan-Perekat-Kuat-untuk-Kanban-Board-Kantor.html</loc>
+    <lastmod>2026-09-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

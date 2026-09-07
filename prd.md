@@ -92,4 +92,7 @@ Tugas kamu sebagai AI Agent:
 4. Proses gambar tersebut (resize, kompres max 50KB, format .webp) dan tambahkan watermark teks "alattuliskantor.web.id" berukuran sedang di tengah gambar. Simpan di folder `assets/img/blog/` dengan nama yang sama dengan judul artikel.
 5. Tambahkan kartu (card) artikel baru ini ke bagian paling atas grid di dalam file `blog.html`. Pastikan atribut `data-category` disesuaikan agar filter tetap berfungsi.
 6. Tambahkan URL artikel baru ini ke dalam file `sitemap.xml`.
+
+parafrase
 ```
+nih artikel ke 2 day 13 kita. buatkan file nya sesuai nama judul, gambar berformat webp berwatermark dan terkompres max 90kb, lalu harus sudah tampil di blog nya
