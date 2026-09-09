@@ -95,7 +95,7 @@ Tugas kamu sebagai AI Agent:
 
 parafrase
 ```
-nih artikel ke 2 day 13 kita. buatkan file nya sesuai nama judul, gambar berformat webp berwatermark dan terkompres max 90kb, lalu harus sudah tampil di blog nya
+nih artikel ke 1 day 15 kita. buatkan file nya sesuai nama judul, gambar berformat webp berwatermark dan terkompres max 50kb, lalu harus sudah tampil di blog nya
 
 fokus untuk internal link harap harus sesuai dan harus ada halaman nya contoh internal link pada tulisan [jasa pengadaan ATK](http://127.0.0.1:5500/jasa-pengadaan-atk.html)  ini masih cannot status nya karena gada halaman t\yang asli
 
